@@ -638,6 +638,12 @@ section.bg-white.border-y:has(#device-showcase-container) .border-border {
     border-color: #e4e4e7 !important;
 }
 
+/* Card text should be black */
+section.bg-white.border-y:has(#device-showcase-container) .bg-white h3,
+section.bg-white.border-y:has(#device-showcase-container) .bg-white p {
+    color: #000000 !important;
+}
+
 /* Navigation dots - white and grey */
 section.bg-white.border-y:has(#device-showcase-container) #desktop-carousel-dots > div {
     background-color: rgba(255, 255, 255, 0.3) !important;
@@ -683,6 +689,12 @@ section.bg-white.border-y:has(#service-cards) .bg-white {
 
 section.bg-white.border-y:has(#service-cards) .border-border {
     border-color: #e4e4e7 !important;
+}
+
+/* Card text should be black */
+section.bg-white.border-y:has(#service-cards) .bg-white h3,
+section.bg-white.border-y:has(#service-cards) .bg-white p {
+    color: #000000 !important;
 }
 
 /* Navigation dots for Services - white and grey */
