@@ -1090,3 +1090,30 @@ document.addEventListener('visibilitychange', () => {
         document.body.style.animationPlayState = 'running';
     }
 });
+
+// WhatsApp Tooltip Auto-Popup (Feature 2)
+function initWhatsAppTooltipPopup() {
+    const whatsappButton = document.querySelector('.whatsapp-float');
+    const tooltip = document.querySelector('.whatsapp-tooltip');
+    
+    if (!whatsappButton || !tooltip) return;
+    
+    // Show tooltip after 3 seconds
+    setTimeout(() => {
+        tooltip.style.opacity = '1';
+        tooltip.style.pointerEvents = 'auto';
+        
+        // Hide tooltip after 3 seconds (total 6 seconds from page load)
+        setTimeout(() => {
+            tooltip.style.opacity = '0';
+            tooltip.style.pointerEvents = 'none';
+        }, 3000);
+    }, 3000);
+}
+
+// Initialize WhatsApp tooltip popup on page load
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        initWhatsAppTooltipPopup();
+    }, 100);
+});

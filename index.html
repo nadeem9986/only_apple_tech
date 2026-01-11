@@ -75,7 +75,7 @@
                 <a href="#contact" class="px-4 py-1.5 rounded-md bg-primary text-white hover:shadow-lg hover:brightness-110 transition-all duration-200 shadow-md">Contacts</a>
             </div>
             <div class="flex items-center gap-4">
-                <button class="bg-white text-primary border-2 border-primary px-5 py-2 rounded-md text-sm font-medium hover:bg-primary hover:text-white transition-all duration-200 shadow-md hover:shadow-lg" onclick="document.getElementById('inquiry').scrollIntoView({ behavior: 'smooth' })">
+                <button class="btn-get-estimate px-5 py-2 rounded-md text-sm font-medium transition-all duration-200 shadow-md hover:shadow-lg" onclick="document.getElementById('inquiry').scrollIntoView({ behavior: 'smooth' })">
                     Get Estimate
                 </button>
             </div>
@@ -159,17 +159,19 @@
         <!-- Inquiry Section -->
         <section id="inquiry" class="py-24 bg-accent/30">
             <div class="max-w-4xl mx-auto px-4 py-12">
-                <div class="mb-8 flex items-center justify-between">
-                    <div>
-                          <h2 class="text-3xl font-bold tracking-tight">Get a Free Quote in Minutes</h2>
-                          <p class="text-muted-foreground mb-4">Tell us what's wrong — we'll reply on WhatsApp.</p>
-                          <a href="https://checkcoverage.apple.com/?locale=en_IN" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-secondary text-secondary-foreground rounded-lg text-sm font-medium hover:bg-secondary/80 transition-all border border-border shadow-sm">
-                              <i data-lucide="shield" class="w-4 h-4 text-blue-500"></i>
+                <div class="mb-8">
+                    <div class="text-center mb-6">
+                          <h2 class="text-3xl font-bold tracking-tight mb-2">Get a Free Quote in Minutes</h2>
+                          <p class="text-muted-foreground mb-6">Tell us what's wrong — we'll reply on WhatsApp.</p>
+                          
+                          <!-- Centered Apple Warranty Button -->
+                          <a href="https://checkcoverage.apple.com/?locale=en_IN" target="_blank" class="inline-flex items-center gap-3 px-6 py-3 bg-white border-2 border-primary rounded-xl text-base font-semibold hover:bg-primary hover:text-white transition-all shadow-md hover:shadow-lg">
+                              <i data-lucide="shield" class="w-5 h-5 text-blue-500"></i>
                               Check Apple Warranty (Official Apple Website)
-                              <i data-lucide="external-link" class="w-3.5 h-3.5 opacity-50"></i>
+                              <i data-lucide="external-link" class="w-4 h-4 opacity-50"></i>
                           </a>
                       </div>
-                    <div class="flex gap-2" id="step-indicators">
+                    <div class="flex gap-2 justify-end" id="step-indicators">
                         <div class="h-1.5 w-8 rounded-full bg-primary" data-step="1"></div>
                         <div class="h-1.5 w-8 rounded-full bg-muted" data-step="2"></div>
                         <div class="h-1.5 w-8 rounded-full bg-muted" data-step="3"></div>

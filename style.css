@@ -540,3 +540,66 @@ button, a, input, textarea, select {
     transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
                 transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* Get Estimate Button Shake Animation */
+@keyframes shake-button {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.btn-get-estimate {
+    background-color: #001f3f !important; /* Navy Blue */
+    color: white !important;
+    border: 2px solid #001f3f !important;
+    animation: shake-button 2s ease-in-out infinite;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+}
+
+.btn-get-estimate:hover {
+    background-color: #003366 !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(0, 31, 63, 0.4) !important;
+}
+
+/* Animation runs for 2 seconds, then pauses for 8 seconds (total 10 seconds loop) */
+@keyframes shake-with-pause {
+    0% { transform: translateX(0); }
+    2%, 6%, 10%, 14%, 18% { transform: translateX(-5px); }
+    4%, 8%, 12%, 16% { transform: translateX(5px); }
+    20%, 100% { transform: translateX(0); }
+}
+
+.btn-get-estimate {
+    animation: shake-with-pause 10s ease-in-out infinite;
+}
+
+/* Center the "Other" card in device grid */
+#device-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    #device-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Center the last card (Other) when it's alone in the row */
+#device-list .device-card:last-child:nth-child(3n+1) {
+    grid-column: 2 / 3;
+}
+
+/* For mobile, center when it's the 7th item (odd in 2-column grid) */
+@media (max-width: 767px) {
+    #device-list .device-card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        max-width: 50%;
+        margin: 0 auto;
+    }
+}
