@@ -603,3 +603,101 @@ button, a, input, textarea, select {
         margin: 0 auto;
     }
 }
+
+/* Dark Mode for Device Showcase Section */
+#device-showcase-container {
+    background-color: #000000 !important;
+}
+
+section.bg-white.border-y:has(#device-showcase-container) {
+    background-color: #000000 !important;
+    border-color: #000000 !important;
+}
+
+/* Dark mode text colors for Device Showcase */
+section.bg-white.border-y:has(#device-showcase-container) h2 {
+    color: #ffffff !important;
+}
+
+section.bg-white.border-y:has(#device-showcase-container) p {
+    color: #ffffff !important;
+}
+
+section.bg-white.border-y:has(#device-showcase-container) span.inline-block {
+    color: #4facfe !important;
+    background-color: rgba(79, 172, 254, 0.1) !important;
+    border-color: rgba(79, 172, 254, 0.3) !important;
+}
+
+/* Keep cards white in dark mode */
+section.bg-white.border-y:has(#device-showcase-container) .bg-white {
+    background-color: #ffffff !important;
+}
+
+section.bg-white.border-y:has(#device-showcase-container) .border-border {
+    border-color: #e4e4e7 !important;
+}
+
+/* Navigation dots - white and grey */
+section.bg-white.border-y:has(#device-showcase-container) #desktop-carousel-dots > div {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+section.bg-white.border-y:has(#device-showcase-container) #desktop-carousel-dots > div.bg-primary {
+    background-color: #ffffff !important;
+}
+
+section.bg-white.border-y:has(#device-showcase-container) #mobile-showcase-dots > span {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+section.bg-white.border-y:has(#device-showcase-container) #mobile-showcase-dots > span.bg-white {
+    background-color: #ffffff !important;
+}
+
+/* Dark Mode for Services Section (What We Can Fix) */
+section.bg-white.border-y:has(#service-cards) {
+    background-color: #000000 !important;
+    border-color: #000000 !important;
+}
+
+/* Dark mode text colors for Services */
+section.bg-white.border-y:has(#service-cards) h2 {
+    color: #ffffff !important;
+}
+
+section.bg-white.border-y:has(#service-cards) p {
+    color: #ffffff !important;
+}
+
+section.bg-white.border-y:has(#service-cards) span.inline-block {
+    color: #4facfe !important;
+    background-color: rgba(79, 172, 254, 0.1) !important;
+    border-color: rgba(79, 172, 254, 0.3) !important;
+}
+
+/* Keep cards white in Services dark mode */
+section.bg-white.border-y:has(#service-cards) .bg-white {
+    background-color: #ffffff !important;
+}
+
+section.bg-white.border-y:has(#service-cards) .border-border {
+    border-color: #e4e4e7 !important;
+}
+
+/* Navigation dots for Services - white and grey */
+section.bg-white.border-y:has(#service-cards) #service-carousel-dots > div {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+section.bg-white.border-y:has(#service-cards) #service-carousel-dots > div.bg-primary {
+    background-color: #ffffff !important;
+}
+
+section.bg-white.border-y:has(#service-cards) #service-dots > span {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+section.bg-white.border-y:has(#service-cards) #service-dots > span.bg-white {
+    background-color: #ffffff !important;
+}
