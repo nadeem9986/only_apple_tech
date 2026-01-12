@@ -166,6 +166,7 @@ button:active, a[class*="button"]:active, .hover-lift:active {
 .service-card:hover, .bg-white.border:hover {
     transform: translateY(-4px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    z-index: 100;
 }
 
 /* Material UI Button Styles */
@@ -337,6 +338,21 @@ nav.scrolled {
 
 img {
     animation: imageReveal 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Prevent layout shift with aspect ratio */
+img[width][height] {
+    aspect-ratio: attr(width) / attr(height);
+    height: auto;
+}
+
+/* Ensure carousel images maintain aspect ratio */
+.aspect-\[16\/9\] img {
+    aspect-ratio: 16 / 9;
+}
+
+.aspect-square img {
+    aspect-ratio: 1 / 1;
 }
 
 /* Smooth scroll behavior */
@@ -523,11 +539,30 @@ input:focus, textarea:focus {
     white-space: nowrap;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease 0.5s;
 }
 
 .whatsapp-float:hover .whatsapp-tooltip {
     opacity: 1;
+    transition-delay: 0.5s;
+}
+
+/* Remove FAQ card hover effects - make them static */
+#faq .border:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+}
+
+/* Remove shadow from FAQ button on hover */
+#faq .border button:hover {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Remove any shadow from FAQ answer content */
+#faq .border .px-6 {
+    box-shadow: none !important;
 }
 
 /* Smooth transitions for all interactive elements */

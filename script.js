@@ -3,17 +3,17 @@ const repairSlides = [
     {
         title: "iPhone Repair",
         description: "Screen replacement, battery upgrades, charging issues, and camera fixes for all iPhone models.",
-        image: "images/service-iphone.png"
+        image: "images/service-iphone.webp"
     },
     {
         title: "iPad Repair",
         description: "Cracked screens, unresponsive touch, and battery issues for all iPad models.",
-        image: "images/service-ipad.png"
+        image: "images/service-ipad.webp"
     },
     {
         title: "MacBook Services",
         description: "Keyboard repair, SSD upgrades, battery replacement, and liquid damage restoration.",
-        image: "images/service-macbook.png"
+        image: "images/service-macbook.webp"
     },
     {
         title: "Apple Watch Repair",
@@ -23,7 +23,7 @@ const repairSlides = [
     {
         title: "Mac Mini Services",
         description: "Power supply repair, port replacements, overheating issues, and SSD upgrades.",
-        image: "images/service-macbook.png"
+        image: "images/service-macbook.webp"
     }
 ];
 
@@ -289,7 +289,7 @@ function renderServiceCards() {
                     <div class="relative aspect-[16/9] bg-muted/30 overflow-hidden">
                         <div id="service-image-track" class="flex h-full transition-transform duration-700 ease-in-out">
                             ${repairSlides.map(slide => `
-                                <img src="${slide.image}" alt="${slide.title}" class="w-full h-full object-contain flex-shrink-0">
+                                <img src="${slide.image}" alt="${slide.title}" width="800" height="450" loading="lazy" class="w-full h-full object-contain flex-shrink-0">
                             `).join('')}
                         </div>
                         <!-- Navigation Dots -->
@@ -318,7 +318,7 @@ function renderServiceCards() {
                         ${extendedSlides.map((slide, i) => `
                             <div class="flex-shrink-0 w-full md:w-[calc(33.333%-1.333rem)] bg-white border border-border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                                 <div class="relative aspect-[16/9] bg-muted/30 rounded-t-2xl overflow-hidden">
-                                    <img src="${slide.image}" alt="${slide.title}" class="w-full h-full object-contain">
+                                    <img src="${slide.image}" alt="${slide.title}" width="800" height="450" loading="lazy" class="w-full h-full object-contain">
                                 </div>
                                 <div class="p-6 text-center">
                                     <h3 class="text-xl font-bold mb-2">${slide.title}</h3>
@@ -536,7 +536,7 @@ function renderDeviceShowcase() {
                     <div class="relative aspect-[16/9] bg-muted/30 overflow-hidden">
                         <div id="mobile-showcase-track" class="flex h-full transition-transform duration-700 ease-in-out">
                             ${showcaseSlides.map(slide => `
-                                <img src="${slide.image}" alt="${slide.title}" class="w-full h-full object-contain flex-shrink-0">
+                                <img src="${slide.image}" alt="${slide.title}" width="800" height="450" loading="lazy" class="w-full h-full object-contain flex-shrink-0">
                             `).join('')}
                         </div>
                         <!-- Navigation Dots -->
@@ -566,7 +566,7 @@ function renderDeviceShowcase() {
                         ${extendedSlides.map((slide, i) => `
                             <div class="flex-shrink-0 w-full md:w-[calc(33.333%-1.333rem)] bg-white border border-border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                                 <div class="relative aspect-[16/9] bg-muted/30 rounded-t-2xl overflow-hidden">
-                                    <img src="${slide.image}" alt="${slide.title}" class="w-full h-full object-contain">
+                                    <img src="${slide.image}" alt="${slide.title}" width="800" height="450" loading="lazy" class="w-full h-full object-contain">
                                 </div>
                                 <div class="p-6 text-center">
                                     <h3 class="text-xl font-bold mb-2">${slide.title}</h3>
