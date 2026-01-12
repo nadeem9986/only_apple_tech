@@ -3,7 +3,7 @@ const repairSlides = [
     {
         title: "iPhone Repair",
         description: "Screen replacement, battery upgrades, charging issues, and camera fixes for all iPhone models.",
-        image: "images/service-iphone.webp"
+        image: "images/hero-iphone-repair.webp"
     },
     {
         title: "iPad Repair",
@@ -31,17 +31,17 @@ const showcaseSlides = [
     {
         title: "iPhone Repair",
         description: "Screen replacement, battery upgrades, charging issues, and camera fixes for all iPhone models.",
-        image: "images/hero-iphone.webp"
+        image: "images/hero-iphone-repair.webp"
     },
     {
         title: "iPad Repair",
         description: "Cracked screens, unresponsive touch, and battery issues for all iPad models.",
-        image: "images/showcase-ipad.webp"
+        image: "images/service-ipad.webp"
     },
     {
         title: "MacBook Services",
         description: "Keyboard repair, SSD upgrades, battery replacement, and liquid damage restoration.",
-        image: "images/showcase-mac.webp"
+        image: "images/service-macbook.webp"
     },
     {
         title: "Apple Watch Repair",
@@ -286,10 +286,12 @@ function renderServiceCards() {
         serviceCards.innerHTML = `
             <div class="max-w-3xl mx-auto px-4">
                 <div class="bg-white border border-border rounded-2xl overflow-hidden shadow-lg">
-                    <div class="relative aspect-[16/9] bg-muted/30 overflow-hidden">
+                    <div class="relative aspect-[16/9] overflow-hidden" style="background-image: url('images/wood-texture-bg.webp'); background-size: cover; background-position: center;">
                         <div id="service-image-track" class="flex h-full transition-transform duration-700 ease-in-out">
                             ${repairSlides.map(slide => `
-                                <img src="${slide.image}" alt="${slide.title}" width="800" height="450" loading="lazy" class="w-full h-full object-contain flex-shrink-0">
+                                <div class="w-full h-full flex items-center justify-center flex-shrink-0">
+                                    <img src="${slide.image}" alt="${slide.title}" width="800" height="450" loading="lazy" class="max-w-full max-h-full object-contain">
+                                </div>
                             `).join('')}
                         </div>
                         <!-- Navigation Dots -->
@@ -317,8 +319,8 @@ function renderServiceCards() {
                     <div id="service-carousel-track" class="flex gap-8 transition-transform duration-700 ease-in-out -mx-4 px-4">
                         ${extendedSlides.map((slide, i) => `
                             <div class="flex-shrink-0 w-full md:w-[calc(33.333%-1.333rem)] bg-white border border-border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                                <div class="relative aspect-[16/9] bg-muted/30 rounded-t-2xl overflow-hidden">
-                                    <img src="${slide.image}" alt="${slide.title}" width="800" height="450" loading="lazy" class="w-full h-full object-contain">
+                                <div class="relative aspect-[16/9] rounded-t-2xl overflow-hidden flex items-center justify-center" style="background-image: url('images/wood-texture-bg.webp'); background-size: cover; background-position: center;">
+                                    <img src="${slide.image}" alt="${slide.title}" width="800" height="450" loading="lazy" class="max-w-full max-h-full object-contain">
                                 </div>
                                 <div class="p-6 text-center">
                                     <h3 class="text-xl font-bold mb-2">${slide.title}</h3>
@@ -533,10 +535,12 @@ function renderDeviceShowcase() {
         showcaseContainer.innerHTML = `
             <div class="max-w-3xl mx-auto px-4">
                 <div class="bg-white border border-border rounded-2xl overflow-hidden shadow-lg">
-                    <div class="relative aspect-[16/9] bg-muted/30 overflow-hidden">
+                    <div class="relative aspect-square overflow-hidden" style="background-image: url('images/wood-texture-bg.webp'); background-size: cover; background-position: center;">
                         <div id="mobile-showcase-track" class="flex h-full transition-transform duration-700 ease-in-out">
                             ${showcaseSlides.map(slide => `
-                                <img src="${slide.image}" alt="${slide.title}" width="800" height="450" loading="lazy" class="w-full h-full object-contain flex-shrink-0">
+                                <div class="w-full h-full flex items-center justify-center flex-shrink-0">
+                                    <img src="${slide.image}" alt="${slide.title}" width="800" height="450" loading="lazy" class="max-w-full max-h-full object-contain">
+                                </div>
                             `).join('')}
                         </div>
                         <!-- Navigation Dots -->
@@ -565,8 +569,8 @@ function renderDeviceShowcase() {
                     <div id="desktop-carousel-track" class="flex gap-8 transition-transform duration-700 ease-in-out -mx-4 px-4">
                         ${extendedSlides.map((slide, i) => `
                             <div class="flex-shrink-0 w-full md:w-[calc(33.333%-1.333rem)] bg-white border border-border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                                <div class="relative aspect-[16/9] bg-muted/30 rounded-t-2xl overflow-hidden">
-                                    <img src="${slide.image}" alt="${slide.title}" width="800" height="450" loading="lazy" class="w-full h-full object-contain">
+                                <div class="relative aspect-[4/3] rounded-t-2xl overflow-hidden flex items-center justify-center" style="background-image: url('images/wood-texture-bg.webp'); background-size: cover; background-position: center;">
+                                    <img src="${slide.image}" alt="${slide.title}" width="800" height="450" loading="lazy" class="max-w-full max-h-full object-contain">
                                 </div>
                                 <div class="p-6 text-center">
                                     <h3 class="text-xl font-bold mb-2">${slide.title}</h3>
