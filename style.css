@@ -31,10 +31,13 @@ body {
 }
 
 @keyframes bounce-slow {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(-5%);
         animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
     }
+
     50% {
         transform: translateY(0);
         animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
@@ -55,8 +58,15 @@ body {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateX(20px); }
-    to { opacity: 1; transform: translateX(0); }
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .success-overlay {
@@ -108,13 +118,27 @@ body {
 }
 
 @keyframes textFadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes textFadeOut {
-    from { opacity: 1; transform: translateY(0); }
-    to { opacity: 0; transform: translateY(-10px); }
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
 }
 
 /* ============================================
@@ -126,7 +150,7 @@ body {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .fade-in-up.visible {
@@ -135,42 +159,69 @@ body {
 }
 
 /* Stagger animation delays */
-.stagger-1 { transition-delay: 0.1s; }
-.stagger-2 { transition-delay: 0.2s; }
-.stagger-3 { transition-delay: 0.3s; }
-.stagger-4 { transition-delay: 0.4s; }
-.stagger-5 { transition-delay: 0.5s; }
-.stagger-6 { transition-delay: 0.6s; }
+.stagger-1 {
+    transition-delay: 0.1s;
+}
+
+.stagger-2 {
+    transition-delay: 0.2s;
+}
+
+.stagger-3 {
+    transition-delay: 0.3s;
+}
+
+.stagger-4 {
+    transition-delay: 0.4s;
+}
+
+.stagger-5 {
+    transition-delay: 0.5s;
+}
+
+.stagger-6 {
+    transition-delay: 0.6s;
+}
 
 /* Premium button hover effects */
-button, a[class*="button"], .hover-lift {
+button,
+a[class*="button"],
+.hover-lift {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
 }
 
-button:hover, a[class*="button"]:hover, .hover-lift:hover {
+button:hover,
+a[class*="button"]:hover,
+.hover-lift:hover {
     transform: translateY(-2px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
-button:active, a[class*="button"]:active, .hover-lift:active {
+button:active,
+a[class*="button"]:active,
+.hover-lift:active {
     transform: translateY(0);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Card hover effects */
-.service-card, .bg-white.border {
+.service-card,
+.bg-white.border {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.service-card:hover, .bg-white.border:hover {
+.service-card:hover,
+.bg-white.border:hover {
     transform: translateY(-4px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
     z-index: 100;
 }
 
 /* Material UI Button Styles */
-button, a[class*="bg-primary"], a[class*="border-primary"] {
+button,
+a[class*="bg-primary"],
+a[class*="border-primary"] {
     position: relative;
     overflow: hidden;
     transform: translateZ(0);
@@ -191,11 +242,13 @@ button, a[class*="bg-primary"], a[class*="border-primary"] {
 }
 
 /* Hover elevation increase */
-button:hover, a[class*="hover:shadow"]:hover {
+button:hover,
+a[class*="hover:shadow"]:hover {
     transform: translateY(-1px);
 }
 
-button:active, a[class*="bg-primary"]:active {
+button:active,
+a[class*="bg-primary"]:active {
     transform: translateY(0);
 }
 
@@ -232,10 +285,12 @@ button:active, a[class*="bg-primary"]:active {
 }
 
 /* Glow effect on focus */
-input:focus, textarea:focus, button:focus-visible {
+input:focus,
+textarea:focus,
+button:focus-visible {
     outline: none;
     box-shadow: 0 0 0 3px rgba(28, 28, 28, 0.1),
-                0 0 20px rgba(28, 28, 28, 0.05);
+        0 0 20px rgba(28, 28, 28, 0.05);
 }
 
 /* Ripple effect */
@@ -244,6 +299,7 @@ input:focus, textarea:focus, button:focus-visible {
         transform: scale(0);
         opacity: 1;
     }
+
     100% {
         transform: scale(4);
         opacity: 0;
@@ -263,15 +319,24 @@ i[data-lucide] {
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-button:hover i[data-lucide], a:hover i[data-lucide] {
+button:hover i[data-lucide],
+a:hover i[data-lucide],
+.logo-main:hover {
     transform: scale(1.1);
+}
+
+.logo-main {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Floating animation */
 @keyframes float {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0px);
     }
+
     50% {
         transform: translateY(-10px);
     }
@@ -287,6 +352,7 @@ button:hover i[data-lucide], a:hover i[data-lucide] {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -330,6 +396,7 @@ nav.scrolled {
         opacity: 0;
         transform: scale(0.95);
     }
+
     to {
         opacity: 1;
         transform: scale(1);
@@ -362,7 +429,8 @@ html {
 
 /* Call Now Button */
 .btn-call-now {
-    background-color: #007aff !important; /* Apple Blue */
+    background-color: #007aff !important;
+    /* Apple Blue */
     color: white !important;
     border: none !important;
 }
@@ -420,6 +488,7 @@ html {
 
 /* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
@@ -430,11 +499,13 @@ html {
 }
 
 /* Enhanced form inputs */
-input, textarea {
+input,
+textarea {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
     transform: translateY(-1px);
     border-color: var(--primary);
 }
@@ -448,10 +519,10 @@ input:focus, textarea:focus {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, 
-        rgba(28, 28, 28, 0.05) 0%, 
-        transparent 50%,
-        rgba(28, 28, 28, 0.05) 100%);
+    background: linear-gradient(135deg,
+            rgba(28, 28, 28, 0.05) 0%,
+            transparent 50%,
+            rgba(28, 28, 28, 0.05) 100%);
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -466,7 +537,8 @@ input:focus, textarea:focus {
     position: relative;
     isolation: isolate;
     background-color: rgba(255, 255, 255, 0.25) !important;
-    backdrop-filter: none !important; /* Overriding default blur */
+    backdrop-filter: none !important;
+    /* Overriding default blur */
     border: none !important;
 }
 
@@ -566,25 +638,49 @@ input:focus, textarea:focus {
 }
 
 /* Smooth transitions for all interactive elements */
-button, a, input, textarea, select {
+button,
+a,
+input,
+textarea,
+select {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Card hover transitions */
-.shadow-lg, .shadow-md, .shadow-xl {
-    transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
-                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.shadow-lg,
+.shadow-md,
+.shadow-xl {
+    transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Get Estimate Button Shake Animation */
 @keyframes shake-button {
-    0%, 100% { transform: translateX(0); }
-    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-    20%, 40%, 60%, 80% { transform: translateX(5px); }
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-5px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(5px);
+    }
 }
 
 .btn-get-estimate {
-    background-color: #001f3f !important; /* Navy Blue */
+    background-color: #001f3f !important;
+    /* Navy Blue */
     color: white !important;
     border: 2px solid #001f3f !important;
     animation: shake-button 2s ease-in-out infinite;
@@ -602,10 +698,29 @@ button, a, input, textarea, select {
 
 /* Animation runs for 2 seconds, then pauses for 8 seconds (total 10 seconds loop) */
 @keyframes shake-with-pause {
-    0% { transform: translateX(0); }
-    2%, 6%, 10%, 14%, 18% { transform: translateX(-5px); }
-    4%, 8%, 12%, 16% { transform: translateX(5px); }
-    20%, 100% { transform: translateX(0); }
+    0% {
+        transform: translateX(0);
+    }
+
+    2%,
+    6%,
+    10%,
+    14%,
+    18% {
+        transform: translateX(-5px);
+    }
+
+    4%,
+    8%,
+    12%,
+    16% {
+        transform: translateX(5px);
+    }
+
+    20%,
+    100% {
+        transform: translateX(0);
+    }
 }
 
 .btn-get-estimate {
@@ -680,19 +795,19 @@ section.bg-white.border-y:has(#device-showcase-container) .bg-white p {
 }
 
 /* Navigation dots - white and grey */
-section.bg-white.border-y:has(#device-showcase-container) #desktop-carousel-dots > div {
+section.bg-white.border-y:has(#device-showcase-container) #desktop-carousel-dots>div {
     background-color: rgba(255, 255, 255, 0.3) !important;
 }
 
-section.bg-white.border-y:has(#device-showcase-container) #desktop-carousel-dots > div.bg-primary {
+section.bg-white.border-y:has(#device-showcase-container) #desktop-carousel-dots>div.bg-primary {
     background-color: #ffffff !important;
 }
 
-section.bg-white.border-y:has(#device-showcase-container) #mobile-showcase-dots > span {
+section.bg-white.border-y:has(#device-showcase-container) #mobile-showcase-dots>span {
     background-color: rgba(255, 255, 255, 0.3) !important;
 }
 
-section.bg-white.border-y:has(#device-showcase-container) #mobile-showcase-dots > span.bg-white {
+section.bg-white.border-y:has(#device-showcase-container) #mobile-showcase-dots>span.bg-white {
     background-color: #ffffff !important;
 }
 
@@ -733,18 +848,18 @@ section.bg-white.border-y:has(#service-cards) .bg-white p {
 }
 
 /* Navigation dots for Services - white and grey */
-section.bg-white.border-y:has(#service-cards) #service-carousel-dots > div {
+section.bg-white.border-y:has(#service-cards) #service-carousel-dots>div {
     background-color: rgba(255, 255, 255, 0.3) !important;
 }
 
-section.bg-white.border-y:has(#service-cards) #service-carousel-dots > div.bg-primary {
+section.bg-white.border-y:has(#service-cards) #service-carousel-dots>div.bg-primary {
     background-color: #ffffff !important;
 }
 
-section.bg-white.border-y:has(#service-cards) #service-dots > span {
+section.bg-white.border-y:has(#service-cards) #service-dots>span {
     background-color: rgba(255, 255, 255, 0.3) !important;
 }
 
-section.bg-white.border-y:has(#service-cards) #service-dots > span.bg-white {
+section.bg-white.border-y:has(#service-cards) #service-dots>span.bg-white {
     background-color: #ffffff !important;
 }

@@ -1,62 +1,59 @@
 // Data
-const repairSlides = [
-    {
+const repairSlides = [{
         title: "iPhone Repair",
         description: "Screen replacement, battery upgrades, charging issues, and camera fixes for all iPhone models.",
-        image: "images/hero-iphone-repair.webp"
+        image: "images/fixed devices webm /iphone fixed .webp"
     },
     {
         title: "iPad Repair",
         description: "Cracked screens, unresponsive touch, and battery issues for all iPad models.",
-        image: "images/service-ipad.webp"
+        image: "images/fixed devices webm /i pad fixed.webp"
     },
     {
         title: "MacBook Services",
         description: "Keyboard repair, SSD upgrades, battery replacement, and liquid damage restoration.",
-        image: "images/service-macbook.webp"
+        image: "images/fixed devices webm /i mac fixed.webp"
     },
     {
         title: "Apple Watch Repair",
         description: "Screen replacement, battery issues, and sensor repairs for all Apple Watch models.",
-        image: "images/service-watch.webp"
+        image: "images/fixed devices webm /apple watch fixed.webp"
     },
     {
         title: "Mac Mini Services",
         description: "Power supply repair, port replacements, overheating issues, and SSD upgrades.",
-        image: "images/service-macbook.webp"
+        image: "images/fixed devices webm /mac mini fixed.webp"
     }
 ];
 
-const showcaseSlides = [
-    {
+const showcaseSlides = [{
         title: "iPhone Repair",
         description: "Screen replacement, battery upgrades, charging issues, and camera fixes for all iPhone models.",
-        image: "images/hero-iphone-repair.webp"
+        image: "images/iphone_showcase.webp"
     },
     {
         title: "iPad Repair",
         description: "Cracked screens, unresponsive touch, and battery issues for all iPad models.",
-        image: "images/service-ipad.webp"
+        image: "images/ipad_showcase.webp"
     },
     {
         title: "MacBook Services",
         description: "Keyboard repair, SSD upgrades, battery replacement, and liquid damage restoration.",
-        image: "images/service-macbook.webp"
+        image: "images/macbook_showcase.webp"
     },
     {
         title: "Apple Watch Repair",
         description: "Screen replacement, battery issues, and sensor repairs for all Apple Watch models.",
-        image: "images/showcase-watch.webp"
+        image: "images/apple_watch_showcase.webp"
     },
     {
         title: "Mac Mini Services",
         description: "Power supply repair, port replacements, overheating issues, and SSD upgrades.",
-        image: "images/showcase-mac.webp"
+        image: "images/mac_mini_showcase.webp"
     }
 ];
 
-const reviews = [
-    {
+const reviews = [{
         name: "Rahul Sharma",
         rating: 5,
         text: "Excellent service! Fixed my iPhone 14 Pro Max screen in just 2 hours. The quality is as good as original. Highly recommend Only Apple Tech.",
@@ -89,7 +86,7 @@ const deviceIcons = {
         <circle cx="32" cy="51" r="2" fill="white" opacity="0.8"/>
         <rect x="26" y="12" width="12" height="2" rx="1" fill="white" opacity="0.6"/>
     </svg>`,
-    
+
     ipad: `<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
             <linearGradient id="ipadGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -101,7 +98,7 @@ const deviceIcons = {
         <circle cx="32" cy="50" r="2" fill="white" opacity="0.8"/>
         <rect x="28" y="14" width="8" height="1.5" rx="0.75" fill="white" opacity="0.6"/>
     </svg>`,
-    
+
     macbook: `<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
             <linearGradient id="macGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -113,7 +110,7 @@ const deviceIcons = {
         <path d="M8 44 L56 44 L54 48 L10 48 Z" fill="currentColor" opacity="0.3"/>
         <rect x="28" y="46" width="8" height="1" rx="0.5" fill="currentColor" opacity="0.4"/>
     </svg>`,
-    
+
     watch: `<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
             <linearGradient id="watchGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -126,7 +123,7 @@ const deviceIcons = {
         <rect x="22" y="46" width="20" height="4" rx="1" fill="currentColor" opacity="0.3"/>
         <circle cx="32" cy="32" r="2" fill="white" opacity="0.9"/>
     </svg>`,
-    
+
     imac: `<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
             <linearGradient id="imacGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -150,7 +147,7 @@ const deviceIcons = {
         <circle cx="32" cy="32" r="6" fill="currentColor" opacity="0.15"/>
         <rect x="16" y="42" width="32" height="1" rx="0.5" fill="black" opacity="0.2"/>
     </svg>`,
-    
+
     other: `<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
             <linearGradient id="otherGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -163,14 +160,41 @@ const deviceIcons = {
     </svg>`
 };
 
-const devices = [
-    { id: "iphone", name: "iPhone", icon: "iphone" },
-    { id: "macbook", name: "MacBook", icon: "macbook" },
-    { id: "ipad", name: "iPad", icon: "ipad" },
-    { id: "watch", name: "Apple Watch", icon: "watch" },
-    { id: "imac", name: "iMac", icon: "imac" },
-    { id: "macmini", name: "Mac Mini", icon: "macmini" },
-    { id: "other", name: "Other", icon: "other" },
+const devices = [{
+        id: "iphone",
+        name: "iPhone",
+        icon: "iphone"
+    },
+    {
+        id: "macbook",
+        name: "MacBook",
+        icon: "macbook"
+    },
+    {
+        id: "ipad",
+        name: "iPad",
+        icon: "ipad"
+    },
+    {
+        id: "watch",
+        name: "Apple Watch",
+        icon: "watch"
+    },
+    {
+        id: "imac",
+        name: "iMac",
+        icon: "imac"
+    },
+    {
+        id: "macmini",
+        name: "Mac Mini",
+        icon: "macmini"
+    },
+    {
+        id: "other",
+        name: "Other",
+        icon: "other"
+    },
 ];
 
 const deviceProblems = {
@@ -277,16 +301,16 @@ function renderDevices() {
 
 function renderServiceCards() {
     const serviceCards = document.getElementById('service-cards');
-    
+
     // Check if mobile
     const isMobile = window.innerWidth < 1024;
-    
+
     if (isMobile) {
         // Mobile: Single card with sliding images inside
         serviceCards.innerHTML = `
             <div class="max-w-3xl mx-auto px-4">
                 <div class="bg-white border border-border rounded-2xl overflow-hidden shadow-lg">
-                    <div class="relative aspect-[16/9] overflow-hidden" style="background-image: url('images/wood-texture-bg.webp'); background-size: cover; background-position: center;">
+                    <div class="relative aspect-square overflow-hidden" style="background-image: url('images/wood-texture-bg.webp'); background-size: cover; background-position: center;">
                         <div id="service-image-track" class="flex h-full transition-transform duration-700 ease-in-out">
                             ${repairSlides.map(slide => `
                                 <div class="w-full h-full flex items-center justify-center flex-shrink-0">
@@ -312,14 +336,14 @@ function renderServiceCards() {
     } else {
         // Desktop: 3-card carousel with sliding effect (right -> middle -> left)
         const extendedSlides = [...repairSlides, ...repairSlides, ...repairSlides];
-        
+
         serviceCards.innerHTML = `
             <div class="container mx-auto px-4">
                 <div class="relative overflow-hidden">
                     <div id="service-carousel-track" class="flex gap-8 transition-transform duration-700 ease-in-out -mx-4 px-4">
                         ${extendedSlides.map((slide, i) => `
                             <div class="flex-shrink-0 w-full md:w-[calc(33.333%-1.333rem)] bg-white border border-border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                                <div class="relative aspect-[16/9] rounded-t-2xl overflow-hidden flex items-center justify-center" style="background-image: url('images/wood-texture-bg.webp'); background-size: cover; background-position: center;">
+                                <div class="relative aspect-[4/3] rounded-t-2xl overflow-hidden flex items-center justify-center" style="background-image: url('images/wood-texture-bg.webp'); background-size: cover; background-position: center;">
                                     <img src="${slide.image}" alt="${slide.title}" width="800" height="450" loading="lazy" class="max-w-full max-h-full object-contain">
                                 </div>
                                 <div class="p-6 text-center">
@@ -340,7 +364,7 @@ function renderServiceCards() {
         `;
         initDesktopServiceCarousel();
     }
-    
+
     lucide.createIcons();
 }
 
@@ -369,17 +393,17 @@ function updateServiceUI(nextIdx) {
     const imageTrack = document.getElementById('service-image-track');
     const textContainer = document.getElementById('service-text-container');
     const dotsContainer = document.getElementById('service-dots');
-    
+
     if (!imageTrack || !textContainer || !dotsContainer) return;
-    
+
     const dots = dotsContainer.children;
-    
+
     // Image Transition
     imageTrack.style.transform = `translateX(-${nextIdx * 100}%)`;
-    
+
     // Text Transition
     textContainer.classList.add('text-fade-out');
-    
+
     setTimeout(() => {
         textContainer.innerHTML = `
             <h3 class="text-2xl font-bold mb-3">${repairSlides[nextIdx].title}</h3>
@@ -387,12 +411,12 @@ function updateServiceUI(nextIdx) {
         `;
         textContainer.classList.remove('text-fade-out');
         textContainer.classList.add('text-fade-in');
-        
+
         setTimeout(() => {
             textContainer.classList.remove('text-fade-in');
         }, 500);
     }, 350);
-    
+
     // Update Dots
     Array.from(dots).forEach((dot, i) => {
         if (i === nextIdx) {
@@ -413,10 +437,10 @@ let isServiceTransitioning = false;
 function initDesktopServiceCarousel() {
     const track = document.getElementById('service-carousel-track');
     if (!track) return;
-    
+
     // Position at the middle set initially
     updateServiceCarouselPosition(false);
-    
+
     // Start auto-sliding
     startServiceCarouselInterval();
 }
@@ -430,14 +454,14 @@ function startServiceCarouselInterval() {
 
 function moveServiceCarousel(direction) {
     if (isServiceTransitioning) return;
-    
+
     currentServiceCarouselIdx += direction;
     updateServiceCarouselPosition(true);
 }
 
 function goToServiceSlide(index) {
     if (isServiceTransitioning) return;
-    
+
     clearInterval(serviceCarouselInterval);
     currentServiceCarouselIdx = repairSlides.length + index;
     updateServiceCarouselPosition(true);
@@ -447,25 +471,25 @@ function goToServiceSlide(index) {
 function updateServiceCarouselPosition(withTransition) {
     const track = document.getElementById('service-carousel-track');
     const dots = document.querySelectorAll('#service-carousel-dots > div');
-    
+
     if (!track) return;
-    
+
     isServiceTransitioning = true;
-    
+
     // Enable/disable transition
     if (withTransition) {
         track.style.transition = 'transform 0.7s ease-in-out';
     } else {
         track.style.transition = 'none';
     }
-    
+
     // Calculate position - show 3 cards at once
     const cardWidth = track.children[0].offsetWidth;
     const gap = 32; // 2rem = 32px
     const offset = currentServiceCarouselIdx * (cardWidth + gap);
-    
+
     track.style.transform = `translateX(-${offset}px)`;
-    
+
     // Update dots based on actual position in the original array
     const actualIndex = currentServiceCarouselIdx % repairSlides.length;
     dots.forEach((dot, i) => {
@@ -477,7 +501,7 @@ function updateServiceCarouselPosition(withTransition) {
             dot.classList.add('bg-muted-foreground/30');
         }
     });
-    
+
     // Handle infinite loop
     if (withTransition) {
         setTimeout(() => {
@@ -492,7 +516,7 @@ function updateServiceCarouselPosition(withTransition) {
 function handleServiceCarouselLoop() {
     const track = document.getElementById('service-carousel-track');
     if (!track) return;
-    
+
     // If we've gone past the second set, jump back to the first set
     if (currentServiceCarouselIdx >= repairSlides.length * 2) {
         currentServiceCarouselIdx = repairSlides.length;
@@ -526,10 +550,10 @@ function renderReviews() {
 
 function renderDeviceShowcase() {
     const showcaseContainer = document.getElementById('device-showcase-container');
-    
+
     // Check if mobile
     const isMobile = window.innerWidth < 1024;
-    
+
     if (isMobile) {
         // Mobile: Single card with sliding images inside
         showcaseContainer.innerHTML = `
@@ -562,7 +586,7 @@ function renderDeviceShowcase() {
         // Desktop: 3-card carousel with sliding effect (right -> middle -> left)
         // Create extended array for infinite loop: [...slides, ...slides, ...slides]
         const extendedSlides = [...showcaseSlides, ...showcaseSlides, ...showcaseSlides];
-        
+
         showcaseContainer.innerHTML = `
             <div class="container mx-auto px-4">
                 <div class="relative overflow-hidden">
@@ -590,7 +614,7 @@ function renderDeviceShowcase() {
         `;
         initDesktopCarousel();
     }
-    
+
     lucide.createIcons();
 }
 
@@ -619,17 +643,17 @@ function updateMobileShowcaseUI(nextIdx) {
     const imageTrack = document.getElementById('mobile-showcase-track');
     const textContainer = document.getElementById('mobile-showcase-text');
     const dotsContainer = document.getElementById('mobile-showcase-dots');
-    
+
     if (!imageTrack || !textContainer || !dotsContainer) return;
-    
+
     const dots = dotsContainer.children;
-    
+
     // Image Transition
     imageTrack.style.transform = `translateX(-${nextIdx * 100}%)`;
-    
+
     // Text Transition
     textContainer.classList.add('text-fade-out');
-    
+
     setTimeout(() => {
         textContainer.innerHTML = `
             <h3 class="text-2xl font-bold mb-3">${showcaseSlides[nextIdx].title}</h3>
@@ -637,12 +661,12 @@ function updateMobileShowcaseUI(nextIdx) {
         `;
         textContainer.classList.remove('text-fade-out');
         textContainer.classList.add('text-fade-in');
-        
+
         setTimeout(() => {
             textContainer.classList.remove('text-fade-in');
         }, 500);
     }, 350);
-    
+
     // Update Dots
     Array.from(dots).forEach((dot, i) => {
         if (i === nextIdx) {
@@ -663,10 +687,10 @@ let isDesktopTransitioning = false;
 function initDesktopCarousel() {
     const track = document.getElementById('desktop-carousel-track');
     if (!track) return;
-    
+
     // Position at the middle set initially (showing cards 0, 1, 2)
     updateDesktopCarouselPosition(false);
-    
+
     // Start auto-sliding
     startDesktopCarouselInterval();
 }
@@ -680,14 +704,14 @@ function startDesktopCarouselInterval() {
 
 function moveDesktopCarousel(direction) {
     if (isDesktopTransitioning) return;
-    
+
     currentDesktopCarouselIdx += direction;
     updateDesktopCarouselPosition(true);
 }
 
 function goToDesktopSlide(index) {
     if (isDesktopTransitioning) return;
-    
+
     clearInterval(desktopCarouselInterval);
     currentDesktopCarouselIdx = showcaseSlides.length + index;
     updateDesktopCarouselPosition(true);
@@ -697,25 +721,25 @@ function goToDesktopSlide(index) {
 function updateDesktopCarouselPosition(withTransition) {
     const track = document.getElementById('desktop-carousel-track');
     const dots = document.querySelectorAll('#desktop-carousel-dots > div');
-    
+
     if (!track) return;
-    
+
     isDesktopTransitioning = true;
-    
+
     // Enable/disable transition
     if (withTransition) {
         track.style.transition = 'transform 0.7s ease-in-out';
     } else {
         track.style.transition = 'none';
     }
-    
+
     // Calculate position - show 3 cards at once
     const cardWidth = track.children[0].offsetWidth;
     const gap = 32; // 2rem = 32px
     const offset = currentDesktopCarouselIdx * (cardWidth + gap);
-    
+
     track.style.transform = `translateX(-${offset}px)`;
-    
+
     // Update dots based on actual position in the original array
     const actualIndex = currentDesktopCarouselIdx % showcaseSlides.length;
     dots.forEach((dot, i) => {
@@ -727,7 +751,7 @@ function updateDesktopCarouselPosition(withTransition) {
             dot.classList.add('bg-muted-foreground/30');
         }
     });
-    
+
     // Handle infinite loop
     if (withTransition) {
         setTimeout(() => {
@@ -742,7 +766,7 @@ function updateDesktopCarouselPosition(withTransition) {
 function handleDesktopCarouselLoop() {
     const track = document.getElementById('desktop-carousel-track');
     if (!track) return;
-    
+
     // If we've gone past the second set, jump back to the first set
     if (currentDesktopCarouselIdx >= showcaseSlides.length * 2) {
         currentDesktopCarouselIdx = showcaseSlides.length;
@@ -767,7 +791,7 @@ window.addEventListener('resize', () => {
         const currentWidth = window.innerWidth;
         const wasMobile = document.getElementById('mobile-showcase-track') !== null;
         const isMobile = currentWidth < 1024;
-        
+
         // Only re-render if we're switching between mobile and desktop
         if (wasMobile !== isMobile) {
             // Clear all intervals before re-rendering
@@ -775,7 +799,7 @@ window.addEventListener('resize', () => {
             clearInterval(mobileServiceInterval);
             clearInterval(desktopCarouselInterval);
             clearInterval(serviceCarouselInterval);
-            
+
             renderDeviceShowcase();
             renderServiceCards();
         } else if (!isMobile && Math.abs(currentWidth - lastWidth) > 50) {
@@ -785,19 +809,21 @@ window.addEventListener('resize', () => {
                 updateServiceCarouselPosition(false);
             });
         }
-        
+
         lastWidth = currentWidth;
     }, 150);
-}, { passive: true });
+}, {
+    passive: true
+});
 
 
 // Logic Functions
 function toggleFaq(button) {
     const content = button.nextElementSibling;
     const icon = button.querySelector('[data-lucide="chevron-down"]');
-    
+
     const isOpen = !content.classList.contains('hidden');
-    
+
     if (isOpen) {
         content.classList.add('hidden');
         icon.style.transform = 'rotate(0deg)';
@@ -840,7 +866,7 @@ function goToStep(step) {
     currentStep = step;
     document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
     document.getElementById(`step-${step}`).classList.add('active');
-    
+
     // Update indicators
     document.querySelectorAll('#step-indicators div').forEach((el, idx) => {
         if (idx + 1 <= step) {
@@ -851,7 +877,7 @@ function goToStep(step) {
             el.classList.add('bg-muted');
         }
     });
-    
+
     lucide.createIcons();
 }
 
@@ -869,17 +895,17 @@ document.getElementById('quote-form').addEventListener('submit', (e) => {
     const deviceDisplay = model ? `${deviceName} ${model}` : deviceName;
 
     let message = `${intro}\n\nI need help with my ${deviceDisplay}.\n\nThe issue is ${selectedProblem}.`;
-    
+
     if (description) {
         message += `\n\n${description}`;
     }
-    
+
     const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     window.open(waUrl, "_blank");
-    
+
     // Update direct link in success overlay
     document.getElementById('whatsapp-direct-link').href = waUrl;
-    
+
     document.getElementById('success-overlay').classList.add('active');
 });
 
@@ -979,6 +1005,7 @@ function handleNavbarScroll() {
 
 // Throttled scroll handler
 let ticking = false;
+
 function onScroll() {
     if (!ticking) {
         window.requestAnimationFrame(() => {
@@ -997,7 +1024,7 @@ function handleParallax() {
 
     const scrolled = window.pageYOffset;
     const parallaxElements = heroSection.querySelectorAll('.absolute');
-    
+
     parallaxElements.forEach((el, index) => {
         const speed = 0.5 + (index * 0.1);
         const yPos = -(scrolled * speed);
@@ -1019,13 +1046,13 @@ function initSmoothScroll() {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
             if (href === '#' || href === '') return;
-            
+
             e.preventDefault();
             const target = document.querySelector(href);
             if (target) {
                 const offset = 80;
                 const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
-                
+
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
@@ -1074,8 +1101,10 @@ function initPremiumEnhancements() {
     initNavLinkEffects();
     initImageLoading();
     initFloatingElements();
-    
-    window.addEventListener('scroll', onScroll, { passive: true });
+
+    window.addEventListener('scroll', onScroll, {
+        passive: true
+    });
     handleNavbarScroll();
 }
 
@@ -1099,14 +1128,14 @@ document.addEventListener('visibilitychange', () => {
 function initWhatsAppTooltipPopup() {
     const whatsappButton = document.querySelector('.whatsapp-float');
     const tooltip = document.querySelector('.whatsapp-tooltip');
-    
+
     if (!whatsappButton || !tooltip) return;
-    
+
     // Show tooltip after 3 seconds
     setTimeout(() => {
         tooltip.style.opacity = '1';
         tooltip.style.pointerEvents = 'auto';
-        
+
         // Hide tooltip after 3 seconds (total 6 seconds from page load)
         setTimeout(() => {
             tooltip.style.opacity = '0';
