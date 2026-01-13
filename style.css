@@ -863,3 +863,48 @@ section.bg-white.border-y:has(#service-cards) #service-dots>span {
 section.bg-white.border-y:has(#service-cards) #service-dots>span.bg-white {
     background-color: #ffffff !important;
 }
+/* Service card image blend effect */
+#service-cards img,
+#service-image-track img {
+    mask-image: linear-gradient(to bottom, 
+        rgba(0,0,0,1) 0%, 
+        rgba(0,0,0,1) 70%, 
+        rgba(0,0,0,0.8) 85%, 
+        rgba(0,0,0,0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, 
+        rgba(0,0,0,1) 0%, 
+        rgba(0,0,0,1) 70%, 
+        rgba(0,0,0,0.8) 85%, 
+        rgba(0,0,0,0) 100%);
+}
+
+/* Also apply to desktop carousel service images */
+#service-carousel-track img {
+    mask-image: linear-gradient(to bottom, 
+        rgba(0,0,0,1) 0%, 
+        rgba(0,0,0,1) 70%, 
+        rgba(0,0,0,0.8) 85%, 
+        rgba(0,0,0,0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, 
+        rgba(0,0,0,1) 0%, 
+        rgba(0,0,0,1) 70%, 
+        rgba(0,0,0,0.8) 85%, 
+        rgba(0,0,0,0) 100%);
+}
+
+/* Fix checkerboard and grey backgrounds in showcase images */
+#device-showcase-container img {
+    mix-blend-mode: multiply;
+    filter: contrast(1.1) brightness(1.05);
+}
+
+/* Ensure white backgrounds stay white */
+section.bg-white.border-y:has(#device-showcase-container) .bg-white {
+    background-color: #ffffff !important;
+}
+
+/* Alternative: Use lighten blend mode for better transparency effect */
+#desktop-showcase-track img,
+#mobile-showcase-track img {
+    mix-blend-mode: darken;
+}

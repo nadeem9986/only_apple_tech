@@ -2,54 +2,64 @@
 const repairSlides = [{
         title: "iPhone Repair",
         description: "Screen replacement, battery upgrades, charging issues, and camera fixes for all iPhone models.",
-        image: "images/fixed devices webm /iphone fixed .webp"
+        image: "images/services/iphone.webp"
     },
     {
         title: "iPad Repair",
         description: "Cracked screens, unresponsive touch, and battery issues for all iPad models.",
-        image: "images/fixed devices webm /i pad fixed.webp"
+        image: "images/services/ipad.webp"
     },
     {
         title: "MacBook Services",
         description: "Keyboard repair, SSD upgrades, battery replacement, and liquid damage restoration.",
-        image: "images/fixed devices webm /i mac fixed.webp"
+        image: "images/services/macbook.webp"
+    },
+    {
+        title: "iMac Repair",
+        description: "Screen issues, power problems, performance upgrades, and hardware repairs for all iMac models.",
+        image: "images/services/imac.webp"
     },
     {
         title: "Apple Watch Repair",
         description: "Screen replacement, battery issues, and sensor repairs for all Apple Watch models.",
-        image: "images/fixed devices webm /apple watch fixed.webp"
+        image: "images/services/apple-watch.webp"
     },
     {
         title: "Mac Mini Services",
         description: "Power supply repair, port replacements, overheating issues, and SSD upgrades.",
-        image: "images/fixed devices webm /mac mini fixed.webp"
+        image: "images/services/mac-mini.webp"
     }
 ];
 
 const showcaseSlides = [{
         title: "iPhone Repair",
         description: "Screen replacement, battery upgrades, charging issues, and camera fixes for all iPhone models.",
-        image: "images/iphone_showcase.webp"
+        image: "images/showcase/iphone.webp"
     },
     {
         title: "iPad Repair",
         description: "Cracked screens, unresponsive touch, and battery issues for all iPad models.",
-        image: "images/ipad_showcase.webp"
+        image: "images/showcase/ipad.webp"
     },
     {
         title: "MacBook Services",
         description: "Keyboard repair, SSD upgrades, battery replacement, and liquid damage restoration.",
-        image: "images/macbook_showcase.webp"
+        image: "images/showcase/macbook.webp"
+    },
+    {
+        title: "iMac Repair",
+        description: "Screen issues, power problems, performance upgrades, and hardware repairs for all iMac models.",
+        image: "images/services/imac.webp"
     },
     {
         title: "Apple Watch Repair",
         description: "Screen replacement, battery issues, and sensor repairs for all Apple Watch models.",
-        image: "images/apple_watch_showcase.webp"
+        image: "images/showcase/apple-watch.webp"
     },
     {
         title: "Mac Mini Services",
         description: "Power supply repair, port replacements, overheating issues, and SSD upgrades.",
-        image: "images/mac_mini_showcase.webp"
+        image: "images/showcase/mac-mini.webp"
     }
 ];
 
@@ -290,7 +300,7 @@ function initSmoothScrolling() {
 function renderDevices() {
     const deviceList = document.getElementById('device-list');
     deviceList.innerHTML = devices.map(device => `
-        <div class="device-card bg-white border border-border p-8 rounded-xl flex flex-col items-center justify-center cursor-pointer transition-all hover:shadow-lg hover:scale-105 hover:border-primary/50" onclick="handleDeviceSelect('${device.id}')">
+        <div class="device-card bg-white border border-border p-8 rounded-3xl flex flex-col items-center justify-center cursor-pointer transition-all hover:shadow-lg hover:scale-105 hover:border-primary/50" onclick="handleDeviceSelect('${device.id}')">
             <div class="device-icon w-16 h-16 mb-4 transition-transform hover:scale-150">
                 ${deviceIcons[device.icon]}
             </div>
@@ -309,8 +319,8 @@ function renderServiceCards() {
         // Mobile: Single card with sliding images inside
         serviceCards.innerHTML = `
             <div class="max-w-3xl mx-auto px-4">
-                <div class="bg-white border border-border rounded-2xl overflow-hidden shadow-lg">
-                    <div class="relative aspect-square overflow-hidden" style="background-image: url('images/wood-texture-bg.webp'); background-size: cover; background-position: center;">
+                <div class="bg-white border border-border rounded-3xl overflow-hidden shadow-lg">
+                    <div class="relative aspect-square overflow-hidden" style="background-image: url('images/ui/card-background.webp'); background-size: cover; background-position: center;">
                         <div id="service-image-track" class="flex h-full transition-transform duration-700 ease-in-out">
                             ${repairSlides.map(slide => `
                                 <div class="w-full h-full flex items-center justify-center flex-shrink-0">
@@ -339,11 +349,11 @@ function renderServiceCards() {
 
         serviceCards.innerHTML = `
             <div class="container mx-auto px-4">
-                <div class="relative overflow-hidden">
+                <div class="relative overflow-hidden py-10 -my-10">
                     <div id="service-carousel-track" class="flex gap-8 transition-transform duration-700 ease-in-out -mx-4 px-4">
                         ${extendedSlides.map((slide, i) => `
-                            <div class="flex-shrink-0 w-full md:w-[calc(33.333%-1.333rem)] bg-white border border-border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                                <div class="relative aspect-[4/3] rounded-t-2xl overflow-hidden flex items-center justify-center" style="background-image: url('images/wood-texture-bg.webp'); background-size: cover; background-position: center;">
+                            <div class="flex-shrink-0 w-full md:w-[calc(33.333%-1.333rem)] bg-white border border-border rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                                <div class="relative aspect-[4/3] rounded-t-3xl overflow-hidden flex items-center justify-center" style="background-image: url('images/ui/card-background.webp'); background-size: cover; background-position: center;">
                                     <img src="${slide.image}" alt="${slide.title}" width="800" height="450" loading="lazy" class="max-w-full max-h-full object-contain">
                                 </div>
                                 <div class="p-6 text-center">
@@ -535,7 +545,7 @@ function handleServiceCarouselLoop() {
 function renderReviews() {
     const reviewsList = document.getElementById('reviews-list');
     reviewsList.innerHTML = reviews.map(review => `
-        <div class="bg-white border-none shadow-lg rounded-xl p-8">
+        <div class="bg-white border-none shadow-lg rounded-3xl p-8">
             <div class="flex gap-1 mb-4">
                 ${Array(review.rating).fill('<i data-lucide="star" class="w-4 h-4 fill-primary text-primary"></i>').join('')}
             </div>
@@ -558,8 +568,8 @@ function renderDeviceShowcase() {
         // Mobile: Single card with sliding images inside
         showcaseContainer.innerHTML = `
             <div class="max-w-3xl mx-auto px-4">
-                <div class="bg-white border border-border rounded-2xl overflow-hidden shadow-lg">
-                    <div class="relative aspect-square overflow-hidden" style="background-image: url('images/wood-texture-bg.webp'); background-size: cover; background-position: center;">
+                <div class="bg-white border border-border rounded-3xl overflow-hidden shadow-lg">
+                    <div class="relative aspect-square overflow-hidden" style="background-image: url('images/ui/wood-texture.webp'); background-size: cover; background-position: center;">
                         <div id="mobile-showcase-track" class="flex h-full transition-transform duration-700 ease-in-out">
                             ${showcaseSlides.map(slide => `
                                 <div class="w-full h-full flex items-center justify-center flex-shrink-0">
@@ -589,11 +599,11 @@ function renderDeviceShowcase() {
 
         showcaseContainer.innerHTML = `
             <div class="container mx-auto px-4">
-                <div class="relative overflow-hidden">
+                <div class="relative overflow-hidden py-10 -my-10">
                     <div id="desktop-carousel-track" class="flex gap-8 transition-transform duration-700 ease-in-out -mx-4 px-4">
                         ${extendedSlides.map((slide, i) => `
-                            <div class="flex-shrink-0 w-full md:w-[calc(33.333%-1.333rem)] bg-white border border-border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                                <div class="relative aspect-[4/3] rounded-t-2xl overflow-hidden flex items-center justify-center" style="background-image: url('images/wood-texture-bg.webp'); background-size: cover; background-position: center;">
+                            <div class="flex-shrink-0 w-full md:w-[calc(33.333%-1.333rem)] bg-white border border-border rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                                <div class="relative aspect-[4/3] rounded-t-3xl overflow-hidden flex items-center justify-center" style="background-image: url('images/ui/wood-texture.webp'); background-size: cover; background-position: center;">
                                     <img src="${slide.image}" alt="${slide.title}" width="800" height="450" loading="lazy" class="max-w-full max-h-full object-contain">
                                 </div>
                                 <div class="p-6 text-center">
@@ -845,7 +855,7 @@ function renderProblems() {
     problemList.innerHTML = problems.map(problem => {
         const escapedProblem = problem.replace(/'/g, "\\'");
         return `
-            <div class="bg-white border border-border p-6 rounded-xl flex items-center justify-between cursor-pointer transition-all hover:bg-accent/50 ${problem === "Something else — let's chat" ? 'card-frosted-green' : ''}" onclick="handleProblemSelect('${escapedProblem}')">
+            <div class="bg-white border border-border p-6 rounded-3xl flex items-center justify-between cursor-pointer transition-all hover:bg-accent/50 ${problem === "Something else — let's chat" ? 'card-frosted-green' : ''}" onclick="handleProblemSelect('${escapedProblem}')">
                 <div class="flex items-center gap-3">
                     ${problem === "Something else — let's chat" ? '<i data-lucide="message-circle" class="w-5 h-5 text-green-600"></i>' : ''}
                     <span class="font-medium">${problem}</span>

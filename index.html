@@ -13,7 +13,7 @@
 
     <!-- Preload critical resources -->
     <link rel="preload" as="style" href="style.css">
-    <link rel="preload" as="image" href="images/iphone_showcase.webp">
+    <link rel="preload" as="image" href="images/showcase/iphone.webp">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -76,11 +76,11 @@
     </svg>
     <!-- Navbar -->
     <nav
-        class="sticky top-4 z-50 mx-4 lg:mx-8 rounded-2xl border border-border/40 transition-all duration-300 shadow-md liquid-glass-effect">
+        class="sticky top-4 z-50 mx-4 lg:mx-8 rounded-3xl border border-border/40 transition-all duration-300 shadow-md liquid-glass-effect">
         <div class="w-full px-6 h-16 flex items-center justify-between relative z-10">
             <div class="flex items-center gap-2">
                 <div class="p-1 rounded-lg">
-                    <img src="images/logo.webp" alt="Only Apple Tech Logo" class="w-8 h-8 object-contain logo-main">
+                    <img src="images/ui/logo.webp" alt="Only Apple Tech Logo" class="w-8 h-8 object-contain logo-main">
                 </div>
                 <span class="text-lg font-bold tracking-tight">Only Apple Tech</span>
             </div>
@@ -148,11 +148,11 @@
                     </div>
                     <div class="flex-1 relative hidden lg:block">
                         <div class="relative aspect-square max-w-lg mx-auto">
-                            <img src="images/image_0.webp" alt="Apple Repair Service" width="600" height="600"
+                            <img src="images/ui/repair-hero.webp" alt="Apple Repair Service" width="600" height="600"
                                 loading="lazy"
                                 class="object-contain rounded-3xl shadow-2xl transition-all duration-700 w-full h-full">
                             <div
-                                class="absolute -bottom-6 -left-6 bg-white border border-border p-6 rounded-2xl shadow-xl hidden md:block animate-bounce-slow">
+                                class="absolute -bottom-6 -left-6 bg-white border border-border p-6 rounded-3xl shadow-xl hidden md:block animate-bounce-slow">
                                 <div class="flex items-center gap-4">
                                     <div class="bg-green-500/10 p-3 rounded-full text-green-500">
                                         <i data-lucide="star" class="w-6 h-6 fill-current"></i>
@@ -241,7 +241,7 @@
                             onclick="goToStep(2)">
                             <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i> Back
                         </button>
-                        <div class="bg-white rounded-xl border border-border p-8 shadow-sm">
+                        <div class="bg-white rounded-3xl border border-border p-8 shadow-sm">
                             <form id="quote-form" class="space-y-6">
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div class="space-y-2">
@@ -384,7 +384,7 @@
                     </p>
                 </div>
                 <div class="max-w-3xl mx-auto space-y-4">
-                    <div class="border border-border rounded-xl overflow-hidden bg-white">
+                    <div class="border border-border rounded-3xl overflow-hidden bg-white">
                         <button
                             class="w-full p-6 text-left flex items-center justify-between hover:bg-secondary/50 transition-colors"
                             onclick="toggleFaq(this)">
@@ -498,7 +498,7 @@
     <footer class="bg-white border-t py-12">
         <div class="container mx-auto px-4 text-center">
             <div class="flex items-center justify-center gap-2 mb-8">
-                <img src="images/logo.webp" alt="Only Apple Tech Logo" class="w-10 h-10 object-contain">
+                <img src="images/ui/logo.webp" alt="Only Apple Tech Logo" class="w-10 h-10 object-contain">
                 <span class="text-2xl font-bold tracking-tight">Only Apple Tech</span>
             </div>
             <p class="text-muted-foreground mb-8 max-w-md mx-auto">
