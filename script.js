@@ -260,7 +260,7 @@ const deviceProblems = {
     ]
 };
 
-const WHATSAPP_NUMBER = "919123456789";
+const WHATSAPP_NUMBER = "919739767039";
 
 // State
 let currentStep = 1;
@@ -395,7 +395,7 @@ let mobileServiceInterval;
 
 function initMobileServiceCards() {
     startMobileServiceInterval();
-    initSwipeSupport('service-mobile-container', (dir) => moveServiceSlide(dir * -1));
+    initSwipeSupport('service-mobile-container', (dir) => moveServiceSlide(dir));
 }
 
 function startMobileServiceInterval() {
@@ -657,7 +657,7 @@ let mobileShowcaseInterval;
 
 function initMobileShowcase() {
     startMobileShowcaseInterval();
-    initSwipeSupport('showcase-mobile-container', (dir) => moveMobileShowcaseSlide(dir * -1));
+    initSwipeSupport('showcase-mobile-container', (dir) => moveMobileShowcaseSlide(dir));
 }
 
 function startMobileShowcaseInterval() {
