@@ -49,7 +49,7 @@ const showcaseSlides = [{
     {
         title: "iMac Repair",
         description: "Screen issues, power problems, performance upgrades, and hardware repairs for all iMac models.",
-        image: "images/services/imac.webp"
+        image: "images/showcase/imac-new.webp"
     },
     {
         title: "Apple Watch Repair",
@@ -300,7 +300,7 @@ function initSmoothScrolling() {
 function renderDevices() {
     const deviceList = document.getElementById('device-list');
     deviceList.innerHTML = devices.map(device => `
-        <div class="device-card bg-white border border-border p-8 rounded-3xl flex flex-col items-center justify-center cursor-pointer transition-all hover:shadow-lg hover:scale-105 hover:border-primary/50" onclick="handleDeviceSelect('${device.id}')">
+        <div class="device-card bg-white border border-border p-8 rounded-3xl flex flex-col items-center justify-center cursor-pointer transition-all hover:shadow-lg hover:border-primary/50" onclick="handleDeviceSelect('${device.id}')">
             <div class="device-icon w-16 h-16 mb-4 transition-transform hover:scale-150">
                 ${deviceIcons[device.icon]}
             </div>
@@ -320,7 +320,7 @@ function renderServiceCards() {
         serviceCards.innerHTML = `
             <div class="max-w-3xl mx-auto px-4">
                 <div class="bg-white border border-border rounded-3xl overflow-hidden shadow-lg">
-                    <div class="relative aspect-square overflow-hidden" style="background-image: url('images/ui/card-background.webp'); background-size: cover; background-position: center;">
+                    <div id="service-mobile-container" class="relative aspect-square overflow-hidden" style="background-image: url('images/ui/card-background.webp'); background-size: cover; background-position: center;">
                         <div id="service-image-track" class="flex h-full transition-transform duration-700 ease-in-out">
                             ${repairSlides.map(slide => `
                                 <div class="w-full h-full flex items-center justify-center flex-shrink-0">
@@ -349,21 +349,32 @@ function renderServiceCards() {
 
         serviceCards.innerHTML = `
             <div class="container mx-auto px-4">
-                <div class="relative overflow-hidden py-10 -my-10">
-                    <div id="service-carousel-track" class="flex gap-8 transition-transform duration-700 ease-in-out -mx-4 px-4">
-                        ${extendedSlides.map((slide, i) => `
-                            <div class="flex-shrink-0 w-full md:w-[calc(33.333%-1.333rem)] bg-white border border-border rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                                <div class="relative aspect-[4/3] rounded-t-3xl overflow-hidden flex items-center justify-center" style="background-image: url('images/ui/card-background.webp'); background-size: cover; background-position: center;">
-                                    <img src="${slide.image}" alt="${slide.title}" width="800" height="450" loading="lazy" class="max-w-full max-h-full object-contain">
+                <div class="relative group">
+                    <div class="relative overflow-hidden py-10 -my-10">
+                        <div id="service-carousel-track" class="flex gap-8 transition-transform duration-700 ease-in-out -mx-4 px-4">
+                            ${extendedSlides.map((slide, i) => `
+                                <div class="flex-shrink-0 w-full md:w-[calc(33.333%-1.333rem)] bg-white border border-border rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                                    <div class="relative aspect-[4/3] rounded-t-3xl overflow-hidden flex items-center justify-center" style="background-image: url('images/ui/card-background.webp'); background-size: cover; background-position: center;">
+                                        <img src="${slide.image}" alt="${slide.title}" width="800" height="450" loading="lazy" class="max-w-full max-h-full object-contain">
+                                    </div>
+                                    <div class="p-6 text-center">
+                                        <h3 class="text-xl font-bold mb-2">${slide.title}</h3>
+                                        <p class="text-muted-foreground">${slide.description}</p>
+                                    </div>
                                 </div>
-                                <div class="p-6 text-center">
-                                    <h3 class="text-xl font-bold mb-2">${slide.title}</h3>
-                                    <p class="text-muted-foreground">${slide.description}</p>
-                                </div>
-                            </div>
-                        `).join('')}
+                            `).join('')}
+                        </div>
                     </div>
+                    
+                    <!-- Desktop Navigation Buttons -->
+                    <button class="carousel-nav-btn prev absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center transition-all" onclick="moveServiceCarousel(-1)">
+                        <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                    </button>
+                    <button class="carousel-nav-btn next absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center transition-all" onclick="moveServiceCarousel(1)">
+                        <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                    </button>
                 </div>
+                
                 <!-- Navigation Dots -->
                 <div id="service-carousel-dots" class="flex justify-center gap-2 mt-8">
                     ${repairSlides.map((_, i) => `
@@ -384,6 +395,7 @@ let mobileServiceInterval;
 
 function initMobileServiceCards() {
     startMobileServiceInterval();
+    initSwipeSupport('service-mobile-container', (dir) => moveServiceSlide(dir * -1));
 }
 
 function startMobileServiceInterval() {
@@ -569,7 +581,7 @@ function renderDeviceShowcase() {
         showcaseContainer.innerHTML = `
             <div class="max-w-3xl mx-auto px-4">
                 <div class="bg-white border border-border rounded-3xl overflow-hidden shadow-lg">
-                    <div class="relative aspect-square overflow-hidden" style="background-image: url('images/ui/wood-texture.webp'); background-size: cover; background-position: center;">
+                    <div id="showcase-mobile-container" class="relative aspect-square overflow-hidden" style="background-image: url('images/ui/wood-texture.webp'); background-size: cover; background-position: center;">
                         <div id="mobile-showcase-track" class="flex h-full transition-transform duration-700 ease-in-out">
                             ${showcaseSlides.map(slide => `
                                 <div class="w-full h-full flex items-center justify-center flex-shrink-0">
@@ -599,21 +611,32 @@ function renderDeviceShowcase() {
 
         showcaseContainer.innerHTML = `
             <div class="container mx-auto px-4">
-                <div class="relative overflow-hidden py-10 -my-10">
-                    <div id="desktop-carousel-track" class="flex gap-8 transition-transform duration-700 ease-in-out -mx-4 px-4">
-                        ${extendedSlides.map((slide, i) => `
-                            <div class="flex-shrink-0 w-full md:w-[calc(33.333%-1.333rem)] bg-white border border-border rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                                <div class="relative aspect-[4/3] rounded-t-3xl overflow-hidden flex items-center justify-center" style="background-image: url('images/ui/wood-texture.webp'); background-size: cover; background-position: center;">
-                                    <img src="${slide.image}" alt="${slide.title}" width="800" height="450" loading="lazy" class="max-w-full max-h-full object-contain">
+                <div class="relative group">
+                    <div class="relative overflow-hidden py-10 -my-10">
+                        <div id="desktop-carousel-track" class="flex gap-8 transition-transform duration-700 ease-in-out -mx-4 px-4">
+                            ${extendedSlides.map((slide, i) => `
+                                <div class="flex-shrink-0 w-full md:w-[calc(33.333%-1.333rem)] bg-white border border-border rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                                    <div class="relative aspect-[4/3] rounded-t-3xl overflow-hidden flex items-center justify-center" style="background-image: url('images/ui/wood-texture.webp'); background-size: cover; background-position: center;">
+                                        <img src="${slide.image}" alt="${slide.title}" width="800" height="450" loading="lazy" class="max-w-full max-h-full object-contain">
+                                    </div>
+                                    <div class="p-6 text-center">
+                                        <h3 class="text-xl font-bold mb-2">${slide.title}</h3>
+                                        <p class="text-muted-foreground">${slide.description}</p>
+                                    </div>
                                 </div>
-                                <div class="p-6 text-center">
-                                    <h3 class="text-xl font-bold mb-2">${slide.title}</h3>
-                                    <p class="text-muted-foreground">${slide.description}</p>
-                                </div>
-                            </div>
-                        `).join('')}
+                            `).join('')}
+                        </div>
                     </div>
+
+                    <!-- Desktop Navigation Buttons -->
+                    <button class="carousel-nav-btn prev absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center transition-all" onclick="moveDesktopCarousel(-1)">
+                        <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                    </button>
+                    <button class="carousel-nav-btn next absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center transition-all" onclick="moveDesktopCarousel(1)">
+                        <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                    </button>
                 </div>
+                
                 <!-- Navigation Dots -->
                 <div id="desktop-carousel-dots" class="flex justify-center gap-2 mt-8">
                     ${showcaseSlides.map((_, i) => `
@@ -634,6 +657,7 @@ let mobileShowcaseInterval;
 
 function initMobileShowcase() {
     startMobileShowcaseInterval();
+    initSwipeSupport('showcase-mobile-container', (dir) => moveMobileShowcaseSlide(dir * -1));
 }
 
 function startMobileShowcaseInterval() {
@@ -827,6 +851,44 @@ window.addEventListener('resize', () => {
 });
 
 
+// Swipe Support for mobile
+function initSwipeSupport(elementId, callback) {
+    const el = document.getElementById(elementId);
+    if (!el) return;
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    el.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, {
+        passive: true
+    });
+
+    el.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, {
+        passive: true
+    });
+
+    function handleSwipe() {
+        const threshold = 50;
+        const diff = touchEndX - touchStartX;
+
+        if (Math.abs(diff) > threshold) {
+            if (diff > 0) {
+                // Swiped right
+                callback(-1);
+            } else {
+                // Swiped left
+                callback(1);
+            }
+        }
+    }
+}
+
+
 // Logic Functions
 function toggleFaq(button) {
     const content = button.nextElementSibling;
@@ -991,9 +1053,9 @@ function createRipple(event) {
     }, 600);
 }
 
-// Add ripple effect to all buttons
+// Add ripple effect to all buttons (except carousel nav arrows)
 function initRippleEffects() {
-    const buttons = document.querySelectorAll('button, a[class*="bg-"]');
+    const buttons = document.querySelectorAll('button:not(.carousel-nav-btn), a[class*="bg-"]');
     buttons.forEach(button => {
         button.style.position = 'relative';
         button.style.overflow = 'hidden';

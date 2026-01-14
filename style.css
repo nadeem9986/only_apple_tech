@@ -1,5 +1,5 @@
 :root {
-    --radius: 0.75rem;
+    --radius: 1.5rem; /* Increased default radius */
     --background: #ffffff;
     --foreground: #1c1c1c;
     --card: #ffffff;
@@ -184,9 +184,10 @@ body {
 }
 
 /* Premium button hover effects */
-button,
-a[class*="button"],
-.hover-lift {
+button:not(.carousel-nav-btn):not(.btn-square),
+a[class*="button"]:not(.btn-square),
+.hover-lift:not(.btn-square) {
+    border-radius: 9999px !important; /* Force rounded-full for buttons */
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
 }
@@ -196,6 +197,10 @@ a[class*="button"]:hover,
 .hover-lift:hover {
     transform: translateY(-2px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.btn-square {
+    border-radius: 1rem !important; /* Rounded-2xl (16px) for squared look */
 }
 
 button:active,
@@ -329,6 +334,29 @@ a:hover i[data-lucide],
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.brand-name {
+    font-size: clamp(0.85rem, 4vw, 1.125rem);
+    white-space: nowrap;
+    transition: font-size 0.3s ease;
+}
+
+@media (max-width: 400px) {
+    nav .px-6 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    .btn-get-estimate {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+        font-size: 0.75rem !important;
+    }
+    
+    .flex.items-center.gap-4 {
+        gap: 0.5rem !important;
+    }
+}
+
 /* Floating animation */
 @keyframes float {
 
@@ -371,6 +399,21 @@ nav.scrolled {
 }
 
 /* Underline animation for links */
+.btn-dynamic-warranty {
+    font-size: clamp(0.7rem, 2.5vw, 1rem) !important;
+    padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(1rem, 3vw, 1.5rem) !important;
+    gap: clamp(0.25rem, 1.5vw, 0.75rem) !important;
+    width: min(100%, fit-content);
+    max-width: 100%;
+    white-space: nowrap;
+}
+
+.btn-dynamic-warranty svg {
+    width: clamp(1rem, 3vw, 1.25rem) !important;
+    height: clamp(1rem, 3vw, 1.25rem) !important;
+    flex-shrink: 0;
+}
+
 .nav-link {
     position: relative;
 }
@@ -762,6 +805,8 @@ select {
 section.bg-white.border-y:has(#device-showcase-container) {
     background-color: #000000 !important;
     border-color: #000000 !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
 }
 
 /* Dark mode text colors for Device Showcase */
@@ -815,6 +860,8 @@ section.bg-white.border-y:has(#device-showcase-container) #mobile-showcase-dots>
 section.bg-white.border-y:has(#service-cards) {
     background-color: #000000 !important;
     border-color: #000000 !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
 }
 
 /* Dark mode text colors for Services */
@@ -907,4 +954,37 @@ section.bg-white.border-y:has(#device-showcase-container) .bg-white {
 #desktop-showcase-track img,
 #mobile-showcase-track img {
     mix-blend-mode: darken;
+}
+/* Carousel Navigation Buttons */
+.carousel-nav-btn {
+    opacity: 0.8; /* Always visible but slightly transparent */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: white !important;
+    border: 1px solid var(--border) !important;
+    color: var(--primary) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+.carousel-nav-btn:hover {
+    background-color: var(--primary) !important;
+    color: white !important;
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1) !important;
+}
+
+/* Ensure sections have rounded containers */
+section {
+    position: relative;
+    border-radius: 2.5rem; /* Large rounding for section blocks */
+    margin: 1rem 0.5rem;
+    overflow: hidden;
+}
+
+/* Specific fix for Device Showcase Dark Mode transition */
+section.bg-white.border-y:has(#device-showcase-container) {
+    overflow: visible; /* Allow buttons to show if needed, but we'll put them inside */
+}
+
+#device-showcase-container {
+    border-radius: 2.5rem;
 }
