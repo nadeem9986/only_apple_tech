@@ -1,5 +1,8 @@
+/* ============================================
+   CSS VARIABLES & RESET
+   ============================================ */
 :root {
-    --radius: 1.5rem; /* Increased default radius */
+    --radius: 1.5rem;
     --background: #ffffff;
     --foreground: #1c1c1c;
     --card: #ffffff;
@@ -24,20 +27,223 @@
     border-color: var(--border);
 }
 
+/* ============================================
+   BASE STYLES & TYPOGRAPHY
+   ============================================ */
 body {
-    background-color: var(--background);
+    background-color: #ffffff !important;
     color: var(--foreground);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    animation: fadeInPage 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: #ffffff !important;
+}
+
+/* ============================================
+   LAYOUT & STRUCTURE
+   ============================================ */
+section {
+    position: relative;
+    border-radius: 2.5rem;
+    margin: 1rem 0.5rem;
+    overflow: hidden;
+}
+
+section.bg-white.border-y:has(#device-showcase-container) {
+    overflow: visible;
+}
+
+#device-showcase-container {
+    background-color: #000000 !important;
+    border-radius: 2.5rem;
+}
+
+/* ============================================
+   COMPONENTS - BUTTONS
+   ============================================ */
+button,
+a[class*="bg-primary"],
+a[class*="border-primary"] {
+    position: relative;
+    overflow: hidden;
+    transform: translateZ(0);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-square {
+    border-radius: 1rem !important;
+}
+
+button:hover,
+a[class*="hover:shadow"]:hover {
+    transform: translateY(-1px);
+}
+
+button:active,
+a[class*="bg-primary"]:active {
+    transform: translateY(0);
+}
+
+/* Call Now Button */
+.btn-call-now {
+    background-color: #007aff !important;
+    color: white !important;
+    border: none !important;
+}
+
+.btn-call-now:hover {
+    background-color: #0063cc !important;
+    box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3) !important;
+}
+
+.btn-call-now:active {
+    background-color: white !important;
+    color: #007aff !important;
+    transform: scale(0.98);
+}
+
+/* Frosted Green Button */
+.btn-frosted-green {
+    background-color: rgba(37, 211, 102, 0.1) !important;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(37, 211, 102, 0.3) !important;
+    color: #16a34a !important;
+}
+
+.btn-frosted-green:hover {
+    background-color: rgba(37, 211, 102, 0.2) !important;
+    border-color: rgba(37, 211, 102, 0.5) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2) !important;
+}
+
+/* Get Estimate Button */
+.btn-get-estimate {
+    background-color: #001f3f !important;
+    color: white !important;
+    border: 2px solid #001f3f !important;
+    animation: shake-with-pause 10s ease-in-out infinite;
+}
+
+.btn-get-estimate:hover {
+    background-color: #003366 !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(0, 31, 63, 0.4) !important;
+}
+
+/* Back button override */
+.no-hover-animation:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Dynamic Warranty Button */
+.btn-dynamic-warranty {
+    font-size: clamp(0.7rem, 2.5vw, 1rem) !important;
+    padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(1rem, 3vw, 1.5rem) !important;
+    gap: clamp(0.25rem, 1.5vw, 0.75rem) !important;
+    width: min(100%, fit-content);
+    max-width: 100%;
+    white-space: nowrap;
+}
+
+.btn-dynamic-warranty svg {
+    width: clamp(1rem, 3vw, 1.25rem) !important;
+    height: clamp(1rem, 3vw, 1.25rem) !important;
+    flex-shrink: 0;
+}
+
+/* ============================================
+   COMPONENTS - CARDS
+   ============================================ */
+.service-card,
+.bg-white.border {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card:hover,
+.bg-white.border:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    z-index: 100;
+}
+
+.card-frosted-green {
+    background-color: rgba(37, 211, 102, 0.05) !important;
+    border-color: rgba(37, 211, 102, 0.4) !important;
+}
+
+.card-frosted-green:hover {
+    background-color: rgba(37, 211, 102, 0.1) !important;
+    border-color: rgba(37, 211, 102, 0.6) !important;
+}
+
+.gradient-overlay {
+    position: relative;
+}
+
+.gradient-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+            rgba(28, 28, 28, 0.05) 0%,
+            transparent 50%,
+            rgba(28, 28, 28, 0.05) 100%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gradient-overlay:hover::before {
+    opacity: 1;
+}
+
+/* ============================================
+   COMPONENTS - FORMS
+   ============================================ */
+input,
+textarea {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+input:focus,
+textarea:focus {
+    transform: translateY(-1px);
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(28, 28, 28, 0.1),
+        0 0 20px rgba(28, 28, 28, 0.05);
+}
+
+button:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(28, 28, 28, 0.1),
+        0 0 20px rgba(28, 28, 28, 0.05);
+}
+
+/* ============================================
+   ANIMATIONS & KEYFRAMES
+   ============================================ */
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes bounce-slow {
-
-    0%,
-    100% {
+    0%, 100% {
         transform: translateY(-5%);
         animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
     }
-
     50% {
         transform: translateY(0);
         animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
@@ -48,6 +254,113 @@ body {
     animation: bounce-slow 3s infinite;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes textFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.text-fade-in {
+    animation: textFadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes textFadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.float-animation {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes shake-with-pause {
+    0% {
+        transform: translateX(0);
+    }
+    2%, 6%, 10%, 14%, 18% {
+        transform: translateX(-5px);
+    }
+    4%, 8%, 12%, 16% {
+        transform: translateX(5px);
+    }
+    20%, 100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(0);
+    animation: ripple-animation 0.6s ease-out;
+    pointer-events: none;
+}
+
+/* Scroll-triggered animations */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger animation delays */
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+.stagger-6 { transition-delay: 0.6s; }
+
+/* ============================================
+   SECTION-SPECIFIC STYLES
+   ============================================ */
+
+/* Step Content */
 .step-content {
     display: none;
 }
@@ -57,18 +370,7 @@ body {
     animation: fadeIn 0.3s ease-in-out;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateX(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
+/* Success Overlay */
 .success-overlay {
     display: none;
     position: fixed;
@@ -84,6 +386,7 @@ body {
     display: flex;
 }
 
+/* Service Card Slider */
 .service-card-slider {
     position: relative;
     width: 100%;
@@ -113,476 +416,44 @@ body {
     z-index: 1;
 }
 
-.text-fade-in {
-    animation: textFadeIn 0.5s ease-in-out forwards;
-}
-
-@keyframes textFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes textFadeOut {
-    from {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    to {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-}
-
-/* ============================================
-   PREMIUM 2026 ENHANCEMENTS
-   ============================================ */
-
-/* Scroll-triggered animations */
-.fade-in-up {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-        transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.fade-in-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Stagger animation delays */
-.stagger-1 {
-    transition-delay: 0.1s;
-}
-
-.stagger-2 {
-    transition-delay: 0.2s;
-}
-
-.stagger-3 {
-    transition-delay: 0.3s;
-}
-
-.stagger-4 {
-    transition-delay: 0.4s;
-}
-
-.stagger-5 {
-    transition-delay: 0.5s;
-}
-
-.stagger-6 {
-    transition-delay: 0.6s;
-}
-
-/* Premium button hover effects */
-button:not(.carousel-nav-btn):not(.btn-square),
-a[class*="button"]:not(.btn-square),
-.hover-lift:not(.btn-square) {
-    border-radius: 9999px !important; /* Force rounded-full for buttons */
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-}
-
-button:hover,
-a[class*="button"]:hover,
-.hover-lift:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-}
-
-.btn-square {
-    border-radius: 1rem !important; /* Rounded-2xl (16px) for squared look */
-}
-
-button:active,
-a[class*="button"]:active,
-.hover-lift:active {
-    transform: translateY(0);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Card hover effects */
-.service-card,
-.bg-white.border {
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.service-card:hover,
-.bg-white.border:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-    z-index: 100;
-}
-
-/* Material UI Button Styles */
-button,
-a[class*="bg-primary"],
-a[class*="border-primary"] {
-    position: relative;
-    overflow: hidden;
-    transform: translateZ(0);
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Material UI Elevation */
-.shadow-md {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08);
-}
-
-.shadow-lg {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.12);
-}
-
-.shadow-xl {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.16);
-}
-
-/* Hover elevation increase */
-button:hover,
-a[class*="hover:shadow"]:hover {
-    transform: translateY(-1px);
-}
-
-button:active,
-a[class*="bg-primary"]:active {
-    transform: translateY(0);
-}
-
-/* Material UI Ripple Effect (already implemented in JS) */
-.ripple {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.6);
-    transform: scale(0);
-    animation: ripple-animation 0.6s ease-out;
-    pointer-events: none;
-}
-
-@keyframes ripple-animation {
-    to {
-        transform: scale(4);
-        opacity: 0;
-    }
-}
-
-/* Gradient text effect */
-.gradient-text {
-    background: linear-gradient(135deg, #1c1c1c 0%, #4a4a4a 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-/* Smooth color transitions */
-* {
-    transition-property: background-color, border-color, color, fill, stroke;
-    transition-duration: 0.2s;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Glow effect on focus */
-input:focus,
-textarea:focus,
-button:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(28, 28, 28, 0.1),
-        0 0 20px rgba(28, 28, 28, 0.05);
-}
-
-/* Ripple effect */
-@keyframes ripple {
-    0% {
-        transform: scale(0);
-        opacity: 1;
-    }
-
-    100% {
-        transform: scale(4);
-        opacity: 0;
-    }
-}
-
-.ripple {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.6);
-    pointer-events: none;
-    animation: ripple 0.6s ease-out;
-}
-
-/* Icon animations */
-i[data-lucide] {
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-button:hover i[data-lucide],
-a:hover i[data-lucide],
-.logo-main:hover {
-    transform: scale(1.1);
-}
-
-.logo-main {
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.brand-name {
-    font-size: clamp(0.85rem, 4vw, 1.125rem);
-    white-space: nowrap;
-    transition: font-size 0.3s ease;
-}
-
-@media (max-width: 400px) {
-    nav .px-6 {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
-    }
-    
-    .btn-get-estimate {
-        padding-left: 0.75rem !important;
-        padding-right: 0.75rem !important;
-        font-size: 0.75rem !important;
-    }
-    
-    .flex.items-center.gap-4 {
-        gap: 0.5rem !important;
-    }
-}
-
-/* Floating animation */
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-.float-animation {
-    animation: float 3s ease-in-out infinite;
-}
-
-/* Smooth page load animation */
-@keyframes fadeInPage {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-body {
-    animation: fadeInPage 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Enhanced navbar on scroll */
+/* Navbar */
 nav.scrolled {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
 }
 
-/* Underline animation for links */
-.btn-dynamic-warranty {
-    font-size: clamp(0.7rem, 2.5vw, 1rem) !important;
-    padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(1rem, 3vw, 1.5rem) !important;
-    gap: clamp(0.25rem, 1.5vw, 0.75rem) !important;
-    width: min(100%, fit-content);
-    max-width: 100%;
+/* Brand Name */
+.brand-name {
+    font-size: clamp(0.85rem, 4vw, 1.125rem);
     white-space: nowrap;
+    transition: font-size 0.3s ease;
 }
 
-.btn-dynamic-warranty svg {
-    width: clamp(1rem, 3vw, 1.25rem) !important;
-    height: clamp(1rem, 3vw, 1.25rem) !important;
-    flex-shrink: 0;
+/* Logo */
+.logo-main {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.nav-link {
-    position: relative;
+.logo-main:hover,
+button:hover i[data-lucide],
+a:hover i[data-lucide] {
+    transform: scale(1.1);
 }
 
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: currentColor;
-    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+/* Icons */
+i[data-lucide] {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.nav-link:hover::after {
-    width: 100%;
-}
-
-/* Image reveal animation */
-@keyframes imageReveal {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-img {
-    animation: imageReveal 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Prevent layout shift with aspect ratio */
-img[width][height] {
-    aspect-ratio: attr(width) / attr(height);
-    height: auto;
-}
-
-/* Ensure carousel images maintain aspect ratio */
-.aspect-\[16\/9\] img {
-    aspect-ratio: 16 / 9;
-}
-
-.aspect-square img {
-    aspect-ratio: 1 / 1;
-}
-
-/* Smooth scroll behavior */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Call Now Button */
-.btn-call-now {
-    background-color: #007aff !important;
-    /* Apple Blue */
-    color: white !important;
-    border: none !important;
-}
-
-.btn-call-now:hover {
-    background-color: #0063cc !important;
-    box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3) !important;
-}
-
-.btn-call-now:active {
-    background-color: white !important;
-    color: #007aff !important;
-    transform: scale(0.98);
-}
-
-/* Back button override */
-.no-hover-animation:hover {
-    transform: none !important;
-    box-shadow: none !important;
-}
-
-/* Frosted Green Button */
-.btn-frosted-green {
-    background-color: rgba(37, 211, 102, 0.1) !important;
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(37, 211, 102, 0.3) !important;
-    color: #16a34a !important;
-}
-
-.btn-frosted-green:hover {
-    background-color: rgba(37, 211, 102, 0.2) !important;
-    border-color: rgba(37, 211, 102, 0.5) !important;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2) !important;
-}
-
-.card-frosted-green {
-    background-color: rgba(37, 211, 102, 0.05) !important;
-    border-color: rgba(37, 211, 102, 0.4) !important;
-}
-
-.card-frosted-green:hover {
-    background-color: rgba(37, 211, 102, 0.1) !important;
-    border-color: rgba(37, 211, 102, 0.6) !important;
-}
-
-/* Performance optimizations */
-.will-change-transform {
-    will-change: transform;
-}
-
-.will-change-opacity {
-    will-change: opacity;
-}
-
-/* Reduce motion for accessibility */
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-}
-
-/* Enhanced form inputs */
-input,
-textarea {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-input:focus,
-textarea:focus {
-    transform: translateY(-1px);
-    border-color: var(--primary);
-}
-
-/* Gradient overlay effects */
-.gradient-overlay {
-    position: relative;
-}
-
-.gradient-overlay::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg,
-            rgba(28, 28, 28, 0.05) 0%,
-            transparent 50%,
-            rgba(28, 28, 28, 0.05) 100%);
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.gradient-overlay:hover::before {
-    opacity: 1;
-}
-
-/* Liquid Glass Effect */
+/* ============================================
+   LIQUID GLASS EFFECT
+   ============================================ */
 .liquid-glass-effect {
     position: relative;
     isolation: isolate;
     background-color: rgba(255, 255, 255, 0.25) !important;
-    -webkit-backdrop-filter: none !important;
     backdrop-filter: none !important;
-    /* Overriding default blur */
     border: none !important;
 }
 
@@ -595,22 +466,21 @@ textarea:focus {
     pointer-events: none;
 }
 
-/* Glass distortion effect */
 .liquid-glass-effect::before {
-    -webkit-backdrop-filter: blur(3px) !important;
     backdrop-filter: blur(3px) !important;
     filter: url(#glass-distortion) !important;
     z-index: -1;
-    transform: translateZ(0); /* Hardware acceleration */
+    transform: translateZ(0);
 }
 
-/* Outline shine */
 .liquid-glass-effect::after {
     box-shadow: inset 2px 2px 1px 0 rgb(255 255 255 / 50%), inset -1px -1px 1px 1px rgb(255 255 255 / 50%);
     z-index: 1;
 }
 
-/* WhatsApp Floating Button - Material UI Style */
+/* ============================================
+   WHATSAPP FLOATING BUTTON
+   ============================================ */
 .whatsapp-float {
     position: fixed !important;
     bottom: 24px !important;
@@ -641,7 +511,6 @@ textarea:focus {
     transform: translateY(-2px) scale(1.05);
 }
 
-/* WhatsApp tooltip */
 .whatsapp-tooltip {
     position: absolute;
     right: calc(100% + 16px);
@@ -665,34 +534,21 @@ textarea:focus {
     transition-delay: 0.5s;
 }
 
-/* Remove FAQ card hover effects - make them static */
-#faq .border:hover {
-    transform: none !important;
-    box-shadow: none !important;
-    background-color: transparent !important;
+/* ============================================
+   MATERIAL UI ELEVATION
+   ============================================ */
+.shadow-md {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08);
 }
 
-/* Remove shadow from FAQ button on hover */
-#faq .border button:hover {
-    background-color: transparent !important;
-    box-shadow: none !important;
+.shadow-lg {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.12);
 }
 
-/* Remove any shadow from FAQ answer content */
-#faq .border .px-6 {
-    box-shadow: none !important;
+.shadow-xl {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.16);
 }
 
-/* Smooth transitions for all interactive elements */
-button,
-a,
-input,
-textarea,
-select {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Card hover transitions */
 .shadow-lg,
 .shadow-md,
 .shadow-xl {
@@ -700,111 +556,29 @@ select {
         transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Get Estimate Button Shake Animation */
-@keyframes shake-button {
-
-    0%,
-    100% {
-        transform: translateX(0);
-    }
-
-    10%,
-    30%,
-    50%,
-    70%,
-    90% {
-        transform: translateX(-5px);
-    }
-
-    20%,
-    40%,
-    60%,
-    80% {
-        transform: translateX(5px);
-    }
+/* ============================================
+   CAROUSEL NAVIGATION
+   ============================================ */
+.carousel-nav-btn {
+    opacity: 0.8;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: white !important;
+    border: 1px solid var(--border) !important;
+    color: var(--primary) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
 }
 
-.btn-get-estimate {
-    background-color: #001f3f !important;
-    /* Navy Blue */
-    color: white !important;
-    border: 2px solid #001f3f !important;
-    animation: shake-button 2s ease-in-out infinite;
-    animation-delay: 0s;
-    animation-iteration-count: infinite;
-    animation-duration: 2s;
-    animation-timing-function: ease-in-out;
+.carousel-nav-btn:hover {
+    opacity: 1;
+    transform: scale(1.05) !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15) !important;
 }
 
-.btn-get-estimate:hover {
-    background-color: #003366 !important;
-    color: white !important;
-    box-shadow: 0 4px 12px rgba(0, 31, 63, 0.4) !important;
-}
+/* ============================================
+   DARK MODE SECTIONS
+   ============================================ */
 
-/* Animation runs for 2 seconds, then pauses for 8 seconds (total 10 seconds loop) */
-@keyframes shake-with-pause {
-    0% {
-        transform: translateX(0);
-    }
-
-    2%,
-    6%,
-    10%,
-    14%,
-    18% {
-        transform: translateX(-5px);
-    }
-
-    4%,
-    8%,
-    12%,
-    16% {
-        transform: translateX(5px);
-    }
-
-    20%,
-    100% {
-        transform: translateX(0);
-    }
-}
-
-.btn-get-estimate {
-    animation: shake-with-pause 10s ease-in-out infinite;
-}
-
-/* Center the "Other" card in device grid */
-#device-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-}
-
-@media (min-width: 768px) {
-    #device-list {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* Center the last card (Other) when it's alone in the row */
-#device-list .device-card:last-child:nth-child(3n+1) {
-    grid-column: 2 / 3;
-}
-
-/* For mobile, center when it's the 7th item (odd in 2-column grid) */
-@media (max-width: 767px) {
-    #device-list .device-card:last-child:nth-child(odd) {
-        grid-column: 1 / -1;
-        max-width: 50%;
-        margin: 0 auto;
-    }
-}
-
-/* Dark Mode for Device Showcase Section */
-#device-showcase-container {
-    background-color: #000000 !important;
-}
-
+/* Device Showcase Dark Mode */
 section.bg-white.border-y:has(#device-showcase-container) {
     background-color: #000000 !important;
     border-color: #000000 !important;
@@ -812,11 +586,7 @@ section.bg-white.border-y:has(#device-showcase-container) {
     margin: 0 !important;
 }
 
-/* Dark mode text colors for Device Showcase */
-section.bg-white.border-y:has(#device-showcase-container) h2 {
-    color: #ffffff !important;
-}
-
+section.bg-white.border-y:has(#device-showcase-container) h2,
 section.bg-white.border-y:has(#device-showcase-container) p {
     color: #ffffff !important;
 }
@@ -827,7 +597,6 @@ section.bg-white.border-y:has(#device-showcase-container) span.inline-block {
     border-color: rgba(79, 172, 254, 0.3) !important;
 }
 
-/* Keep cards white in dark mode */
 section.bg-white.border-y:has(#device-showcase-container) .bg-white {
     background-color: #ffffff !important;
 }
@@ -836,13 +605,11 @@ section.bg-white.border-y:has(#device-showcase-container) .border-border {
     border-color: #e4e4e7 !important;
 }
 
-/* Card text should be black */
 section.bg-white.border-y:has(#device-showcase-container) .bg-white h3,
 section.bg-white.border-y:has(#device-showcase-container) .bg-white p {
     color: #000000 !important;
 }
 
-/* Navigation dots - white and grey */
 section.bg-white.border-y:has(#device-showcase-container) #desktop-carousel-dots>div {
     background-color: rgba(255, 255, 255, 0.3) !important;
 }
@@ -859,7 +626,7 @@ section.bg-white.border-y:has(#device-showcase-container) #mobile-showcase-dots>
     background-color: #ffffff !important;
 }
 
-/* Dark Mode for Services Section (What We Can Fix) */
+/* Services Section Dark Mode */
 section.bg-white.border-y:has(#service-cards) {
     background-color: #000000 !important;
     border-color: #000000 !important;
@@ -867,11 +634,7 @@ section.bg-white.border-y:has(#service-cards) {
     margin: 0 !important;
 }
 
-/* Dark mode text colors for Services */
-section.bg-white.border-y:has(#service-cards) h2 {
-    color: #ffffff !important;
-}
-
+section.bg-white.border-y:has(#service-cards) h2,
 section.bg-white.border-y:has(#service-cards) p {
     color: #ffffff !important;
 }
@@ -882,7 +645,6 @@ section.bg-white.border-y:has(#service-cards) span.inline-block {
     border-color: rgba(79, 172, 254, 0.3) !important;
 }
 
-/* Keep cards white in Services dark mode */
 section.bg-white.border-y:has(#service-cards) .bg-white {
     background-color: #ffffff !important;
 }
@@ -891,13 +653,11 @@ section.bg-white.border-y:has(#service-cards) .border-border {
     border-color: #e4e4e7 !important;
 }
 
-/* Card text should be black */
 section.bg-white.border-y:has(#service-cards) .bg-white h3,
 section.bg-white.border-y:has(#service-cards) .bg-white p {
     color: #000000 !important;
 }
 
-/* Navigation dots for Services - white and grey */
 section.bg-white.border-y:has(#service-cards) #service-carousel-dots>div {
     background-color: rgba(255, 255, 255, 0.3) !important;
 }
@@ -913,22 +673,14 @@ section.bg-white.border-y:has(#service-cards) #service-dots>span {
 section.bg-white.border-y:has(#service-cards) #service-dots>span.bg-white {
     background-color: #ffffff !important;
 }
+
+/* ============================================
+   IMAGE EFFECTS
+   ============================================ */
+
 /* Service card image blend effect */
 #service-cards img,
-#service-image-track img {
-    mask-image: linear-gradient(to bottom, 
-        rgba(0,0,0,1) 0%, 
-        rgba(0,0,0,1) 70%, 
-        rgba(0,0,0,0.8) 85%, 
-        rgba(0,0,0,0) 100%);
-    -webkit-mask-image: linear-gradient(to bottom, 
-        rgba(0,0,0,1) 0%, 
-        rgba(0,0,0,1) 70%, 
-        rgba(0,0,0,0.8) 85%, 
-        rgba(0,0,0,0) 100%);
-}
-
-/* Also apply to desktop carousel service images */
+#service-image-track img,
 #service-carousel-track img {
     mask-image: linear-gradient(to bottom, 
         rgba(0,0,0,1) 0%, 
@@ -942,52 +694,116 @@ section.bg-white.border-y:has(#service-cards) #service-dots>span.bg-white {
         rgba(0,0,0,0) 100%);
 }
 
-/* Fix checkerboard and grey backgrounds in showcase images */
+/* Showcase images blend mode */
 #device-showcase-container img {
     mix-blend-mode: multiply;
     filter: contrast(1.1) brightness(1.05);
 }
 
-/* Ensure white backgrounds stay white */
-section.bg-white.border-y:has(#device-showcase-container) .bg-white {
-    background-color: #ffffff !important;
-}
-
-/* Alternative: Use lighten blend mode for better transparency effect */
 #desktop-showcase-track img,
 #mobile-showcase-track img {
     mix-blend-mode: darken;
 }
-/* Carousel Navigation Buttons */
-.carousel-nav-btn {
-    opacity: 0.8; /* Always visible but slightly transparent */
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    background-color: white !important;
-    border: 1px solid var(--border) !important;
-    color: var(--primary) !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+
+/* ============================================
+   RESPONSIVE OVERRIDES
+   ============================================ */
+@media (max-width: 400px) {
+    nav .px-6 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    .btn-get-estimate {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+        font-size: 0.75rem !important;
+    }
+    
+    .flex.items-center.gap-4 {
+        gap: 0.5rem !important;
+    }
 }
 
-.carousel-nav-btn:hover {
-    background-color: var(--primary) !important;
-    color: white !important;
-    opacity: 1;
-    transform: translateY(-50%) scale(1.1) !important;
+
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+#device-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
 }
 
-/* Ensure sections have rounded containers */
-section {
-    position: relative;
-    border-radius: 2.5rem; /* Large rounding for section blocks */
-    margin: 1rem 0.5rem;
-    overflow: hidden;
+#device-list .device-card {
+    width: calc(50% - 0.5rem);
+    max-width: 200px;
+    aspect-ratio: 1;
 }
 
-/* Specific fix for Device Showcase Dark Mode transition */
-section.bg-white.border-y:has(#device-showcase-container) {
-    overflow: visible; /* Allow buttons to show if needed, but we'll put them inside */
+@media (min-width: 768px) {
+    #device-list .device-card {
+        width: calc(33.333% - 0.67rem);
+    }
 }
 
-#device-showcase-container {
-    border-radius: 2.5rem;
+/* FAQ Section - Remove hover effects */
+#faq .border:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+}
+
+#faq .border button:hover {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+#faq .border .px-6 {
+    box-shadow: none !important;
+}
+
+/* Review Cards - Static with clean borders */
+.review-card {
+    transform: none !important;
+    box-shadow: none !important;
+    transition: none !important;
+}
+
+.review-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.review-card::before,
+.review-card::after {
+    display: none !important;
+}
+
+#reviews-list .review-card {
+    border: 1px solid #e5e7eb !important;
+    border-radius: 1rem !important;
+    background-color: #ffffff !important;
+}
+
+/* Accessibility - Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Override to remove any blue glow effects */
+html, body {
+    background: #ffffff !important;
+    background-image: none !important;
+}
+
+html::before, html::after,
+body::before, body::after {
+    display: none !important;
 }

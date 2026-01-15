@@ -1,5 +1,11 @@
-// Data
-const repairSlides = [{
+// ============================================
+// CONFIGURATION & DATA
+// ============================================
+
+const WHATSAPP_NUMBER = "919739767039";
+
+const repairSlides = [
+    {
         title: "iPhone Repair",
         description: "Screen replacement, battery upgrades, charging issues, and camera fixes for all iPhone models.",
         image: "images/services/iphone.webp"
@@ -31,7 +37,8 @@ const repairSlides = [{
     }
 ];
 
-const showcaseSlides = [{
+const showcaseSlides = [
+    {
         title: "iPhone Repair",
         description: "Screen replacement, battery upgrades, charging issues, and camera fixes for all iPhone models.",
         image: "images/showcase/iphone.webp"
@@ -63,27 +70,54 @@ const showcaseSlides = [{
     }
 ];
 
-const reviews = [{
+const reviews = [
+    {
         name: "Rahul Sharma",
         rating: 5,
-        text: "Excellent service! Fixed my iPhone 14 Pro Max screen in just 2 hours. The quality is as good as original. Highly recommend Only Apple Tech.",
-        date: "2 weeks ago"
+        text: "Excellent service! Fixed my iPhone 14 Pro Max screen in just 2 hours. The quality is as good as original. Highly recommend Only Apple Tech."
     },
     {
         name: "Priya V",
         rating: 5,
-        text: "Best place for MacBook repairs in Bangalore. They fixed my motherboard issue which other shops said was impossible. Very professional.",
-        date: "1 month ago"
+        text: "Best place for MacBook repairs in Bangalore. They fixed my motherboard issue which other shops said was impossible. Very professional."
     },
     {
         name: "Anand Kumar",
         rating: 5,
-        text: "Quick battery replacement for my Apple Watch. Affordable pricing and genuine parts used. The technician was very knowledgeable.",
-        date: "3 weeks ago"
+        text: "Quick battery replacement for my Apple Watch. Affordable pricing and genuine parts used. The technician was very knowledgeable."
+    },
+    {
+        name: "Deepak Reddy",
+        rating: 5,
+        text: "Amazing experience! My MacBook Pro was running slow and overheating. They cleaned it, upgraded the SSD, and now it works like new. Great value for money!"
+    },
+    {
+        name: "Sneha Patel",
+        rating: 5,
+        text: "Took my iPad for screen replacement. The team was very honest and transparent about the costs. Repair done in same day with warranty. Couldn't ask for better service."
+    },
+    {
+        name: "Arjun Nair",
+        rating: 5,
+        text: "My iPhone had water damage and wouldn't turn on. Other shops refused to touch it but these guys brought it back to life! Outstanding work and fair pricing."
+    },
+    {
+        name: "Kavya Menon",
+        rating: 5,
+        text: "Highly professional team! Got my iMac repaired here after the display started showing lines. They diagnosed the issue quickly and fixed it perfectly. 100% satisfied!"
+    },
+    {
+        name: "Vikram Shah",
+        rating: 5,
+        text: "Best Apple service center in Bangalore! They replaced my iPhone battery and charging port. Works perfectly now. Staff is friendly and knowledgeable."
+    },
+    {
+        name: "Meera Krishnan",
+        rating: 5,
+        text: "Fantastic service! My MacBook keyboard had liquid damage. They replaced it with genuine parts and it feels brand new. Very reasonable prices compared to official Apple service."
     }
 ];
 
-// Custom Apple-style SVG icons
 const deviceIcons = {
     iphone: `<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -96,7 +130,6 @@ const deviceIcons = {
         <circle cx="32" cy="51" r="2" fill="white" opacity="0.8"/>
         <rect x="26" y="12" width="12" height="2" rx="1" fill="white" opacity="0.6"/>
     </svg>`,
-
     ipad: `<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
             <linearGradient id="ipadGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -108,7 +141,6 @@ const deviceIcons = {
         <circle cx="32" cy="50" r="2" fill="white" opacity="0.8"/>
         <rect x="28" y="14" width="8" height="1.5" rx="0.75" fill="white" opacity="0.6"/>
     </svg>`,
-
     macbook: `<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
             <linearGradient id="macGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -120,7 +152,6 @@ const deviceIcons = {
         <path d="M8 44 L56 44 L54 48 L10 48 Z" fill="currentColor" opacity="0.3"/>
         <rect x="28" y="46" width="8" height="1" rx="0.5" fill="currentColor" opacity="0.4"/>
     </svg>`,
-
     watch: `<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
             <linearGradient id="watchGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -133,7 +164,6 @@ const deviceIcons = {
         <rect x="22" y="46" width="20" height="4" rx="1" fill="currentColor" opacity="0.3"/>
         <circle cx="32" cy="32" r="2" fill="white" opacity="0.9"/>
     </svg>`,
-
     imac: `<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
             <linearGradient id="imacGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -145,7 +175,6 @@ const deviceIcons = {
         <rect x="26" y="44" width="12" height="8" fill="currentColor" opacity="0.2"/>
         <rect x="18" y="52" width="28" height="2" rx="1" fill="currentColor" opacity="0.3"/>
     </svg>`,
-
     macmini: `<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
             <linearGradient id="miniGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -157,7 +186,6 @@ const deviceIcons = {
         <circle cx="32" cy="32" r="6" fill="currentColor" opacity="0.15"/>
         <rect x="16" y="42" width="32" height="1" rx="0.5" fill="black" opacity="0.2"/>
     </svg>`,
-
     other: `<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
             <linearGradient id="otherGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -170,41 +198,14 @@ const deviceIcons = {
     </svg>`
 };
 
-const devices = [{
-        id: "iphone",
-        name: "iPhone",
-        icon: "iphone"
-    },
-    {
-        id: "macbook",
-        name: "MacBook",
-        icon: "macbook"
-    },
-    {
-        id: "ipad",
-        name: "iPad",
-        icon: "ipad"
-    },
-    {
-        id: "watch",
-        name: "Apple Watch",
-        icon: "watch"
-    },
-    {
-        id: "imac",
-        name: "iMac",
-        icon: "imac"
-    },
-    {
-        id: "macmini",
-        name: "Mac Mini",
-        icon: "macmini"
-    },
-    {
-        id: "other",
-        name: "Other",
-        icon: "other"
-    },
+const devices = [
+    { id: "iphone", name: "iPhone", icon: "iphone" },
+    { id: "macbook", name: "MacBook", icon: "macbook" },
+    { id: "ipad", name: "iPad", icon: "ipad" },
+    { id: "watch", name: "Apple Watch", icon: "watch" },
+    { id: "imac", name: "iMac", icon: "imac" },
+    { id: "macmini", name: "Mac Mini", icon: "macmini" },
+    { id: "other", name: "Other", icon: "other" }
 ];
 
 const deviceProblems = {
@@ -260,14 +261,34 @@ const deviceProblems = {
     ]
 };
 
-const WHATSAPP_NUMBER = "919739767039";
+// ============================================
+// STATE MANAGEMENT
+// ============================================
 
-// State
 let currentStep = 1;
 let selectedDevice = "";
 let selectedProblem = "";
+let currentServiceIdx = 0;
+let currentMobileShowcaseIdx = 0;
+let currentServiceCarouselIdx = repairSlides.length;
+let currentDesktopCarouselIdx = showcaseSlides.length;
+let currentReviewPage = 0;
+let currentMobileReviewIdx = 0;
+let mobileServiceInterval;
+let mobileShowcaseInterval;
+let serviceCarouselInterval;
+let desktopCarouselInterval;
+let mobileReviewInterval;
+let isServiceTransitioning = false;
+let isDesktopTransitioning = false;
+let resizeTimeout;
+let lastWidth = window.innerWidth;
+let ticking = false;
 
-// Initialize
+// ============================================
+// INITIALIZATION
+// ============================================
+
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('current-year').textContent = new Date().getFullYear();
     renderDevices();
@@ -276,27 +297,16 @@ document.addEventListener('DOMContentLoaded', () => {
     renderDeviceShowcase();
     lucide.createIcons();
     initSmoothScrolling();
+    setTimeout(() => {
+        initPremiumEnhancements();
+        initWhatsAppTooltipPopup();
+    }, 100);
 });
 
-// Smooth Scrolling
-function initSmoothScrolling() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').slice(1);
-            if (targetId === "") return;
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-}
+// ============================================
+// RENDERING FUNCTIONS
+// ============================================
 
-// Rendering Functions
 function renderDevices() {
     const deviceList = document.getElementById('device-list');
     deviceList.innerHTML = devices.map(device => `
@@ -307,608 +317,6 @@ function renderDevices() {
             <span class="font-semibold text-gray-800">${device.name}</span>
         </div>
     `).join('');
-}
-
-function renderServiceCards() {
-    const serviceCards = document.getElementById('service-cards');
-
-    // Check if mobile
-    const isMobile = window.innerWidth < 1024;
-
-    if (isMobile) {
-        // Mobile: Single card with sliding images inside
-        serviceCards.innerHTML = `
-            <div class="max-w-3xl mx-auto px-4">
-                <div class="bg-white border border-border rounded-3xl overflow-hidden shadow-lg">
-                    <div id="service-mobile-container" class="relative aspect-square overflow-hidden" style="background-image: url('images/ui/card-background.webp'); background-size: cover; background-position: center;">
-                        <div id="service-image-track" class="flex h-full transition-transform duration-700 ease-in-out">
-                            ${repairSlides.map(slide => `
-                                <div class="w-full h-full flex items-center justify-center flex-shrink-0">
-                                    <img src="${slide.image}" alt="${slide.title}" width="800" height="450" loading="lazy" class="max-w-full max-h-full object-contain">
-                                </div>
-                            `).join('')}
-                        </div>
-                        <!-- Navigation Dots -->
-                        <div id="service-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                            ${repairSlides.map((_, i) => `
-                                <span class="w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === 0 ? 'bg-white scale-125' : 'bg-white/40'}"></span>
-                            `).join('')}
-                        </div>
-                    </div>
-                    <div class="p-8 text-center" id="service-text-container">
-                        <h3 class="text-2xl font-bold mb-3">${repairSlides[0].title}</h3>
-                        <p class="text-muted-foreground text-lg max-w-xl mx-auto">${repairSlides[0].description}</p>
-                    </div>
-                </div>
-            </div>
-        `;
-        initMobileServiceCards();
-    } else {
-        // Desktop: 3-card carousel with sliding effect (right -> middle -> left)
-        const extendedSlides = [...repairSlides, ...repairSlides, ...repairSlides];
-
-        serviceCards.innerHTML = `
-            <div class="container mx-auto px-4">
-                <div class="relative group">
-                    <div class="relative overflow-hidden py-10 -my-10">
-                        <div id="service-carousel-track" class="flex gap-8 transition-transform duration-700 ease-in-out -mx-4 px-4">
-                            ${extendedSlides.map((slide, i) => `
-                                <div class="flex-shrink-0 w-full md:w-[calc(33.333%-1.333rem)] bg-white border border-border rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                                    <div class="relative aspect-[4/3] rounded-t-3xl overflow-hidden flex items-center justify-center" style="background-image: url('images/ui/card-background.webp'); background-size: cover; background-position: center;">
-                                        <img src="${slide.image}" alt="${slide.title}" width="800" height="450" loading="lazy" class="max-w-full max-h-full object-contain">
-                                    </div>
-                                    <div class="p-6 text-center">
-                                        <h3 class="text-xl font-bold mb-2">${slide.title}</h3>
-                                        <p class="text-muted-foreground">${slide.description}</p>
-                                    </div>
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
-                    
-                    <!-- Desktop Navigation Buttons -->
-                    <button class="carousel-nav-btn prev absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center transition-all" onclick="moveServiceCarousel(-1)">
-                        <i data-lucide="chevron-left" class="w-6 h-6"></i>
-                    </button>
-                    <button class="carousel-nav-btn next absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center transition-all" onclick="moveServiceCarousel(1)">
-                        <i data-lucide="chevron-right" class="w-6 h-6"></i>
-                    </button>
-                </div>
-                
-                <!-- Navigation Dots -->
-                <div id="service-carousel-dots" class="flex justify-center gap-2 mt-8">
-                    ${repairSlides.map((_, i) => `
-                        <div class="w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer ${i === 0 ? 'bg-primary w-8' : 'bg-muted-foreground/30'}" onclick="goToServiceSlide(${i})"></div>
-                    `).join('')}
-                </div>
-            </div>
-        `;
-        initDesktopServiceCarousel();
-    }
-
-    lucide.createIcons();
-}
-
-// Mobile service cards slider
-let currentServiceIdx = 0;
-let mobileServiceInterval;
-
-function initMobileServiceCards() {
-    startMobileServiceInterval();
-    initSwipeSupport('service-mobile-container', (dir) => moveServiceSlide(dir));
-}
-
-function startMobileServiceInterval() {
-    clearInterval(mobileServiceInterval);
-    mobileServiceInterval = setInterval(() => {
-        moveServiceSlide(1);
-    }, 4000);
-}
-
-function moveServiceSlide(direction) {
-    const nextIdx = (currentServiceIdx + direction + repairSlides.length) % repairSlides.length;
-    updateServiceUI(nextIdx);
-    currentServiceIdx = nextIdx;
-}
-
-function updateServiceUI(nextIdx) {
-    const imageTrack = document.getElementById('service-image-track');
-    const textContainer = document.getElementById('service-text-container');
-    const dotsContainer = document.getElementById('service-dots');
-
-    if (!imageTrack || !textContainer || !dotsContainer) return;
-
-    const dots = dotsContainer.children;
-
-    // Image Transition
-    imageTrack.style.transform = `translateX(-${nextIdx * 100}%)`;
-
-    // Text Transition
-    textContainer.classList.add('text-fade-out');
-
-    setTimeout(() => {
-        textContainer.innerHTML = `
-            <h3 class="text-2xl font-bold mb-3">${repairSlides[nextIdx].title}</h3>
-            <p class="text-muted-foreground text-lg max-w-xl mx-auto">${repairSlides[nextIdx].description}</p>
-        `;
-        textContainer.classList.remove('text-fade-out');
-        textContainer.classList.add('text-fade-in');
-
-        setTimeout(() => {
-            textContainer.classList.remove('text-fade-in');
-        }, 500);
-    }, 350);
-
-    // Update Dots
-    Array.from(dots).forEach((dot, i) => {
-        if (i === nextIdx) {
-            dot.classList.add('bg-white', 'scale-125');
-            dot.classList.remove('bg-white/40');
-        } else {
-            dot.classList.remove('bg-white', 'scale-125');
-            dot.classList.add('bg-white/40');
-        }
-    });
-}
-
-// Desktop service 3-card carousel
-let currentServiceCarouselIdx = repairSlides.length; // Start at middle set
-let serviceCarouselInterval;
-let isServiceTransitioning = false;
-
-function initDesktopServiceCarousel() {
-    const track = document.getElementById('service-carousel-track');
-    if (!track) return;
-
-    // Position at the middle set initially
-    updateServiceCarouselPosition(false);
-
-    // Start auto-sliding
-    startServiceCarouselInterval();
-}
-
-function startServiceCarouselInterval() {
-    clearInterval(serviceCarouselInterval);
-    serviceCarouselInterval = setInterval(() => {
-        moveServiceCarousel(1);
-    }, 4000);
-}
-
-function moveServiceCarousel(direction) {
-    if (isServiceTransitioning) return;
-
-    currentServiceCarouselIdx += direction;
-    updateServiceCarouselPosition(true);
-}
-
-function goToServiceSlide(index) {
-    if (isServiceTransitioning) return;
-
-    clearInterval(serviceCarouselInterval);
-    currentServiceCarouselIdx = repairSlides.length + index;
-    updateServiceCarouselPosition(true);
-    startServiceCarouselInterval();
-}
-
-function updateServiceCarouselPosition(withTransition) {
-    const track = document.getElementById('service-carousel-track');
-    const dots = document.querySelectorAll('#service-carousel-dots > div');
-
-    if (!track) return;
-
-    isServiceTransitioning = true;
-
-    // Enable/disable transition
-    if (withTransition) {
-        track.style.transition = 'transform 0.7s ease-in-out';
-    } else {
-        track.style.transition = 'none';
-    }
-
-    // Calculate position - show 3 cards at once
-    const cardWidth = track.children[0].offsetWidth;
-    const gap = 32; // 2rem = 32px
-    const offset = currentServiceCarouselIdx * (cardWidth + gap);
-
-    track.style.transform = `translateX(-${offset}px)`;
-
-    // Update dots based on actual position in the original array
-    const actualIndex = currentServiceCarouselIdx % repairSlides.length;
-    dots.forEach((dot, i) => {
-        if (i === actualIndex) {
-            dot.classList.add('bg-primary', 'w-8');
-            dot.classList.remove('bg-muted-foreground/30');
-        } else {
-            dot.classList.remove('bg-primary', 'w-8');
-            dot.classList.add('bg-muted-foreground/30');
-        }
-    });
-
-    // Handle infinite loop
-    if (withTransition) {
-        setTimeout(() => {
-            handleServiceCarouselLoop();
-            isServiceTransitioning = false;
-        }, 700);
-    } else {
-        isServiceTransitioning = false;
-    }
-}
-
-function handleServiceCarouselLoop() {
-    const track = document.getElementById('service-carousel-track');
-    if (!track) return;
-
-    // If we've gone past the second set, jump back to the first set
-    if (currentServiceCarouselIdx >= repairSlides.length * 2) {
-        currentServiceCarouselIdx = repairSlides.length;
-        track.style.transition = 'none';
-        updateServiceCarouselPosition(false);
-    }
-    // If we've gone before the first set, jump to the second set
-    else if (currentServiceCarouselIdx < repairSlides.length) {
-        currentServiceCarouselIdx = repairSlides.length * 2 - 1;
-        track.style.transition = 'none';
-        updateServiceCarouselPosition(false);
-    }
-}
-
-
-function renderReviews() {
-    const reviewsList = document.getElementById('reviews-list');
-    reviewsList.innerHTML = reviews.map(review => `
-        <div class="bg-white border-none shadow-lg rounded-3xl p-8">
-            <div class="flex gap-1 mb-4">
-                ${Array(review.rating).fill('<i data-lucide="star" class="w-4 h-4 fill-primary text-primary"></i>').join('')}
-            </div>
-            <p class="text-lg italic mb-6">"${review.text}"</p>
-            <div class="flex items-center justify-between mt-auto">
-                <span class="font-bold">${review.name}</span>
-                <span class="text-sm text-muted-foreground">${review.date}</span>
-            </div>
-        </div>
-    `).join('');
-}
-
-function renderDeviceShowcase() {
-    const showcaseContainer = document.getElementById('device-showcase-container');
-
-    // Check if mobile
-    const isMobile = window.innerWidth < 1024;
-
-    if (isMobile) {
-        // Mobile: Single card with sliding images inside
-        showcaseContainer.innerHTML = `
-            <div class="max-w-3xl mx-auto px-4">
-                <div class="bg-white border border-border rounded-3xl overflow-hidden shadow-lg">
-                    <div id="showcase-mobile-container" class="relative aspect-square overflow-hidden" style="background-image: url('images/ui/wood-texture.webp'); background-size: cover; background-position: center;">
-                        <div id="mobile-showcase-track" class="flex h-full transition-transform duration-700 ease-in-out">
-                            ${showcaseSlides.map(slide => `
-                                <div class="w-full h-full flex items-center justify-center flex-shrink-0">
-                                    <img src="${slide.image}" alt="${slide.title}" width="800" height="450" loading="lazy" class="max-w-full max-h-full object-contain">
-                                </div>
-                            `).join('')}
-                        </div>
-                        <!-- Navigation Dots -->
-                        <div id="mobile-showcase-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                            ${showcaseSlides.map((_, i) => `
-                                <span class="w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === 0 ? 'bg-white scale-125' : 'bg-white/40'}"></span>
-                            `).join('')}
-                        </div>
-                    </div>
-                    <div class="p-8 text-center" id="mobile-showcase-text">
-                        <h3 class="text-2xl font-bold mb-3">${showcaseSlides[0].title}</h3>
-                        <p class="text-muted-foreground text-lg max-w-xl mx-auto">${showcaseSlides[0].description}</p>
-                    </div>
-                </div>
-            </div>
-        `;
-        initMobileShowcase();
-    } else {
-        // Desktop: 3-card carousel with sliding effect (right -> middle -> left)
-        // Create extended array for infinite loop: [...slides, ...slides, ...slides]
-        const extendedSlides = [...showcaseSlides, ...showcaseSlides, ...showcaseSlides];
-
-        showcaseContainer.innerHTML = `
-            <div class="container mx-auto px-4">
-                <div class="relative group">
-                    <div class="relative overflow-hidden py-10 -my-10">
-                        <div id="desktop-carousel-track" class="flex gap-8 transition-transform duration-700 ease-in-out -mx-4 px-4">
-                            ${extendedSlides.map((slide, i) => `
-                                <div class="flex-shrink-0 w-full md:w-[calc(33.333%-1.333rem)] bg-white border border-border rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                                    <div class="relative aspect-[4/3] rounded-t-3xl overflow-hidden flex items-center justify-center" style="background-image: url('images/ui/wood-texture.webp'); background-size: cover; background-position: center;">
-                                        <img src="${slide.image}" alt="${slide.title}" width="800" height="450" loading="lazy" class="max-w-full max-h-full object-contain">
-                                    </div>
-                                    <div class="p-6 text-center">
-                                        <h3 class="text-xl font-bold mb-2">${slide.title}</h3>
-                                        <p class="text-muted-foreground">${slide.description}</p>
-                                    </div>
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
-
-                    <!-- Desktop Navigation Buttons -->
-                    <button class="carousel-nav-btn prev absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center transition-all" onclick="moveDesktopCarousel(-1)">
-                        <i data-lucide="chevron-left" class="w-6 h-6"></i>
-                    </button>
-                    <button class="carousel-nav-btn next absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center transition-all" onclick="moveDesktopCarousel(1)">
-                        <i data-lucide="chevron-right" class="w-6 h-6"></i>
-                    </button>
-                </div>
-                
-                <!-- Navigation Dots -->
-                <div id="desktop-carousel-dots" class="flex justify-center gap-2 mt-8">
-                    ${showcaseSlides.map((_, i) => `
-                        <div class="w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer ${i === 0 ? 'bg-primary w-8' : 'bg-muted-foreground/30'}" onclick="goToDesktopSlide(${i})"></div>
-                    `).join('')}
-                </div>
-            </div>
-        `;
-        initDesktopCarousel();
-    }
-
-    lucide.createIcons();
-}
-
-// Mobile showcase slider
-let currentMobileShowcaseIdx = 0;
-let mobileShowcaseInterval;
-
-function initMobileShowcase() {
-    startMobileShowcaseInterval();
-    initSwipeSupport('showcase-mobile-container', (dir) => moveMobileShowcaseSlide(dir));
-}
-
-function startMobileShowcaseInterval() {
-    clearInterval(mobileShowcaseInterval);
-    mobileShowcaseInterval = setInterval(() => {
-        moveMobileShowcaseSlide(1);
-    }, 4000);
-}
-
-function moveMobileShowcaseSlide(direction) {
-    const nextIdx = (currentMobileShowcaseIdx + direction + showcaseSlides.length) % showcaseSlides.length;
-    updateMobileShowcaseUI(nextIdx);
-    currentMobileShowcaseIdx = nextIdx;
-}
-
-function updateMobileShowcaseUI(nextIdx) {
-    const imageTrack = document.getElementById('mobile-showcase-track');
-    const textContainer = document.getElementById('mobile-showcase-text');
-    const dotsContainer = document.getElementById('mobile-showcase-dots');
-
-    if (!imageTrack || !textContainer || !dotsContainer) return;
-
-    const dots = dotsContainer.children;
-
-    // Image Transition
-    imageTrack.style.transform = `translateX(-${nextIdx * 100}%)`;
-
-    // Text Transition
-    textContainer.classList.add('text-fade-out');
-
-    setTimeout(() => {
-        textContainer.innerHTML = `
-            <h3 class="text-2xl font-bold mb-3">${showcaseSlides[nextIdx].title}</h3>
-            <p class="text-muted-foreground text-lg max-w-xl mx-auto">${showcaseSlides[nextIdx].description}</p>
-        `;
-        textContainer.classList.remove('text-fade-out');
-        textContainer.classList.add('text-fade-in');
-
-        setTimeout(() => {
-            textContainer.classList.remove('text-fade-in');
-        }, 500);
-    }, 350);
-
-    // Update Dots
-    Array.from(dots).forEach((dot, i) => {
-        if (i === nextIdx) {
-            dot.classList.add('bg-white', 'scale-125');
-            dot.classList.remove('bg-white/40');
-        } else {
-            dot.classList.remove('bg-white', 'scale-125');
-            dot.classList.add('bg-white/40');
-        }
-    });
-}
-
-// Desktop 3-card carousel
-let currentDesktopCarouselIdx = showcaseSlides.length; // Start at middle set
-let desktopCarouselInterval;
-let isDesktopTransitioning = false;
-
-function initDesktopCarousel() {
-    const track = document.getElementById('desktop-carousel-track');
-    if (!track) return;
-
-    // Position at the middle set initially (showing cards 0, 1, 2)
-    updateDesktopCarouselPosition(false);
-
-    // Start auto-sliding
-    startDesktopCarouselInterval();
-}
-
-function startDesktopCarouselInterval() {
-    clearInterval(desktopCarouselInterval);
-    desktopCarouselInterval = setInterval(() => {
-        moveDesktopCarousel(1);
-    }, 4000);
-}
-
-function moveDesktopCarousel(direction) {
-    if (isDesktopTransitioning) return;
-
-    currentDesktopCarouselIdx += direction;
-    updateDesktopCarouselPosition(true);
-}
-
-function goToDesktopSlide(index) {
-    if (isDesktopTransitioning) return;
-
-    clearInterval(desktopCarouselInterval);
-    currentDesktopCarouselIdx = showcaseSlides.length + index;
-    updateDesktopCarouselPosition(true);
-    startDesktopCarouselInterval();
-}
-
-function updateDesktopCarouselPosition(withTransition) {
-    const track = document.getElementById('desktop-carousel-track');
-    const dots = document.querySelectorAll('#desktop-carousel-dots > div');
-
-    if (!track) return;
-
-    isDesktopTransitioning = true;
-
-    // Enable/disable transition
-    if (withTransition) {
-        track.style.transition = 'transform 0.7s ease-in-out';
-    } else {
-        track.style.transition = 'none';
-    }
-
-    // Calculate position - show 3 cards at once
-    const cardWidth = track.children[0].offsetWidth;
-    const gap = 32; // 2rem = 32px
-    const offset = currentDesktopCarouselIdx * (cardWidth + gap);
-
-    track.style.transform = `translateX(-${offset}px)`;
-
-    // Update dots based on actual position in the original array
-    const actualIndex = currentDesktopCarouselIdx % showcaseSlides.length;
-    dots.forEach((dot, i) => {
-        if (i === actualIndex) {
-            dot.classList.add('bg-primary', 'w-8');
-            dot.classList.remove('bg-muted-foreground/30');
-        } else {
-            dot.classList.remove('bg-primary', 'w-8');
-            dot.classList.add('bg-muted-foreground/30');
-        }
-    });
-
-    // Handle infinite loop
-    if (withTransition) {
-        setTimeout(() => {
-            handleDesktopCarouselLoop();
-            isDesktopTransitioning = false;
-        }, 700);
-    } else {
-        isDesktopTransitioning = false;
-    }
-}
-
-function handleDesktopCarouselLoop() {
-    const track = document.getElementById('desktop-carousel-track');
-    if (!track) return;
-
-    // If we've gone past the second set, jump back to the first set
-    if (currentDesktopCarouselIdx >= showcaseSlides.length * 2) {
-        currentDesktopCarouselIdx = showcaseSlides.length;
-        track.style.transition = 'none';
-        updateDesktopCarouselPosition(false);
-    }
-    // If we've gone before the first set, jump to the second set
-    else if (currentDesktopCarouselIdx < showcaseSlides.length) {
-        currentDesktopCarouselIdx = showcaseSlides.length * 2 - 1;
-        track.style.transition = 'none';
-        updateDesktopCarouselPosition(false);
-    }
-}
-
-// Re-render on window resize with improved debouncing
-let resizeTimeout;
-let lastWidth = window.innerWidth;
-
-window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-        const currentWidth = window.innerWidth;
-        const wasMobile = document.getElementById('mobile-showcase-track') !== null;
-        const isMobile = currentWidth < 1024;
-
-        // Only re-render if we're switching between mobile and desktop
-        if (wasMobile !== isMobile) {
-            // Clear all intervals before re-rendering
-            clearInterval(mobileShowcaseInterval);
-            clearInterval(mobileServiceInterval);
-            clearInterval(desktopCarouselInterval);
-            clearInterval(serviceCarouselInterval);
-
-            renderDeviceShowcase();
-            renderServiceCards();
-        } else if (!isMobile && Math.abs(currentWidth - lastWidth) > 50) {
-            // On desktop resize (only if significant change), update carousel positions
-            requestAnimationFrame(() => {
-                updateDesktopCarouselPosition(false);
-                updateServiceCarouselPosition(false);
-            });
-        }
-
-        lastWidth = currentWidth;
-    }, 150);
-}, {
-    passive: true
-});
-
-
-// Swipe Support for mobile
-function initSwipeSupport(elementId, callback) {
-    const el = document.getElementById(elementId);
-    if (!el) return;
-
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    el.addEventListener('touchstart', e => {
-        touchStartX = e.changedTouches[0].screenX;
-    }, {
-        passive: true
-    });
-
-    el.addEventListener('touchend', e => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    }, {
-        passive: true
-    });
-
-    function handleSwipe() {
-        const threshold = 50;
-        const diff = touchEndX - touchStartX;
-
-        if (Math.abs(diff) > threshold) {
-            if (diff > 0) {
-                // Swiped right
-                callback(-1);
-            } else {
-                // Swiped left
-                callback(1);
-            }
-        }
-    }
-}
-
-
-// Logic Functions
-function toggleFaq(button) {
-    const content = button.nextElementSibling;
-    const icon = button.querySelector('[data-lucide="chevron-down"]');
-
-    const isOpen = !content.classList.contains('hidden');
-
-    if (isOpen) {
-        content.classList.add('hidden');
-        icon.style.transform = 'rotate(0deg)';
-    } else {
-        content.classList.remove('hidden');
-        icon.style.transform = 'rotate(180deg)';
-    }
-}
-
-function handleDeviceSelect(id) {
-    selectedDevice = id;
-    renderProblems();
-    goToStep(2);
 }
 
 function renderProblems() {
@@ -929,6 +337,616 @@ function renderProblems() {
     lucide.createIcons();
 }
 
+function renderReviews() {
+    const reviewsList = document.getElementById('reviews-list');
+    const isMobile = window.innerWidth < 768;
+
+    if (isMobile) {
+        renderMobileReviews(reviewsList);
+    } else {
+        renderDesktopReviews(reviewsList);
+    }
+}
+
+function renderMobileReviews(container) {
+    container.innerHTML = `
+        <div class="relative w-full overflow-hidden">
+            <div id="mobile-reviews-track" class="flex transition-transform duration-700 ease-in-out">
+                ${reviews.map(review => `
+                    <div class="w-full flex-shrink-0 px-4">
+                        <div class="bg-white border-none shadow-lg rounded-3xl p-8">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex gap-1">
+                                    ${Array(review.rating).fill('<i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>').join('')}
+                                </div>
+                                <img src="images/ui/google-logo.webp" alt="Google" class="h-6 w-6 object-contain">
+                            </div>
+                            <p class="text-lg italic mb-6">"${review.text}"</p>
+                            <div class="mt-auto">
+                                <span class="font-bold">${review.name}</span>
+                            </div>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+            <div id="mobile-review-dots" class="flex justify-center gap-2 mt-6">
+                ${reviews.map((_, i) => `
+                    <span class="w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === 0 ? 'bg-primary' : 'bg-muted-foreground/30'}"></span>
+                `).join('')}
+            </div>
+        </div>
+    `;
+    lucide.createIcons();
+    initMobileReviews();
+}
+
+function renderDesktopReviews(container) {
+    const totalPages = Math.ceil(reviews.length / 3);
+    const extendedReviews = [...reviews, ...reviews, ...reviews];
+
+    container.innerHTML = `
+        <div class="col-span-3 overflow-hidden">
+            <div id="desktop-reviews-track" class="flex gap-6 transition-transform duration-700 ease-in-out">
+                ${extendedReviews.map(review => `
+                    <div class="review-card flex-shrink-0 w-[calc(33.333%-1rem)] bg-white border border-gray-200 rounded-2xl p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex gap-1">
+                                ${Array(review.rating).fill('<i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>').join('')}
+                            </div>
+                            <img src="images/ui/google-logo.webp" alt="Google" class="h-6 w-6 object-contain">
+                        </div>
+                        <p class="text-base italic mb-6 text-gray-700">"${review.text}"</p>
+                        <div class="mt-auto">
+                            <span class="font-bold text-gray-900">${review.name}</span>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+        <div class="col-span-full flex justify-center gap-4 mt-8">
+            <button onclick="changeReviewPage(-1)" 
+                class="carousel-nav-btn w-12 h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center">
+                <i data-lucide="chevron-left" class="w-6 h-6"></i>
+            </button>
+            <div id="desktop-review-dots" class="flex items-center gap-2">
+                ${Array(totalPages).fill(0).map((_, i) => `
+                    <div class="w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer ${i === 0 ? 'bg-primary w-8' : 'bg-muted-foreground/30'}" onclick="goToReviewPage(${i})"></div>
+                `).join('')}
+            </div>
+            <button onclick="changeReviewPage(1)" 
+                class="carousel-nav-btn w-12 h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center">
+                <i data-lucide="chevron-right" class="w-6 h-6"></i>
+            </button>
+        </div>
+    `;
+    lucide.createIcons();
+    initDesktopReviewsCarousel();
+}
+
+let currentDesktopReviewIdx = reviews.length;
+let isReviewTransitioning = false;
+
+function initDesktopReviewsCarousel() {
+    currentDesktopReviewIdx = reviews.length;
+    setTimeout(() => {
+        updateDesktopReviewsPosition(false);
+    }, 50);
+}
+
+function changeReviewPage(direction) {
+    if (isReviewTransitioning) return;
+    currentDesktopReviewIdx += direction * 3;
+    updateDesktopReviewsPosition(true);
+}
+
+function goToReviewPage(pageIndex) {
+    if (isReviewTransitioning) return;
+    currentDesktopReviewIdx = reviews.length + (pageIndex * 3);
+    updateDesktopReviewsPosition(true);
+}
+
+function updateDesktopReviewsPosition(withTransition) {
+    const track = document.getElementById('desktop-reviews-track');
+    const dots = document.querySelectorAll('#desktop-review-dots > div');
+    if (!track || !track.children[0]) return;
+
+    isReviewTransitioning = true;
+    track.style.transition = withTransition ? 'transform 700ms ease-in-out' : 'none';
+
+    const container = track.parentElement;
+    const containerWidth = container.offsetWidth;
+    const cardWidth = track.children[0].offsetWidth;
+    const gap = 24;
+    const visibleCardsWidth = (cardWidth * 3) + (gap * 2);
+    const centerOffset = (containerWidth - visibleCardsWidth) / 2;
+    const offset = (currentDesktopReviewIdx * (cardWidth + gap)) - centerOffset;
+    track.style.transform = `translateX(-${offset}px)`;
+
+    const totalPages = Math.ceil(reviews.length / 3);
+    const actualPage = Math.floor((currentDesktopReviewIdx % reviews.length) / 3);
+    dots.forEach((dot, i) => {
+        if (i === actualPage) {
+            dot.classList.add('bg-primary', 'w-8');
+            dot.classList.remove('bg-muted-foreground/30');
+        } else {
+            dot.classList.remove('bg-primary', 'w-8');
+            dot.classList.add('bg-muted-foreground/30');
+        }
+    });
+
+    if (withTransition) {
+        setTimeout(() => {
+            if (currentDesktopReviewIdx >= reviews.length * 2) {
+                currentDesktopReviewIdx = reviews.length + (currentDesktopReviewIdx % reviews.length);
+                track.style.transition = 'none';
+                updateDesktopReviewsPosition(false);
+            } else if (currentDesktopReviewIdx < reviews.length) {
+                currentDesktopReviewIdx = reviews.length + (currentDesktopReviewIdx % reviews.length);
+                track.style.transition = 'none';
+                updateDesktopReviewsPosition(false);
+            }
+            isReviewTransitioning = false;
+        }, 700);
+    } else {
+        isReviewTransitioning = false;
+    }
+}
+
+// Mobile Reviews Carousel Functions
+function initMobileReviews() {
+    startMobileReviewInterval();
+    initSwipeSupport('mobile-reviews-track', (dir) => moveMobileReview(dir));
+}
+
+function startMobileReviewInterval() {
+    clearInterval(mobileReviewInterval);
+    mobileReviewInterval = setInterval(() => moveMobileReview(1), 5000);
+}
+
+function moveMobileReview(direction) {
+    currentMobileReviewIdx = (currentMobileReviewIdx + direction + reviews.length) % reviews.length;
+    updateMobileReviewUI();
+}
+
+function updateMobileReviewUI() {
+    const track = document.getElementById('mobile-reviews-track');
+    const dots = document.querySelectorAll('#mobile-review-dots > span');
+    
+    if (!track) return;
+    
+    track.style.transform = `translateX(-${currentMobileReviewIdx * 100}%)`;
+    
+    dots.forEach((dot, i) => {
+        if (i === currentMobileReviewIdx) {
+            dot.classList.add('bg-primary');
+            dot.classList.remove('bg-muted-foreground/30');
+        } else {
+            dot.classList.remove('bg-primary');
+            dot.classList.add('bg-muted-foreground/30');
+        }
+    });
+}
+
+function renderServiceCards() {
+    const serviceCards = document.getElementById('service-cards');
+    const isMobile = window.innerWidth < 1024;
+
+    if (isMobile) {
+        renderMobileServiceCards(serviceCards);
+    } else {
+        renderDesktopServiceCards(serviceCards);
+    }
+    lucide.createIcons();
+}
+
+function renderMobileServiceCards(container) {
+    container.innerHTML = `
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="bg-white border border-border rounded-3xl overflow-hidden shadow-lg">
+                <div id="service-mobile-container" class="relative aspect-square overflow-hidden" style="background-image: url('images/ui/card-background.webp'); background-size: cover; background-position: center;">
+                    <div id="service-image-track" class="flex h-full transition-transform duration-700 ease-in-out">
+                        ${repairSlides.map(slide => `
+                            <div class="w-full h-full flex items-center justify-center flex-shrink-0">
+                                <img src="${slide.image}" alt="${slide.title}" width="800" height="450" loading="lazy" class="max-w-full max-h-full object-contain">
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div id="service-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                        ${repairSlides.map((_, i) => `
+                            <span class="w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === 0 ? 'bg-white scale-125' : 'bg-white/40'}"></span>
+                        `).join('')}
+                    </div>
+                </div>
+                <div class="p-8 text-center" id="service-text-container">
+                    <h3 class="text-2xl font-bold mb-3">${repairSlides[0].title}</h3>
+                    <p class="text-muted-foreground text-lg max-w-xl mx-auto">${repairSlides[0].description}</p>
+                </div>
+            </div>
+        </div>
+    `;
+    initMobileServiceCards();
+}
+
+function renderDesktopServiceCards(container) {
+    const extendedSlides = [...repairSlides, ...repairSlides, ...repairSlides];
+    container.innerHTML = `
+        <div class="container mx-auto px-4">
+            <div class="overflow-hidden py-10 -my-10">
+                <div id="service-carousel-track" class="flex gap-8 transition-transform duration-700 ease-in-out -mx-4 px-4">
+                    ${extendedSlides.map(slide => `
+                        <div class="flex-shrink-0 w-full md:w-[calc(33.333%-1.333rem)] bg-white border border-border rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                            <div class="relative aspect-[4/3] rounded-t-3xl overflow-hidden flex items-center justify-center" style="background-image: url('images/ui/card-background.webp'); background-size: cover; background-position: center;">
+                                <img src="${slide.image}" alt="${slide.title}" width="800" height="450" loading="lazy" class="max-w-full max-h-full object-contain">
+                            </div>
+                            <div class="p-6 text-center">
+                                <h3 class="text-xl font-bold mb-2">${slide.title}</h3>
+                                <p class="text-muted-foreground">${slide.description}</p>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+            <div class="flex justify-center gap-4 items-center mt-8">
+                <button class="carousel-nav-btn w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center transition-all" onclick="moveServiceCarousel(-1)">
+                    <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                </button>
+                <div id="service-carousel-dots" class="flex gap-2">
+                    ${repairSlides.map((_, i) => `
+                        <div class="w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer ${i === 0 ? 'bg-primary w-8' : 'bg-muted-foreground/30'}" onclick="goToServiceSlide(${i})"></div>
+                    `).join('')}
+                </div>
+                <button class="carousel-nav-btn w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center transition-all" onclick="moveServiceCarousel(1)">
+                    <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    `;
+    initDesktopServiceCarousel();
+}
+
+function renderDeviceShowcase() {
+    const showcaseContainer = document.getElementById('device-showcase-container');
+    const isMobile = window.innerWidth < 1024;
+
+    if (isMobile) {
+        renderMobileShowcase(showcaseContainer);
+    } else {
+        renderDesktopShowcase(showcaseContainer);
+    }
+    lucide.createIcons();
+}
+
+function renderMobileShowcase(container) {
+    container.innerHTML = `
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="bg-white border border-border rounded-3xl overflow-hidden shadow-lg">
+                <div id="showcase-mobile-container" class="relative aspect-square overflow-hidden" style="background-image: url('images/ui/wood-texture.webp'); background-size: cover; background-position: center;">
+                    <div id="mobile-showcase-track" class="flex h-full transition-transform duration-700 ease-in-out">
+                        ${showcaseSlides.map(slide => `
+                            <div class="w-full h-full flex items-center justify-center flex-shrink-0">
+                                <img src="${slide.image}" alt="${slide.title}" width="800" height="450" loading="lazy" class="max-w-full max-h-full object-contain">
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div id="mobile-showcase-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                        ${showcaseSlides.map((_, i) => `
+                            <span class="w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === 0 ? 'bg-white scale-125' : 'bg-white/40'}"></span>
+                        `).join('')}
+                    </div>
+                </div>
+                <div class="p-8 text-center" id="mobile-showcase-text">
+                    <h3 class="text-2xl font-bold mb-3">${showcaseSlides[0].title}</h3>
+                    <p class="text-muted-foreground text-lg max-w-xl mx-auto">${showcaseSlides[0].description}</p>
+                </div>
+            </div>
+        </div>
+    `;
+    initMobileShowcase();
+}
+
+function renderDesktopShowcase(container) {
+    const extendedSlides = [...showcaseSlides, ...showcaseSlides, ...showcaseSlides];
+    container.innerHTML = `
+        <div class="container mx-auto px-4">
+            <div class="overflow-hidden py-10 -my-10">
+                <div id="desktop-carousel-track" class="flex gap-8 transition-transform duration-700 ease-in-out -mx-4 px-4">
+                    ${extendedSlides.map(slide => `
+                        <div class="flex-shrink-0 w-full md:w-[calc(33.333%-1.333rem)] bg-white border border-border rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                            <div class="relative aspect-[4/3] rounded-t-3xl overflow-hidden flex items-center justify-center" style="background-image: url('images/ui/wood-texture.webp'); background-size: cover; background-position: center;">
+                                <img src="${slide.image}" alt="${slide.title}" width="800" height="450" loading="lazy" class="max-w-full max-h-full object-contain">
+                            </div>
+                            <div class="p-6 text-center">
+                                <h3 class="text-xl font-bold mb-2">${slide.title}</h3>
+                                <p class="text-muted-foreground">${slide.description}</p>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+            <div class="flex justify-center gap-4 items-center mt-8">
+                <button class="carousel-nav-btn w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center transition-all" onclick="moveDesktopCarousel(-1)">
+                    <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                </button>
+                <div id="desktop-carousel-dots" class="flex gap-2">
+                    ${showcaseSlides.map((_, i) => `
+                        <div class="w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer ${i === 0 ? 'bg-primary w-8' : 'bg-muted-foreground/30'}" onclick="goToDesktopSlide(${i})"></div>
+                    `).join('')}
+                </div>
+                <button class="carousel-nav-btn w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center transition-all" onclick="moveDesktopCarousel(1)">
+                    <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    `;
+    initDesktopCarousel();
+}
+
+// ============================================
+// CAROUSEL LOGIC
+// ============================================
+
+// Mobile Service Cards
+function initMobileServiceCards() {
+    startMobileServiceInterval();
+    initSwipeSupport('service-mobile-container', (dir) => moveServiceSlide(dir));
+}
+
+function startMobileServiceInterval() {
+    clearInterval(mobileServiceInterval);
+    mobileServiceInterval = setInterval(() => moveServiceSlide(1), 4000);
+}
+
+function moveServiceSlide(direction) {
+    const nextIdx = (currentServiceIdx + direction + repairSlides.length) % repairSlides.length;
+    updateServiceUI(nextIdx);
+    currentServiceIdx = nextIdx;
+}
+
+function updateServiceUI(nextIdx) {
+    const imageTrack = document.getElementById('service-image-track');
+    const textContainer = document.getElementById('service-text-container');
+    const dotsContainer = document.getElementById('service-dots');
+
+    if (!imageTrack || !textContainer || !dotsContainer) return;
+
+    imageTrack.style.transform = `translateX(-${nextIdx * 100}%)`;
+    
+    textContainer.classList.add('text-fade-out');
+    setTimeout(() => {
+        textContainer.innerHTML = `
+            <h3 class="text-2xl font-bold mb-3">${repairSlides[nextIdx].title}</h3>
+            <p class="text-muted-foreground text-lg max-w-xl mx-auto">${repairSlides[nextIdx].description}</p>
+        `;
+        textContainer.classList.remove('text-fade-out');
+        textContainer.classList.add('text-fade-in');
+        setTimeout(() => textContainer.classList.remove('text-fade-in'), 500);
+    }, 350);
+
+    Array.from(dotsContainer.children).forEach((dot, i) => {
+        if (i === nextIdx) {
+            dot.classList.add('bg-white', 'scale-125');
+            dot.classList.remove('bg-white/40');
+        } else {
+            dot.classList.remove('bg-white', 'scale-125');
+            dot.classList.add('bg-white/40');
+        }
+    });
+}
+
+// Desktop Service Carousel
+function initDesktopServiceCarousel() {
+    updateServiceCarouselPosition(false);
+    startServiceCarouselInterval();
+}
+
+function startServiceCarouselInterval() {
+    clearInterval(serviceCarouselInterval);
+    serviceCarouselInterval = setInterval(() => moveServiceCarousel(1), 4000);
+}
+
+function moveServiceCarousel(direction) {
+    if (isServiceTransitioning) return;
+    currentServiceCarouselIdx += direction;
+    updateServiceCarouselPosition(true);
+}
+
+function goToServiceSlide(index) {
+    if (isServiceTransitioning) return;
+    clearInterval(serviceCarouselInterval);
+    currentServiceCarouselIdx = repairSlides.length + index;
+    updateServiceCarouselPosition(true);
+    startServiceCarouselInterval();
+}
+
+function updateServiceCarouselPosition(withTransition) {
+    const track = document.getElementById('service-carousel-track');
+    const dots = document.querySelectorAll('#service-carousel-dots > div');
+    if (!track) return;
+
+    isServiceTransitioning = true;
+    track.style.transition = withTransition ? 'transform 0.7s ease-in-out' : 'none';
+
+    const cardWidth = track.children[0].offsetWidth;
+    const gap = 32;
+    const offset = currentServiceCarouselIdx * (cardWidth + gap);
+    track.style.transform = `translateX(-${offset}px)`;
+
+    const actualIndex = currentServiceCarouselIdx % repairSlides.length;
+    dots.forEach((dot, i) => {
+        if (i === actualIndex) {
+            dot.classList.add('bg-primary', 'w-8');
+            dot.classList.remove('bg-muted-foreground/30');
+        } else {
+            dot.classList.remove('bg-primary', 'w-8');
+            dot.classList.add('bg-muted-foreground/30');
+        }
+    });
+
+    if (withTransition) {
+        setTimeout(() => {
+            if (currentServiceCarouselIdx >= repairSlides.length * 2) {
+                currentServiceCarouselIdx = repairSlides.length;
+                track.style.transition = 'none';
+                updateServiceCarouselPosition(false);
+            } else if (currentServiceCarouselIdx < repairSlides.length) {
+                currentServiceCarouselIdx = repairSlides.length * 2 - 1;
+                track.style.transition = 'none';
+                updateServiceCarouselPosition(false);
+            }
+            isServiceTransitioning = false;
+        }, 700);
+    } else {
+        isServiceTransitioning = false;
+    }
+}
+
+// Mobile Showcase
+function initMobileShowcase() {
+    startMobileShowcaseInterval();
+    initSwipeSupport('showcase-mobile-container', (dir) => moveMobileShowcaseSlide(dir));
+}
+
+function startMobileShowcaseInterval() {
+    clearInterval(mobileShowcaseInterval);
+    mobileShowcaseInterval = setInterval(() => moveMobileShowcaseSlide(1), 4000);
+}
+
+function moveMobileShowcaseSlide(direction) {
+    const nextIdx = (currentMobileShowcaseIdx + direction + showcaseSlides.length) % showcaseSlides.length;
+    updateMobileShowcaseUI(nextIdx);
+    currentMobileShowcaseIdx = nextIdx;
+}
+
+function updateMobileShowcaseUI(nextIdx) {
+    const imageTrack = document.getElementById('mobile-showcase-track');
+    const textContainer = document.getElementById('mobile-showcase-text');
+    const dotsContainer = document.getElementById('mobile-showcase-dots');
+
+    if (!imageTrack || !textContainer || !dotsContainer) return;
+
+    imageTrack.style.transform = `translateX(-${nextIdx * 100}%)`;
+    
+    textContainer.classList.add('text-fade-out');
+    setTimeout(() => {
+        textContainer.innerHTML = `
+            <h3 class="text-2xl font-bold mb-3">${showcaseSlides[nextIdx].title}</h3>
+            <p class="text-muted-foreground text-lg max-w-xl mx-auto">${showcaseSlides[nextIdx].description}</p>
+        `;
+        textContainer.classList.remove('text-fade-out');
+        textContainer.classList.add('text-fade-in');
+        setTimeout(() => textContainer.classList.remove('text-fade-in'), 500);
+    }, 350);
+
+    Array.from(dotsContainer.children).forEach((dot, i) => {
+        if (i === nextIdx) {
+            dot.classList.add('bg-white', 'scale-125');
+            dot.classList.remove('bg-white/40');
+        } else {
+            dot.classList.remove('bg-white', 'scale-125');
+            dot.classList.add('bg-white/40');
+        }
+    });
+}
+
+// Desktop Showcase Carousel
+function initDesktopCarousel() {
+    updateDesktopCarouselPosition(false);
+    startDesktopCarouselInterval();
+}
+
+function startDesktopCarouselInterval() {
+    clearInterval(desktopCarouselInterval);
+    desktopCarouselInterval = setInterval(() => moveDesktopCarousel(1), 4000);
+}
+
+function moveDesktopCarousel(direction) {
+    if (isDesktopTransitioning) return;
+    currentDesktopCarouselIdx += direction;
+    updateDesktopCarouselPosition(true);
+}
+
+function goToDesktopSlide(index) {
+    if (isDesktopTransitioning) return;
+    clearInterval(desktopCarouselInterval);
+    currentDesktopCarouselIdx = showcaseSlides.length + index;
+    updateDesktopCarouselPosition(true);
+    startDesktopCarouselInterval();
+}
+
+function updateDesktopCarouselPosition(withTransition) {
+    const track = document.getElementById('desktop-carousel-track');
+    const dots = document.querySelectorAll('#desktop-carousel-dots > div');
+    if (!track) return;
+
+    isDesktopTransitioning = true;
+    track.style.transition = withTransition ? 'transform 0.7s ease-in-out' : 'none';
+
+    const cardWidth = track.children[0].offsetWidth;
+    const gap = 32;
+    const offset = currentDesktopCarouselIdx * (cardWidth + gap);
+    track.style.transform = `translateX(-${offset}px)`;
+
+    const actualIndex = currentDesktopCarouselIdx % showcaseSlides.length;
+    dots.forEach((dot, i) => {
+        if (i === actualIndex) {
+            dot.classList.add('bg-primary', 'w-8');
+            dot.classList.remove('bg-muted-foreground/30');
+        } else {
+            dot.classList.remove('bg-primary', 'w-8');
+            dot.classList.add('bg-muted-foreground/30');
+        }
+    });
+
+    if (withTransition) {
+        setTimeout(() => {
+            if (currentDesktopCarouselIdx >= showcaseSlides.length * 2) {
+                currentDesktopCarouselIdx = showcaseSlides.length;
+                track.style.transition = 'none';
+                updateDesktopCarouselPosition(false);
+            } else if (currentDesktopCarouselIdx < showcaseSlides.length) {
+                currentDesktopCarouselIdx = showcaseSlides.length * 2 - 1;
+                track.style.transition = 'none';
+                updateDesktopCarouselPosition(false);
+            }
+            isDesktopTransitioning = false;
+        }, 700);
+    } else {
+        isDesktopTransitioning = false;
+    }
+}
+
+// Swipe Support
+function initSwipeSupport(elementId, callback) {
+    const el = document.getElementById(elementId);
+    if (!el) return;
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    el.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    el.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        const threshold = 50;
+        const diff = touchEndX - touchStartX;
+        if (Math.abs(diff) > threshold) {
+            callback(diff > 0 ? -1 : 1);
+        }
+    }, { passive: true });
+}
+
+// ============================================
+// FORM & INQUIRY LOGIC
+// ============================================
+
+function handleDeviceSelect(id) {
+    selectedDevice = id;
+    renderProblems();
+    goToStep(2);
+}
+
 function handleProblemSelect(problem) {
     selectedProblem = problem;
     goToStep(3);
@@ -939,7 +957,6 @@ function goToStep(step) {
     document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
     document.getElementById(`step-${step}`).classList.add('active');
 
-    // Update indicators
     document.querySelectorAll('#step-indicators div').forEach((el, idx) => {
         if (idx + 1 <= step) {
             el.classList.add('bg-primary');
@@ -953,7 +970,6 @@ function goToStep(step) {
     lucide.createIcons();
 }
 
-// Form Submission
 document.getElementById('quote-form').addEventListener('submit', (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -967,7 +983,6 @@ document.getElementById('quote-form').addEventListener('submit', (e) => {
     const deviceDisplay = model ? `${deviceName} ${model}` : deviceName;
 
     let message = `${intro}\n\nI need help with my ${deviceDisplay}.\n\nThe issue is ${selectedProblem}.`;
-
     if (description) {
         message += `\n\n${description}`;
     }
@@ -975,9 +990,7 @@ document.getElementById('quote-form').addEventListener('submit', (e) => {
     const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     window.open(waUrl, "_blank");
 
-    // Update direct link in success overlay
     document.getElementById('whatsapp-direct-link').href = waUrl;
-
     document.getElementById('success-overlay').classList.add('active');
 });
 
@@ -989,26 +1002,55 @@ function resetInquiry() {
     selectedProblem = "";
 }
 
+function toggleFaq(button) {
+    const content = button.nextElementSibling;
+    const icon = button.querySelector('[data-lucide="chevron-down"]');
+    const isOpen = !content.classList.contains('hidden');
+
+    if (isOpen) {
+        content.classList.add('hidden');
+        icon.style.transform = 'rotate(0deg)';
+    } else {
+        content.classList.remove('hidden');
+        icon.style.transform = 'rotate(180deg)';
+    }
+}
+
 // ============================================
-// PREMIUM 2026 ENHANCEMENTS
+// UI ENHANCEMENTS
 // ============================================
 
-// Intersection Observer for scroll animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const fadeInObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
+function initSmoothScrolling() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').slice(1);
+            if (targetId === "") return;
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
     });
-}, observerOptions);
+}
 
-// Initialize scroll animations
 function initScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const fadeInObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
     const sections = document.querySelectorAll('section');
     sections.forEach((section, index) => {
         section.classList.add('fade-in-up');
@@ -1032,7 +1074,6 @@ function initScrollAnimations() {
     });
 }
 
-// Ripple effect on button clicks
 function createRipple(event) {
     const button = event.currentTarget;
     const ripple = document.createElement('span');
@@ -1047,13 +1088,9 @@ function createRipple(event) {
     ripple.classList.add('ripple');
 
     button.appendChild(ripple);
-
-    setTimeout(() => {
-        ripple.remove();
-    }, 600);
+    setTimeout(() => ripple.remove(), 600);
 }
 
-// Add ripple effect to all buttons (except carousel nav arrows)
 function initRippleEffects() {
     const buttons = document.querySelectorAll('button:not(.carousel-nav-btn), a[class*="bg-"]');
     buttons.forEach(button => {
@@ -1063,7 +1100,6 @@ function initRippleEffects() {
     });
 }
 
-// Enhanced navbar on scroll
 function handleNavbarScroll() {
     const navbar = document.querySelector('nav');
     const currentScroll = window.pageYOffset;
@@ -1075,140 +1111,31 @@ function handleNavbarScroll() {
     }
 }
 
-// Throttled scroll handler
-let ticking = false;
-
 function onScroll() {
     if (!ticking) {
         window.requestAnimationFrame(() => {
             handleNavbarScroll();
-            handleParallax();
             ticking = false;
         });
         ticking = true;
     }
 }
 
-// Parallax effect for hero section
-function handleParallax() {
-    const heroSection = document.querySelector('section');
-    if (!heroSection) return;
-
-    const scrolled = window.pageYOffset;
-    const parallaxElements = heroSection.querySelectorAll('.absolute');
-
-    parallaxElements.forEach((el, index) => {
-        const speed = 0.5 + (index * 0.1);
-        const yPos = -(scrolled * speed);
-        el.style.transform = `translateY(${yPos}px)`;
-    });
-}
-
-// Add gradient overlay to cards on hover
 function initCardEnhancements() {
     const cards = document.querySelectorAll('.bg-white.border');
-    cards.forEach(card => {
-        card.classList.add('gradient-overlay');
-    });
+    cards.forEach(card => card.classList.add('gradient-overlay'));
 }
 
-// Smooth scroll to anchor links
-function initSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            if (href === '#' || href === '') return;
-
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
-                const offset = 80;
-                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
-
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-}
-
-// Add hover effects to navigation links
-function initNavLinkEffects() {
-    const navLinks = document.querySelectorAll('nav a[href^="#"]');
-    navLinks.forEach(link => {
-        link.classList.add('nav-link');
-    });
-}
-
-// Enhanced image loading
-function initImageLoading() {
-    const images = document.querySelectorAll('img');
-    images.forEach(img => {
-        if (!img.complete) {
-            img.style.opacity = '0';
-            img.addEventListener('load', () => {
-                img.style.transition = 'opacity 0.6s ease-in-out';
-                img.style.opacity = '1';
-            });
-        }
-    });
-}
-
-// Add floating animation to hero badge
-function initFloatingElements() {
-    const heroBadge = document.querySelector('section span.inline-block');
-    if (heroBadge) {
-        heroBadge.classList.add('float-animation');
-    }
-}
-
-// Initialize all premium enhancements
-function initPremiumEnhancements() {
-    initScrollAnimations();
-    initRippleEffects();
-    initCardEnhancements();
-    initSmoothScroll();
-    initNavLinkEffects();
-    initImageLoading();
-    initFloatingElements();
-
-    window.addEventListener('scroll', onScroll, {
-        passive: true
-    });
-    handleNavbarScroll();
-}
-
-// Run premium enhancements
-document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-        initPremiumEnhancements();
-    }, 100);
-});
-
-// Performance performance handler
-document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-        document.body.style.animationPlayState = 'paused';
-    } else {
-        document.body.style.animationPlayState = 'running';
-    }
-});
-
-// WhatsApp Tooltip Auto-Popup (Feature 2)
 function initWhatsAppTooltipPopup() {
     const whatsappButton = document.querySelector('.whatsapp-float');
     const tooltip = document.querySelector('.whatsapp-tooltip');
 
     if (!whatsappButton || !tooltip) return;
 
-    // Show tooltip after 3 seconds
     setTimeout(() => {
         tooltip.style.opacity = '1';
         tooltip.style.pointerEvents = 'auto';
 
-        // Hide tooltip after 3 seconds (total 6 seconds from page load)
         setTimeout(() => {
             tooltip.style.opacity = '0';
             tooltip.style.pointerEvents = 'none';
@@ -1216,9 +1143,57 @@ function initWhatsAppTooltipPopup() {
     }, 3000);
 }
 
-// Initialize WhatsApp tooltip popup on page load
-document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-        initWhatsAppTooltipPopup();
-    }, 100);
+function initPremiumEnhancements() {
+    initScrollAnimations();
+    initRippleEffects();
+    initCardEnhancements();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    handleNavbarScroll();
+}
+
+// ============================================
+// EVENT LISTENERS
+// ============================================
+
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        const currentWidth = window.innerWidth;
+        const wasMobile = document.getElementById('mobile-showcase-track') !== null;
+        const isMobile = currentWidth < 1024;
+
+        if (wasMobile !== isMobile) {
+            clearInterval(mobileShowcaseInterval);
+            clearInterval(mobileServiceInterval);
+            clearInterval(desktopCarouselInterval);
+            clearInterval(serviceCarouselInterval);
+
+            renderDeviceShowcase();
+            renderServiceCards();
+        } else if (!isMobile && Math.abs(currentWidth - lastWidth) > 50) {
+            requestAnimationFrame(() => {
+                updateDesktopCarouselPosition(false);
+                updateServiceCarouselPosition(false);
+            });
+        }
+
+
+        // Re-render reviews on mobile/desktop breakpoint
+        const wasReviewMobile = lastWidth < 768;
+        const isReviewMobile = currentWidth < 768;
+        if (wasReviewMobile !== isReviewMobile) {
+            clearInterval(mobileReviewInterval);
+            renderReviews();
+        }
+
+        lastWidth = currentWidth;
+    }, 250);
+}, { passive: true });
+
+document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+        document.body.style.animationPlayState = 'paused';
+    } else {
+        document.body.style.animationPlayState = 'running';
+    }
 });
