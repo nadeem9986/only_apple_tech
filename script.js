@@ -542,12 +542,15 @@ function renderServiceCards() {
 }
 
 function renderMobileServiceCards(container) {
+    // Create extended slides array for infinite loop (3 copies like desktop)
+    const extendedSlides = [...repairSlides, ...repairSlides, ...repairSlides];
+    
     container.innerHTML = `
         <div class="max-w-3xl mx-auto px-4">
             <div class="bg-white border border-border rounded-3xl overflow-hidden shadow-lg">
                 <div id="service-mobile-container" class="relative aspect-square overflow-hidden" style="background-image: url('images/ui/card-background.webp'); background-size: cover; background-position: center;">
                     <div id="service-image-track" class="flex h-full transition-transform duration-700 ease-in-out">
-                        ${repairSlides.map(slide => `
+                        ${extendedSlides.map(slide => `
                             <div class="w-full h-full flex items-center justify-center flex-shrink-0">
                                 <img src="${slide.image}" alt="${slide.title}" width="800" height="450" loading="lazy" class="max-w-full max-h-full object-contain">
                             </div>
@@ -619,12 +622,15 @@ function renderDeviceShowcase() {
 }
 
 function renderMobileShowcase(container) {
+    // Create extended slides array for infinite loop (3 copies like desktop)
+    const extendedSlides = [...showcaseSlides, ...showcaseSlides, ...showcaseSlides];
+    
     container.innerHTML = `
         <div class="max-w-3xl mx-auto px-4">
             <div class="bg-white border border-border rounded-3xl overflow-hidden shadow-lg">
                 <div id="showcase-mobile-container" class="relative aspect-square overflow-hidden" style="background-image: url('images/ui/wood-texture.webp'); background-size: cover; background-position: center;">
                     <div id="mobile-showcase-track" class="flex h-full transition-transform duration-700 ease-in-out">
-                        ${showcaseSlides.map(slide => `
+                        ${extendedSlides.map(slide => `
                             <div class="w-full h-full flex items-center justify-center flex-shrink-0">
                                 <img src="${slide.image}" alt="${slide.title}" width="800" height="450" loading="lazy" class="max-w-full max-h-full object-contain">
                             </div>
@@ -688,7 +694,12 @@ function renderDesktopShowcase(container) {
 // ============================================
 
 // Mobile Service Cards
+let isMobileServiceTransitioning = false;
+
 function initMobileServiceCards() {
+    // Start at the middle set of slides (index = repairSlides.length)
+    currentServiceIdx = repairSlides.length;
+    updateMobileServicePosition(false);
     startMobileServiceInterval();
     initSwipeSupport('service-mobile-container', (dir) => moveServiceSlide(dir));
 }
@@ -699,33 +710,46 @@ function startMobileServiceInterval() {
 }
 
 function moveServiceSlide(direction) {
-    const nextIdx = (currentServiceIdx + direction + repairSlides.length) % repairSlides.length;
-    updateServiceUI(nextIdx);
-    currentServiceIdx = nextIdx;
+    if (isMobileServiceTransitioning) return;
+    currentServiceIdx += direction;
+    updateMobileServicePosition(true);
 }
 
-function updateServiceUI(nextIdx) {
+function updateMobileServicePosition(withTransition) {
     const imageTrack = document.getElementById('service-image-track');
     const textContainer = document.getElementById('service-text-container');
     const dotsContainer = document.getElementById('service-dots');
 
     if (!imageTrack || !textContainer || !dotsContainer) return;
 
-    imageTrack.style.transform = `translateX(-${nextIdx * 100}%)`;
+    isMobileServiceTransitioning = true;
+    imageTrack.style.transition = withTransition ? 'transform 700ms ease-in-out' : 'none';
+    imageTrack.style.transform = `translateX(-${currentServiceIdx * 100}%)`;
     
-    textContainer.classList.add('text-fade-out');
-    setTimeout(() => {
+    // Update text and dots based on actual index
+    const actualIndex = currentServiceIdx % repairSlides.length;
+    const currentSlide = repairSlides[actualIndex];
+    
+    if (withTransition) {
+        textContainer.classList.add('text-fade-out');
+        setTimeout(() => {
+            textContainer.innerHTML = `
+                <h3 class="text-2xl font-bold mb-3">${currentSlide.title}</h3>
+                <p class="text-muted-foreground text-lg max-w-xl mx-auto">${currentSlide.description}</p>
+            `;
+            textContainer.classList.remove('text-fade-out');
+            textContainer.classList.add('text-fade-in');
+            setTimeout(() => textContainer.classList.remove('text-fade-in'), 500);
+        }, 350);
+    } else {
         textContainer.innerHTML = `
-            <h3 class="text-2xl font-bold mb-3">${repairSlides[nextIdx].title}</h3>
-            <p class="text-muted-foreground text-lg max-w-xl mx-auto">${repairSlides[nextIdx].description}</p>
+            <h3 class="text-2xl font-bold mb-3">${currentSlide.title}</h3>
+            <p class="text-muted-foreground text-lg max-w-xl mx-auto">${currentSlide.description}</p>
         `;
-        textContainer.classList.remove('text-fade-out');
-        textContainer.classList.add('text-fade-in');
-        setTimeout(() => textContainer.classList.remove('text-fade-in'), 500);
-    }, 350);
+    }
 
     Array.from(dotsContainer.children).forEach((dot, i) => {
-        if (i === nextIdx) {
+        if (i === actualIndex) {
             dot.classList.add('bg-white', 'scale-125');
             dot.classList.remove('bg-white/40');
         } else {
@@ -733,6 +757,24 @@ function updateServiceUI(nextIdx) {
             dot.classList.add('bg-white/40');
         }
     });
+
+    if (withTransition) {
+        setTimeout(() => {
+            // Reset to middle set when reaching boundaries
+            if (currentServiceIdx >= repairSlides.length * 2) {
+                currentServiceIdx = repairSlides.length;
+                imageTrack.style.transition = 'none';
+                imageTrack.style.transform = `translateX(-${currentServiceIdx * 100}%)`;
+            } else if (currentServiceIdx < repairSlides.length) {
+                currentServiceIdx = repairSlides.length * 2 - 1;
+                imageTrack.style.transition = 'none';
+                imageTrack.style.transform = `translateX(-${currentServiceIdx * 100}%)`;
+            }
+            isMobileServiceTransitioning = false;
+        }, 700);
+    } else {
+        isMobileServiceTransitioning = false;
+    }
 }
 
 // Desktop Service Carousel
@@ -803,7 +845,12 @@ function updateServiceCarouselPosition(withTransition) {
 }
 
 // Mobile Showcase
+let isMobileShowcaseTransitioning = false;
+
 function initMobileShowcase() {
+    // Start at the middle set of slides (index = showcaseSlides.length)
+    currentMobileShowcaseIdx = showcaseSlides.length;
+    updateMobileShowcasePosition(false);
     startMobileShowcaseInterval();
     initSwipeSupport('showcase-mobile-container', (dir) => moveMobileShowcaseSlide(dir));
 }
@@ -814,33 +861,46 @@ function startMobileShowcaseInterval() {
 }
 
 function moveMobileShowcaseSlide(direction) {
-    const nextIdx = (currentMobileShowcaseIdx + direction + showcaseSlides.length) % showcaseSlides.length;
-    updateMobileShowcaseUI(nextIdx);
-    currentMobileShowcaseIdx = nextIdx;
+    if (isMobileShowcaseTransitioning) return;
+    currentMobileShowcaseIdx += direction;
+    updateMobileShowcasePosition(true);
 }
 
-function updateMobileShowcaseUI(nextIdx) {
-    const imageTrack = document.getElementById('mobile-showcase-track');
+function updateMobileShowcasePosition(withTransition) {
+    const track = document.getElementById('mobile-showcase-track');
     const textContainer = document.getElementById('mobile-showcase-text');
     const dotsContainer = document.getElementById('mobile-showcase-dots');
-
-    if (!imageTrack || !textContainer || !dotsContainer) return;
-
-    imageTrack.style.transform = `translateX(-${nextIdx * 100}%)`;
     
-    textContainer.classList.add('text-fade-out');
-    setTimeout(() => {
+    if (!track || !textContainer || !dotsContainer) return;
+
+    isMobileShowcaseTransitioning = true;
+    track.style.transition = withTransition ? 'transform 700ms ease-in-out' : 'none';
+    track.style.transform = `translateX(-${currentMobileShowcaseIdx * 100}%)`;
+
+    // Update text and dots based on actual index
+    const actualIndex = currentMobileShowcaseIdx % showcaseSlides.length;
+    const currentSlide = showcaseSlides[actualIndex];
+    
+    if (withTransition) {
+        textContainer.classList.add('text-fade-out');
+        setTimeout(() => {
+            textContainer.innerHTML = `
+                <h3 class="text-2xl font-bold mb-3">${currentSlide.title}</h3>
+                <p class="text-muted-foreground text-lg max-w-xl mx-auto">${currentSlide.description}</p>
+            `;
+            textContainer.classList.remove('text-fade-out');
+            textContainer.classList.add('text-fade-in');
+            setTimeout(() => textContainer.classList.remove('text-fade-in'), 500);
+        }, 350);
+    } else {
         textContainer.innerHTML = `
-            <h3 class="text-2xl font-bold mb-3">${showcaseSlides[nextIdx].title}</h3>
-            <p class="text-muted-foreground text-lg max-w-xl mx-auto">${showcaseSlides[nextIdx].description}</p>
+            <h3 class="text-2xl font-bold mb-3">${currentSlide.title}</h3>
+            <p class="text-muted-foreground text-lg max-w-xl mx-auto">${currentSlide.description}</p>
         `;
-        textContainer.classList.remove('text-fade-out');
-        textContainer.classList.add('text-fade-in');
-        setTimeout(() => textContainer.classList.remove('text-fade-in'), 500);
-    }, 350);
+    }
 
     Array.from(dotsContainer.children).forEach((dot, i) => {
-        if (i === nextIdx) {
+        if (i === actualIndex) {
             dot.classList.add('bg-white', 'scale-125');
             dot.classList.remove('bg-white/40');
         } else {
@@ -848,6 +908,24 @@ function updateMobileShowcaseUI(nextIdx) {
             dot.classList.add('bg-white/40');
         }
     });
+
+    if (withTransition) {
+        setTimeout(() => {
+            // Reset to middle set when reaching boundaries
+            if (currentMobileShowcaseIdx >= showcaseSlides.length * 2) {
+                currentMobileShowcaseIdx = showcaseSlides.length;
+                track.style.transition = 'none';
+                track.style.transform = `translateX(-${currentMobileShowcaseIdx * 100}%)`;
+            } else if (currentMobileShowcaseIdx < showcaseSlides.length) {
+                currentMobileShowcaseIdx = showcaseSlides.length * 2 - 1;
+                track.style.transition = 'none';
+                track.style.transform = `translateX(-${currentMobileShowcaseIdx * 100}%)`;
+            }
+            isMobileShowcaseTransitioning = false;
+        }, 700);
+    } else {
+        isMobileShowcaseTransitioning = false;
+    }
 }
 
 // Desktop Showcase Carousel
@@ -934,6 +1012,7 @@ function initSwipeSupport(elementId, callback) {
         const threshold = 50;
         const diff = touchEndX - touchStartX;
         if (Math.abs(diff) > threshold) {
+            // Swipe right (diff > 0) = go back (-1), Swipe left (diff < 0) = go forward (1)
             callback(diff > 0 ? -1 : 1);
         }
     }, { passive: true });
