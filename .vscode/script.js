@@ -297,6 +297,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderDeviceShowcase();
     lucide.createIcons();
     initSmoothScrolling();
+    initMobileMenu();
     setTimeout(() => {
         initPremiumEnhancements();
         initWhatsAppTooltipPopup();
@@ -1197,3 +1198,69 @@ document.addEventListener('visibilitychange', () => {
         document.body.style.animationPlayState = 'running';
     }
 });
+
+// ============================================
+// MOBILE MENU FUNCTIONALITY
+// ============================================
+
+function initMobileMenu() {
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const overlay = document.getElementById('mobile-menu-overlay');
+    const whatsappBtn = document.querySelector('.whatsapp-float');
+    const hamburgerIcon = document.querySelector('.hamburger-icon');
+
+    if (!menuBtn || !menu || !overlay) return;
+
+    let isOpen = false;
+
+    function toggleMenu() {
+        isOpen = !isOpen;
+        
+        if (isOpen) {
+            // Open menu
+            overlay.classList.remove('hidden');
+            menu.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+            menu.classList.add('opacity-100', 'scale-100', 'pointer-events-auto');
+            document.body.style.overflow = 'hidden';
+            
+            // Animate hamburger to X
+            if (hamburgerIcon) {
+                hamburgerIcon.classList.add('active');
+            }
+            
+            // Hide WhatsApp button
+            if (whatsappBtn) {
+                whatsappBtn.style.opacity = '0';
+                whatsappBtn.style.pointerEvents = 'none';
+            }
+        } else {
+            // Close menu
+            menu.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+            menu.classList.remove('opacity-100', 'scale-100', 'pointer-events-auto');
+            overlay.classList.add('hidden');
+            document.body.style.overflow = '';
+            
+            // Animate X back to hamburger
+            if (hamburgerIcon) {
+                hamburgerIcon.classList.remove('active');
+            }
+            
+            // Show WhatsApp button
+            if (whatsappBtn) {
+                whatsappBtn.style.opacity = '1';
+                whatsappBtn.style.pointerEvents = 'auto';
+            }
+        }
+    }
+
+    menuBtn.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking on a link
+    menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (isOpen) toggleMenu();
+        });
+    });
+}

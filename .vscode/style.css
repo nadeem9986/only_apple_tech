@@ -788,6 +788,62 @@ section.bg-white.border-y:has(#service-cards) #service-dots>span.bg-white {
     background-color: #ffffff !important;
 }
 
+/* Blog Cards - Remove hover effects */
+#blog-posts article {
+    transform: none !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    transition: none !important;
+}
+
+#blog-posts article:hover {
+    transform: none !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+#blog-posts article::before,
+#blog-posts article::after {
+    display: none !important;
+}
+
+html::before, html::after,
+body::before, body::after {
+    display: none !important;
+}
+
+/* Hamburger Icon Animation */
+.hamburger-icon {
+    width: 24px;
+    height: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.hamburger-line {
+    width: 100%;
+    height: 2px;
+    background-color: #1c1c1c;
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+
+/* When menu is open (active state) */
+.hamburger-icon.active .hamburger-line:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger-icon.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.hamburger-icon.active .hamburger-line:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
 /* Accessibility - Reduce motion */
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
@@ -798,9 +854,29 @@ section.bg-white.border-y:has(#service-cards) #service-dots>span.bg-white {
 }
 
 /* Override to remove any blue glow effects */
-html, body {
-    background: #ffffff !important;
-    background-image: none !important;
+html, body, main {
+    box-shadow: none !important;
+}
+
+main::before, main::after {
+    display: none !important;
+}
+
+/* Blog Cards - Remove hover effects */
+#blog-posts article {
+    transform: none !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    transition: none !important;
+}
+
+#blog-posts article:hover {
+    transform: none !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+#blog-posts article::before,
+#blog-posts article::after {
+    display: none !important;
 }
 
 html::before, html::after,
