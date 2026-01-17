@@ -298,6 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
     lucide.createIcons();
     initSmoothScrolling();
     initMobileMenu();
+    initServiceTabs();
     setTimeout(() => {
         initPremiumEnhancements();
         initWhatsAppTooltipPopup();
@@ -1261,6 +1262,42 @@ function initMobileMenu() {
     menu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             if (isOpen) toggleMenu();
+        });
+    });
+}
+// ============================================
+// Service Tabs Functionality
+// ============================================
+
+function initServiceTabs() {
+    const tabs = document.querySelectorAll('.service-tab');
+    const contents = document.querySelectorAll('.service-content');
+    
+    if (!tabs.length || !contents.length) return;
+    
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const service = tab.getAttribute('data-service');
+            
+            // Update active tab
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            
+            // Update active content with slide animation
+            contents.forEach(content => {
+                if (content.getAttribute('data-service') === service) {
+                    // Remove active from all first
+                    contents.forEach(c => c.classList.remove('active'));
+                    
+                    // Add active to selected content
+                    setTimeout(() => {
+                        content.classList.add('active');
+                        
+                        // Reinitialize lucide icons for the new content
+                        lucide.createIcons();
+                    }, 50);
+                }
+            });
         });
     });
 }

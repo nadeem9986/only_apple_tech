@@ -288,37 +288,186 @@
 
         <!-- Inquiry Section -->
         <section id="inquiry" class="py-24 bg-accent/30">
-            <div class="max-w-4xl mx-auto px-4 py-12">
-                <div class="mb-8">
-                    <div class="text-center mb-6">
-                        <h2 class="text-3xl font-bold tracking-tight mb-2">Get a Free Quote in Minutes</h2>
-                        <p class="text-muted-foreground mb-6">Tell us what's wrong — we'll reply on WhatsApp.</p>
+            <!-- Centered Header -->
+            <div class="max-w-4xl mx-auto px-4 mb-12">
+                <div class="text-center mb-6">
+                    <h2 class="text-3xl font-bold tracking-tight mb-2">Get a Free Quote in Minutes</h2>
+                    <p class="text-muted-foreground mb-6">Tell us what's wrong — we'll reply on WhatsApp.</p>
 
-                        <!-- Centered Apple Warranty Button -->
-                        <a href="https://checkcoverage.apple.com/?locale=en_IN" target="_blank"
-                            class="btn-dynamic-warranty inline-flex items-center bg-white border-2 border-primary rounded-full font-semibold hover:bg-primary hover:text-white transition-all shadow-md hover:shadow-lg">
-                            <i data-lucide="shield" class="text-blue-500"></i>
-                            Check Apple Warranty (Official Apple Website)
-                            <i data-lucide="external-link" class="opacity-50"></i>
-                        </a>
-                    </div>
-                    <div class="flex gap-2 justify-end" id="step-indicators">
-                        <div class="h-1.5 w-8 rounded-full bg-primary" data-step="1"></div>
-                        <div class="h-1.5 w-8 rounded-full bg-muted" data-step="2"></div>
-                        <div class="h-1.5 w-8 rounded-full bg-muted" data-step="3"></div>
-                    </div>
+                    <!-- Centered Apple Warranty Button -->
+                    <a href="https://checkcoverage.apple.com/?locale=en_IN" target="_blank"
+                        class="btn-dynamic-warranty inline-flex items-center bg-white border-2 border-primary rounded-full font-semibold hover:bg-primary hover:text-white transition-all shadow-md hover:shadow-lg">
+                        <i data-lucide="shield" class="text-blue-500"></i>
+                        Check Apple Warranty (Official Apple Website)
+                        <i data-lucide="external-link" class="opacity-50"></i>
+                    </a>
                 </div>
+            </div>
 
-                <div id="repair-inquiry-container">
-                    <!-- Step 1: Device Selection -->
-                    <div class="step-content active" id="step-1">
-                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="device-list">
-                            <!-- Devices injected by JS -->
+            <!-- Full Width Container with Max Width Constraint -->
+            <div class="max-w-[90rem] mx-auto px-4 lg:px-8">
+
+                <!-- Two Column Layout: How It Works (40%) + Device Selection (60%) -->
+                <div class="flex flex-col lg:flex-row gap-8 mb-8">
+                    <!-- How It Works Section (Left - 40%) -->
+                    <div class="lg:w-2/5">
+                        <h3 class="text-xl md:text-2xl font-bold mb-6">How It Works</h3>
+                        
+                        <!-- Service Tabs -->
+                        <div class="flex flex-row gap-2 mb-8">
+                            <button class="service-tab active" data-service="doorstep">
+                                Doorstep Service
+                            </button>
+                            <button class="service-tab" data-service="pickup">
+                                Pickup & Delivery
+                            </button>
+                            <button class="service-tab" data-service="walkin">
+                                Walk-in
+                            </button>
                         </div>
-                        <p class="text-sm text-muted-foreground text-center mt-4">
-                            Don't see your exact model? Just pick the closest one — we'll confirm the details later.
-                        </p>
-                    </div>
+
+                        <!-- Service Content -->
+                        <div class="service-content-container">
+                            <!-- Doorstep Service -->
+                            <div class="service-content active" data-service="doorstep">
+                                <p class="text-sm text-muted-foreground mb-8">
+                                    For simpler repairs (iPhone screen, battery issues | MacBook battery, RAM, HDD replacement).
+                                </p>
+                                
+                                <div class="space-y-8">
+                                    <div class="service-step" data-step="1">
+                                        <div class="flex gap-4">
+                                            <div class="step-number-box">1</div>
+                                            <div>
+                                                <h4 class="font-bold text-base md:text-lg mb-2">Book an appointment</h4>
+                                                <p class="text-sm md:text-base text-muted-foreground">Tell us about the device & the issue. Confirm your location & a convenient time</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="service-step" data-step="2">
+                                        <div class="flex gap-4">
+                                            <div class="step-number-box">2</div>
+                                            <div>
+                                                <h4 class="font-bold text-base md:text-lg mb-2">Technician visit</h4>
+                                                <p class="text-sm md:text-base text-muted-foreground">Our engineer visits your residence/office. Does the service in front of you.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="service-step" data-step="3">
+                                        <div class="flex gap-4">
+                                            <div class="step-number-box">3</div>
+                                            <div>
+                                                <h4 class="font-bold text-base md:text-lg mb-2">Pay Online</h4>
+                                                <p class="text-sm md:text-base text-muted-foreground">Verify the repair and complete payment via your preferred method — cash, card, or UPI.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Pickup & Delivery -->
+                            <div class="service-content" data-service="pickup">
+                                <p class="text-sm text-muted-foreground mb-8">
+                                    For more complex repairs safe to be done only in a workshop
+                                </p>
+                                
+                                <div class="space-y-8">
+                                    <div class="service-step" data-step="1">
+                                        <div class="flex gap-4">
+                                            <div class="step-number-box">1</div>
+                                            <div>
+                                                <h4 class="font-bold text-base md:text-lg mb-2">Schedule a pickup</h4>
+                                                <p class="text-sm md:text-base text-muted-foreground">Inform us about the device & the issue. Our executive pick the device on scheduled time.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="service-step" data-step="2">
+                                        <div class="flex gap-4">
+                                            <div class="step-number-box">2</div>
+                                            <div>
+                                                <h4 class="font-bold text-base md:text-lg mb-2">Get diagnosis & quotation</h4>
+                                                <p class="text-sm md:text-base text-muted-foreground">Once we receive the device, we diagnose it thoroughly. Then share the diagnosis and a repair cost estimate with you via call or email.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="service-step" data-step="3">
+                                        <div class="flex gap-4">
+                                            <div class="step-number-box">3</div>
+                                            <div>
+                                                <h4 class="font-bold text-base md:text-lg mb-2">Receive repaired device</h4>
+                                                <p class="text-sm md:text-base text-muted-foreground">On quotation approval, we proceed with repair. The device is delivered back to you, only post extensive QC.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Walk-in -->
+                            <div class="service-content" data-service="walkin">
+                                <p class="text-sm text-muted-foreground mb-8">
+                                    If you, like us, like to meet someone in person before trusting them with your beloved device.
+                                </p>
+                                
+                                <div class="space-y-8">
+                                    <div class="service-step" data-step="1">
+                                        <div class="flex gap-4">
+                                            <div class="step-number-box">1</div>
+                                            <div>
+                                                <h4 class="font-bold text-base md:text-lg mb-2">Visit our office</h4>
+                                                <p class="text-sm md:text-base text-muted-foreground">Our location is easily available on Google Maps. Preferably call ahead to inform you're coming.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="service-step" data-step="2">
+                                        <div class="flex gap-4">
+                                            <div class="step-number-box">2</div>
+                                            <div>
+                                                <h4 class="font-bold text-base md:text-lg mb-2">Consult with our Advisor</h4>
+                                                <p class="text-sm md:text-base text-muted-foreground">Our staff is trained to lend a patient ear, understand your issue and make sure you have clarity on the repair process etc.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="service-step" data-step="3">
+                                        <div class="flex gap-4">
+                                            <div class="step-number-box">3</div>
+                                            <div>
+                                                <h4 class="font-bold text-base md:text-lg mb-2">Walk-out with a smile</h4>
+                                                <p class="text-sm md:text-base text-muted-foreground">MOST spare parts are readily available in inventory, so we can usually deliver the fastest TAT. Water damaged & motherboard issues take longer.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+
+                    <!-- Device Selection (Right - 60%) -->
+                    <div class="lg:w-3/5">
+                        <!-- Step Indicators -->
+                        <div class="flex gap-2 justify-end mb-6" id="step-indicators">
+                            <div class="h-1.5 w-8 rounded-full bg-primary" data-step="1"></div>
+                            <div class="h-1.5 w-8 rounded-full bg-muted" data-step="2"></div>
+                            <div class="h-1.5 w-8 rounded-full bg-muted" data-step="3"></div>
+                        </div>
+
+                        <div id="repair-inquiry-container">
+                            <!-- Step 1: Device Selection -->
+                            <div class="step-content active" id="step-1">
+                                <h4 class="text-lg md:text-xl font-semibold text-center mb-2">Which Apple Device Needs Repair?</h4>
+                                <p class="text-sm text-muted-foreground text-center mb-6">Get an instant quote in under 60 seconds</p>
+                                <div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="device-list">
+                                    <!-- Devices injected by JS -->
+                                </div>
+                                <p class="text-sm text-muted-foreground text-center mt-4">
+                                    Don't see your exact model? Just pick the closest one — we'll confirm the details later.
+                                </p>
+                            </div>
 
                     <!-- Step 2: Problem Selection -->
                     <div class="step-content" id="step-2">
