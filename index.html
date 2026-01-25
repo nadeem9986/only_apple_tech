@@ -18,11 +18,21 @@
 
     <!-- Preload critical resources -->
     <link rel="preload" as="style" href="style.css">
-    <link rel="preload" as="image" href="images/showcase/iphone.webp">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="style.css">
+    <script>
+        // Ensure page loads at top on iPhone Safari
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                window.scrollTo(0, 0);
+            }, 0);
+        });
+    </script>
     <script>
         tailwind.config = {
             theme: {
