@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
     <title>Only Apple Tech | Apple Repair Specialists in Bangalore</title>
 
     <!-- DNS Prefetch for external resources -->
@@ -58,16 +58,23 @@
         }
     </script>
     <style>
-        html, body, main {
+        html,
+        body,
+        main {
             background: #ffffff !important;
             background-color: #ffffff !important;
             background-image: none !important;
         }
-        html::before, html::after,
-        body::before, body::after,
-        main::before, main::after {
+
+        html::before,
+        html::after,
+        body::before,
+        body::after,
+        main::before,
+        main::after {
             display: none !important;
         }
+
         * {
             outline: none !important;
         }
@@ -76,7 +83,8 @@
 
 <body class="flex flex-col min-h-screen">
     <!-- SVG Filter for Liquid Glass Effect -->
-    <svg xmlns="http://www.w3.org/2000/svg" role="presentation" style="position: absolute; width: 0; height: 0; overflow: hidden; pointer-events: none;">
+    <svg xmlns="http://www.w3.org/2000/svg" role="presentation"
+        style="position: absolute; width: 0; height: 0; overflow: hidden; pointer-events: none;">
         <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
             <feTurbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17"
                 result="turbulence" />
@@ -111,9 +119,9 @@
                     class="btn-square px-4 py-1.5 rounded-2xl bg-primary text-white hover:shadow-lg hover:brightness-110 transition-all duration-200 shadow-md">Reviews</a>
                 <a href="#contact"
                     class="btn-square px-4 py-1.5 rounded-2xl bg-primary text-white hover:shadow-lg hover:brightness-110 transition-all duration-200 shadow-md">Contacts</a>
-                <a href="blogs.html"
+                <a href="blogs.html" target="_blank"
                     class="btn-square px-4 py-1.5 rounded-2xl bg-primary text-white hover:shadow-lg hover:brightness-110 transition-all duration-200 shadow-md">Blogs</a>
-                <a href="businesses.html"
+                <a href="businesses.html" target="_blank"
                     class="btn-square px-4 py-1.5 rounded-2xl bg-primary text-white hover:shadow-lg hover:brightness-110 transition-all duration-200 shadow-md">Businesses</a>
             </div>
             <div class="flex items-center gap-4">
@@ -135,31 +143,39 @@
     </nav>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 hidden transition-opacity duration-300"></div>
-    
+    <div id="mobile-menu-overlay"
+        class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 hidden transition-opacity duration-300"></div>
+
     <!-- Mobile Menu Card (Centered) -->
-    <div id="mobile-menu" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-3xl shadow-2xl z-50 opacity-0 scale-95 transition-all duration-300 overflow-hidden pointer-events-none" style="width: calc(100% - 2rem); max-width: 400px; max-height: calc(100vh - 4rem);">
+    <div id="mobile-menu"
+        class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-3xl shadow-2xl z-50 opacity-0 scale-95 transition-all duration-300 overflow-hidden pointer-events-none"
+        style="width: calc(100% - 2rem); max-width: 400px; max-height: calc(100vh - 4rem);">
         <div class="p-6 overflow-y-auto max-h-full">
             <div class="flex items-center justify-between mb-6">
                 <h3 class="text-lg font-bold">Menu</h3>
             </div>
-            
+
             <!-- Navigation Buttons -->
             <nav class="flex flex-col gap-3 mb-6">
-                <a href="#services" class="btn-square px-4 py-3 rounded-2xl bg-primary text-white hover:shadow-lg hover:brightness-110 transition-all duration-200 shadow-md text-center font-medium">Services</a>
-                <a href="#reviews" class="btn-square px-4 py-3 rounded-2xl bg-primary text-white hover:shadow-lg hover:brightness-110 transition-all duration-200 shadow-md text-center font-medium">Reviews</a>
-                <a href="#contact" class="btn-square px-4 py-3 rounded-2xl bg-primary text-white hover:shadow-lg hover:brightness-110 transition-all duration-200 shadow-md text-center font-medium">Contacts</a>
-                <a href="blogs.html" class="btn-square px-4 py-3 rounded-2xl bg-primary text-white hover:shadow-lg hover:brightness-110 transition-all duration-200 shadow-md text-center font-medium">Blogs</a>
-                <a href="businesses.html" class="btn-square px-4 py-3 rounded-2xl bg-primary text-white hover:shadow-lg hover:brightness-110 transition-all duration-200 shadow-md text-center font-medium">Businesses</a>
+                <a href="#services"
+                    class="btn-square px-4 py-3 rounded-2xl bg-primary text-white hover:shadow-lg hover:brightness-110 transition-all duration-200 shadow-md text-center font-medium">Services</a>
+                <a href="#reviews"
+                    class="btn-square px-4 py-3 rounded-2xl bg-primary text-white hover:shadow-lg hover:brightness-110 transition-all duration-200 shadow-md text-center font-medium">Reviews</a>
+                <a href="#contact"
+                    class="btn-square px-4 py-3 rounded-2xl bg-primary text-white hover:shadow-lg hover:brightness-110 transition-all duration-200 shadow-md text-center font-medium">Contacts</a>
+                <a href="blogs.html" target="_blank"
+                    class="btn-square px-4 py-3 rounded-2xl bg-primary text-white hover:shadow-lg hover:brightness-110 transition-all duration-200 shadow-md text-center font-medium">Blogs</a>
+                <a href="businesses.html" target="_blank"
+                    class="btn-square px-4 py-3 rounded-2xl bg-primary text-white hover:shadow-lg hover:brightness-110 transition-all duration-200 shadow-md text-center font-medium">Businesses</a>
             </nav>
-            
+
             <!-- Get Estimate Button -->
             <button
                 class="w-full btn-square btn-get-estimate px-5 py-3 rounded-2xl text-sm font-medium transition-all duration-200 shadow-md hover:shadow-lg mb-6"
                 onclick="document.getElementById('inquiry').scrollIntoView({ behavior: 'smooth' }); document.getElementById('mobile-menu-btn').click();">
                 Get Estimate
             </button>
-            
+
             <!-- Contact Actions -->
             <div class="border-t border-border pt-6 space-y-3">
                 <a href="https://maps.app.goo.gl/gFTYAP4g6efVdeNF8" target="_blank"
@@ -172,7 +188,7 @@
                         <div class="text-xs text-muted-foreground">Sampangi Rama Nagar</div>
                     </div>
                 </a>
-                
+
                 <a href="tel:9739767039"
                     class="flex items-center gap-3 p-3 rounded-2xl bg-secondary hover:bg-secondary/80 transition-colors">
                     <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
@@ -183,12 +199,14 @@
                         <div class="text-xs text-muted-foreground">+91 9739767039</div>
                     </div>
                 </a>
-                
+
                 <a href="https://wa.me/9739767039" target="_blank"
                     class="flex items-center gap-3 p-3 rounded-2xl bg-green-50 hover:bg-green-100 transition-colors">
                     <div class="w-10 h-10 rounded-full bg-green-500/10 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#25D366">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                            fill="#25D366">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                         </svg>
                     </div>
                     <div class="flex-1">
@@ -312,7 +330,7 @@
                     <!-- How It Works Section (Left - 40%) -->
                     <div class="lg:w-2/5">
                         <h3 class="text-xl md:text-2xl font-bold mb-6">How It Works</h3>
-                        
+
                         <!-- Service Tabs -->
                         <div class="flex flex-row gap-2 mb-8">
                             <button class="service-tab active" data-service="doorstep">
@@ -331,16 +349,18 @@
                             <!-- Doorstep Service -->
                             <div class="service-content active" data-service="doorstep">
                                 <p class="text-sm text-muted-foreground mb-8">
-                                    For simpler repairs (iPhone screen, battery issues | MacBook battery, RAM, HDD replacement).
+                                    For simpler repairs (iPhone screen, battery issues | MacBook battery, RAM, HDD
+                                    replacement).
                                 </p>
-                                
+
                                 <div class="space-y-8">
                                     <div class="service-step" data-step="1">
                                         <div class="flex gap-4">
                                             <div class="step-number-box">1</div>
                                             <div>
                                                 <h4 class="font-bold text-base md:text-lg mb-2">Book an appointment</h4>
-                                                <p class="text-sm md:text-base text-muted-foreground">Tell us about the device & the issue. Confirm your location & a convenient time</p>
+                                                <p class="text-sm md:text-base text-muted-foreground">Tell us about the
+                                                    device & the issue. Confirm your location & a convenient time</p>
                                             </div>
                                         </div>
                                     </div>
@@ -350,7 +370,8 @@
                                             <div class="step-number-box">2</div>
                                             <div>
                                                 <h4 class="font-bold text-base md:text-lg mb-2">Technician visit</h4>
-                                                <p class="text-sm md:text-base text-muted-foreground">Our engineer visits your residence/office. Does the service in front of you.</p>
+                                                <p class="text-sm md:text-base text-muted-foreground">Our engineer
+                                                    visits your residence/office. Does the service in front of you.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -360,7 +381,9 @@
                                             <div class="step-number-box">3</div>
                                             <div>
                                                 <h4 class="font-bold text-base md:text-lg mb-2">Pay Online</h4>
-                                                <p class="text-sm md:text-base text-muted-foreground">Verify the repair and complete payment via your preferred method — cash, card, or UPI.</p>
+                                                <p class="text-sm md:text-base text-muted-foreground">Verify the repair
+                                                    and complete payment via your preferred method — cash, card, or UPI.
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -372,14 +395,16 @@
                                 <p class="text-sm text-muted-foreground mb-8">
                                     For more complex repairs safe to be done only in a workshop
                                 </p>
-                                
+
                                 <div class="space-y-8">
                                     <div class="service-step" data-step="1">
                                         <div class="flex gap-4">
                                             <div class="step-number-box">1</div>
                                             <div>
                                                 <h4 class="font-bold text-base md:text-lg mb-2">Schedule a pickup</h4>
-                                                <p class="text-sm md:text-base text-muted-foreground">Inform us about the device & the issue. Our executive pick the device on scheduled time.</p>
+                                                <p class="text-sm md:text-base text-muted-foreground">Inform us about
+                                                    the device & the issue. Our executive pick the device on scheduled
+                                                    time.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -388,8 +413,11 @@
                                         <div class="flex gap-4">
                                             <div class="step-number-box">2</div>
                                             <div>
-                                                <h4 class="font-bold text-base md:text-lg mb-2">Get diagnosis & quotation</h4>
-                                                <p class="text-sm md:text-base text-muted-foreground">Once we receive the device, we diagnose it thoroughly. Then share the diagnosis and a repair cost estimate with you via call or email.</p>
+                                                <h4 class="font-bold text-base md:text-lg mb-2">Get diagnosis &
+                                                    quotation</h4>
+                                                <p class="text-sm md:text-base text-muted-foreground">Once we receive
+                                                    the device, we diagnose it thoroughly. Then share the diagnosis and
+                                                    a repair cost estimate with you via call or email.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -398,8 +426,11 @@
                                         <div class="flex gap-4">
                                             <div class="step-number-box">3</div>
                                             <div>
-                                                <h4 class="font-bold text-base md:text-lg mb-2">Receive repaired device</h4>
-                                                <p class="text-sm md:text-base text-muted-foreground">On quotation approval, we proceed with repair. The device is delivered back to you, only post extensive QC.</p>
+                                                <h4 class="font-bold text-base md:text-lg mb-2">Receive repaired device
+                                                </h4>
+                                                <p class="text-sm md:text-base text-muted-foreground">On quotation
+                                                    approval, we proceed with repair. The device is delivered back to
+                                                    you, only post extensive QC.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -409,16 +440,19 @@
                             <!-- Walk-in -->
                             <div class="service-content" data-service="walkin">
                                 <p class="text-sm text-muted-foreground mb-8">
-                                    If you, like us, like to meet someone in person before trusting them with your beloved device.
+                                    If you, like us, like to meet someone in person before trusting them with your
+                                    beloved device.
                                 </p>
-                                
+
                                 <div class="space-y-8">
                                     <div class="service-step" data-step="1">
                                         <div class="flex gap-4">
                                             <div class="step-number-box">1</div>
                                             <div>
                                                 <h4 class="font-bold text-base md:text-lg mb-2">Visit our office</h4>
-                                                <p class="text-sm md:text-base text-muted-foreground">Our location is easily available on Google Maps. Preferably call ahead to inform you're coming.</p>
+                                                <p class="text-sm md:text-base text-muted-foreground">Our location is
+                                                    easily available on Google Maps. Preferably call ahead to inform
+                                                    you're coming.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -427,8 +461,11 @@
                                         <div class="flex gap-4">
                                             <div class="step-number-box">2</div>
                                             <div>
-                                                <h4 class="font-bold text-base md:text-lg mb-2">Consult with our Advisor</h4>
-                                                <p class="text-sm md:text-base text-muted-foreground">Our staff is trained to lend a patient ear, understand your issue and make sure you have clarity on the repair process etc.</p>
+                                                <h4 class="font-bold text-base md:text-lg mb-2">Consult with our Advisor
+                                                </h4>
+                                                <p class="text-sm md:text-base text-muted-foreground">Our staff is
+                                                    trained to lend a patient ear, understand your issue and make sure
+                                                    you have clarity on the repair process etc.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -437,15 +474,18 @@
                                         <div class="flex gap-4">
                                             <div class="step-number-box">3</div>
                                             <div>
-                                                <h4 class="font-bold text-base md:text-lg mb-2">Walk-out with a smile</h4>
-                                                <p class="text-sm md:text-base text-muted-foreground">MOST spare parts are readily available in inventory, so we can usually deliver the fastest TAT. Water damaged & motherboard issues take longer.</p>
+                                                <h4 class="font-bold text-base md:text-lg mb-2">Walk-out with a smile
+                                                </h4>
+                                                <p class="text-sm md:text-base text-muted-foreground">MOST spare parts
+                                                    are readily available in inventory, so we can usually deliver the
+                                                    fastest TAT. Water damaged & motherboard issues take longer.</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        </div>
+                    </div>
 
                     <!-- Device Selection (Right - 60%) -->
                     <div class="lg:w-3/5">
@@ -459,81 +499,88 @@
                         <div id="repair-inquiry-container">
                             <!-- Step 1: Device Selection -->
                             <div class="step-content active" id="step-1">
-                                <h4 class="text-lg md:text-xl font-semibold text-center mb-2">Which Apple Device Needs Repair?</h4>
-                                <p class="text-sm text-muted-foreground text-center mb-6">Get an instant quote in under 60 seconds</p>
+                                <h4 class="text-lg md:text-xl font-semibold text-center mb-2">Which Apple Device Needs
+                                    Repair?</h4>
+                                <p class="text-sm text-muted-foreground text-center mb-6">Get an instant quote in under
+                                    60 seconds</p>
                                 <div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="device-list">
                                     <!-- Devices injected by JS -->
                                 </div>
                                 <p class="text-sm text-muted-foreground text-center mt-4">
-                                    Don't see your exact model? Just pick the closest one — we'll confirm the details later.
+                                    Don't see your exact model? Just pick the closest one — we'll confirm the details
+                                    later.
                                 </p>
                             </div>
 
-                    <!-- Step 2: Problem Selection -->
-                    <div class="step-content" id="step-2">
-                        <button
-                            class="mb-6 -ml-2 text-muted-foreground flex items-center hover:text-primary transition-colors no-hover-animation"
-                            onclick="goToStep(1)">
-                            <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i> Back
-                        </button>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="problem-list">
-                            <!-- Problems injected by JS -->
-                        </div>
-                    </div>
-
-                    <!-- Step 3: Contact Form -->
-                    <div class="step-content" id="step-3">
-                        <button
-                            class="mb-6 -ml-2 text-muted-foreground flex items-center hover:text-primary transition-colors no-hover-animation"
-                            onclick="goToStep(2)">
-                            <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i> Back
-                        </button>
-                        <div class="bg-white rounded-3xl border border-border p-8 shadow-sm">
-                            <form id="quote-form" class="space-y-6">
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <div class="space-y-2">
-                                        <label for="name" class="text-sm font-medium leading-none">Your Name</label>
-                                        <input type="text" id="name" name="name" placeholder="e.g. Rahul" required
-                                            class="flex h-10 w-full rounded-xl border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
-                                    </div>
-                                    <div class="space-y-2">
-                                        <label for="phone" class="text-sm font-medium leading-none">Alternate
-                                            Number</label>
-                                        <input type="text" id="phone" name="phone" placeholder="e.g. 91234 56789"
-                                            class="flex h-10 w-full rounded-xl border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
-                                    </div>
-                                </div>
-                                <div class="space-y-2">
-                                    <label for="model" class="text-sm font-medium leading-none">Your Device
-                                        Model</label>
-                                    <input type="text" id="model" name="model"
-                                        placeholder="e.g. iPhone 14 Pro, MacBook Air M2" required
-                                        class="flex h-10 w-full rounded-xl border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
-                                </div>
-                                <div class="space-y-2">
-                                    <label for="description" class="text-sm font-medium leading-none">Anything else we
-                                        should know? (Optional)</label>
-                                    <textarea id="description" name="description"
-                                        placeholder="e.g. Screen cracked after a drop, phone gets hot..."
-                                        class="flex min-h-[100px] w-full rounded-xl border border-input bg-transparent px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"></textarea>
-                                </div>
-                                <button type="submit"
-                                    class="w-full min-h-[3.5rem] py-3 px-6 text-lg btn-frosted-green font-bold rounded-full flex items-center justify-center gap-3 transition-all duration-200 shadow-md active:scale-[0.98]">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="currentColor" class="shrink-0">
-                                        <path
-                                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                                    </svg>
-                                    <span class="text-center">Send & Get Quote on WhatsApp</span>
+                            <!-- Step 2: Problem Selection -->
+                            <div class="step-content" id="step-2">
+                                <button
+                                    class="mb-6 -ml-2 text-muted-foreground flex items-center hover:text-primary transition-colors no-hover-animation"
+                                    onclick="goToStep(1)">
+                                    <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i> Back
                                 </button>
-                                <p class="text-xs text-center text-muted-foreground">
-                                    Free diagnosis · No obligation · Same-day repair available
-                                </p>
-                            </form>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="problem-list">
+                                    <!-- Problems injected by JS -->
+                                </div>
+                            </div>
+
+                            <!-- Step 3: Contact Form -->
+                            <div class="step-content" id="step-3">
+                                <button
+                                    class="mb-6 -ml-2 text-muted-foreground flex items-center hover:text-primary transition-colors no-hover-animation"
+                                    onclick="goToStep(2)">
+                                    <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i> Back
+                                </button>
+                                <div class="bg-white rounded-3xl border border-border p-8 shadow-sm">
+                                    <form id="quote-form" class="space-y-6">
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div class="space-y-2">
+                                                <label for="name" class="text-sm font-medium leading-none">Your
+                                                    Name</label>
+                                                <input type="text" id="name" name="name" placeholder="e.g. Rahul"
+                                                    required
+                                                    class="flex h-10 w-full rounded-xl border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
+                                            </div>
+                                            <div class="space-y-2">
+                                                <label for="phone" class="text-sm font-medium leading-none">Alternate
+                                                    Number</label>
+                                                <input type="text" id="phone" name="phone"
+                                                    placeholder="e.g. 91234 56789"
+                                                    class="flex h-10 w-full rounded-xl border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
+                                            </div>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <label for="model" class="text-sm font-medium leading-none">Your Device
+                                                Model</label>
+                                            <input type="text" id="model" name="model"
+                                                placeholder="e.g. iPhone 14 Pro, MacBook Air M2" required
+                                                class="flex h-10 w-full rounded-xl border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
+                                        </div>
+                                        <div class="space-y-2">
+                                            <label for="description" class="text-sm font-medium leading-none">Anything
+                                                else we
+                                                should know? (Optional)</label>
+                                            <textarea id="description" name="description"
+                                                placeholder="e.g. Screen cracked after a drop, phone gets hot..."
+                                                class="flex min-h-[100px] w-full rounded-xl border border-input bg-transparent px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"></textarea>
+                                        </div>
+                                        <button type="submit"
+                                            class="w-full min-h-[3.5rem] py-3 px-6 text-lg btn-frosted-green font-bold rounded-full flex items-center justify-center gap-3 transition-all duration-200 shadow-md active:scale-[0.98]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="currentColor" class="shrink-0">
+                                                <path
+                                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                                            </svg>
+                                            <span class="text-center">Send & Get Quote on WhatsApp</span>
+                                        </button>
+                                        <p class="text-xs text-center text-muted-foreground">
+                                            Free diagnosis · No obligation · Same-day repair available
+                                        </p>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
         </section>
 
         <!-- Success Overlay -->
@@ -602,7 +649,7 @@
                             about their experience with Only Apple Tech.
                         </p>
                     </div>
-                     <div class="flex flex-col sm:flex-row gap-4">
+                    <div class="flex flex-col sm:flex-row gap-4">
                         <a href="https://www.google.com/search?sxsrf=AE3TifM-KzA5rSH8WagAkCzDBPIjcPdfdg:1767681672812&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E4LfywmliIwJx6nVai_3pLm-VtpOPYqv8cqRHy1T_72S6b5AZk9PvWc9biP7qajbZswEFGfordI9I3rXtPWVIpB6Mw69&q=Only+Apple+Tech+Reviews"
                             target="_blank"
                             class="btn-square inline-flex items-center justify-center border border-border px-6 py-3 rounded-2xl font-medium hover:bg-white transition-colors shadow-sm">
@@ -753,9 +800,9 @@
                 and customer satisfaction is our top priority.
             </p>
             <div class="flex items-center justify-center gap-6 mb-12">
-                <a href="https://www.facebook.com/people/Onlyappletech-Blr/61555467723602/?mibextid=wwXIfr&rdid=dODvmzT75YrM1UpD&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F17tf3UJ3hx%2F%3Fmibextid%3DwwXIfr" target="_blank"
-                    class="text-muted-foreground hover:text-primary transition-colors" aria-label="Facebook"><i
-                        data-lucide="facebook" class="w-6 h-6"></i></a>
+                <a href="https://www.facebook.com/people/Onlyappletech-Blr/61555467723602/?mibextid=wwXIfr&rdid=dODvmzT75YrM1UpD&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F17tf3UJ3hx%2F%3Fmibextid%3DwwXIfr"
+                    target="_blank" class="text-muted-foreground hover:text-primary transition-colors"
+                    aria-label="Facebook"><i data-lucide="facebook" class="w-6 h-6"></i></a>
                 <a href="https://www.instagram.com/onlyappletechblr/" target="_blank"
                     class="text-muted-foreground hover:text-primary transition-colors" aria-label="Instagram"><i
                         data-lucide="instagram" class="w-6 h-6"></i></a>

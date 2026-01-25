@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
     <title>Business Services | Only Apple Tech - Enterprise Solutions</title>
 
     <!-- DNS Prefetch for external resources -->
@@ -56,16 +56,23 @@
         }
     </script>
     <style>
-        html, body, main {
+        html,
+        body,
+        main {
             background: #ffffff !important;
             background-color: #ffffff !important;
             background-image: none !important;
         }
-        html::before, html::after,
-        body::before, body::after,
-        main::before, main::after {
+
+        html::before,
+        html::after,
+        body::before,
+        body::after,
+        main::before,
+        main::after {
             display: none !important;
         }
+
         * {
             outline: none !important;
         }
@@ -74,7 +81,8 @@
 
 <body class="flex flex-col min-h-screen">
     <!-- SVG Filter for Liquid Glass Effect -->
-    <svg xmlns="http://www.w3.org/2000/svg" role="presentation" style="position: absolute; width: 0; height: 0; overflow: hidden; pointer-events: none;">
+    <svg xmlns="http://www.w3.org/2000/svg" role="presentation"
+        style="position: absolute; width: 0; height: 0; overflow: hidden; pointer-events: none;">
         <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
             <feTurbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17"
                 result="turbulence" />
@@ -94,7 +102,8 @@
     </svg>
 
     <!-- Navbar -->
-    <nav class="sticky top-4 z-50 mx-4 lg:mx-8 rounded-3xl border border-border/40 transition-all duration-300 shadow-md liquid-glass-effect">
+    <nav
+        class="sticky top-4 z-50 mx-4 lg:mx-8 rounded-3xl border border-border/40 transition-all duration-300 shadow-md liquid-glass-effect">
         <div class="w-full px-6 h-16 flex items-center justify-between relative z-10">
             <a href="index.html" class="flex items-center gap-2">
                 <div class="p-1 rounded-lg">
@@ -109,9 +118,9 @@
                     class="btn-square px-4 py-1.5 rounded-2xl bg-primary text-white hover:shadow-lg hover:brightness-110 transition-all duration-200 shadow-md">Reviews</a>
                 <a href="index.html#contact"
                     class="btn-square px-4 py-1.5 rounded-2xl bg-primary text-white hover:shadow-lg hover:brightness-110 transition-all duration-200 shadow-md">Contacts</a>
-                <a href="blogs.html"
+                <a href="blogs.html" target="_blank"
                     class="btn-square px-4 py-1.5 rounded-2xl bg-primary text-white hover:shadow-lg hover:brightness-110 transition-all duration-200 shadow-md">Blogs</a>
-                <a href="businesses.html"
+                <a href="businesses.html" target="_blank"
                     class="btn-square px-4 py-1.5 rounded-2xl bg-primary text-white hover:shadow-lg hover:brightness-110 transition-all duration-200 shadow-md">Businesses</a>
             </div>
             <div class="flex items-center gap-4">
@@ -133,24 +142,32 @@
     </nav>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 hidden transition-opacity duration-300"></div>
-    
+    <div id="mobile-menu-overlay"
+        class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 hidden transition-opacity duration-300"></div>
+
     <!-- Mobile Menu Card (Centered) -->
-    <div id="mobile-menu" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-3xl shadow-2xl z-50 opacity-0 scale-95 transition-all duration-300 overflow-hidden pointer-events-none" style="width: calc(100% - 2rem); max-width: 400px; max-height: calc(100vh - 4rem);">
+    <div id="mobile-menu"
+        class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-3xl shadow-2xl z-50 opacity-0 scale-95 transition-all duration-300 overflow-hidden pointer-events-none"
+        style="width: calc(100% - 2rem); max-width: 400px; max-height: calc(100vh - 4rem);">
         <div class="p-6 overflow-y-auto max-h-full">
             <div class="flex items-center justify-between mb-6">
                 <h3 class="text-lg font-bold">Menu</h3>
             </div>
-            
+
             <!-- Navigation Buttons -->
             <nav class="flex flex-col gap-3 mb-6">
-                <a href="index.html#services" class="btn-square px-4 py-3 rounded-2xl bg-primary text-white hover:shadow-lg hover:brightness-110 transition-all duration-200 shadow-md text-center font-medium">Services</a>
-                <a href="index.html#reviews" class="btn-square px-4 py-3 rounded-2xl bg-primary text-white hover:shadow-lg hover:brightness-110 transition-all duration-200 shadow-md text-center font-medium">Reviews</a>
-                <a href="index.html#contact" class="btn-square px-4 py-3 rounded-2xl bg-primary text-white hover:shadow-lg hover:brightness-110 transition-all duration-200 shadow-md text-center font-medium">Contacts</a>
-                <a href="blogs.html" class="btn-square px-4 py-3 rounded-2xl bg-primary text-white hover:shadow-lg hover:brightness-110 transition-all duration-200 shadow-md text-center font-medium">Blogs</a>
-                <a href="businesses.html" class="btn-square px-4 py-3 rounded-2xl bg-primary text-white hover:shadow-lg hover:brightness-110 transition-all duration-200 shadow-md text-center font-medium">Businesses</a>
+                <a href="index.html#services"
+                    class="btn-square px-4 py-3 rounded-2xl bg-primary text-white hover:shadow-lg hover:brightness-110 transition-all duration-200 shadow-md text-center font-medium">Services</a>
+                <a href="index.html#reviews"
+                    class="btn-square px-4 py-3 rounded-2xl bg-primary text-white hover:shadow-lg hover:brightness-110 transition-all duration-200 shadow-md text-center font-medium">Reviews</a>
+                <a href="index.html#contact"
+                    class="btn-square px-4 py-3 rounded-2xl bg-primary text-white hover:shadow-lg hover:brightness-110 transition-all duration-200 shadow-md text-center font-medium">Contacts</a>
+                <a href="blogs.html" target="_blank"
+                    class="btn-square px-4 py-3 rounded-2xl bg-primary text-white hover:shadow-lg hover:brightness-110 transition-all duration-200 shadow-md text-center font-medium">Blogs</a>
+                <a href="businesses.html" target="_blank"
+                    class="btn-square px-4 py-3 rounded-2xl bg-primary text-white hover:shadow-lg hover:brightness-110 transition-all duration-200 shadow-md text-center font-medium">Businesses</a>
             </nav>
-            
+
             <!-- Get Estimate Button -->
             <button
                 class="w-full btn-square btn-get-estimate px-5 py-3 rounded-2xl text-sm font-medium transition-all duration-200 shadow-md hover:shadow-lg mb-6"
@@ -165,14 +182,17 @@
         <section class="relative overflow-hidden py-16 lg:py-24 bg-white">
             <div class="container mx-auto px-4 relative z-10">
                 <div class="text-center max-w-3xl mx-auto">
-                    <span class="inline-block mb-4 py-1 px-4 text-sm font-medium bg-secondary text-secondary-foreground rounded-full">
+                    <span
+                        class="inline-block mb-4 py-1 px-4 text-sm font-medium bg-secondary text-secondary-foreground rounded-full">
                         Enterprise Solutions
                     </span>
-                    <h1 class="text-4xl lg:text-6xl font-bold tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-b from-black to-black/60">
+                    <h1
+                        class="text-4xl lg:text-6xl font-bold tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-b from-black to-black/60">
                         Business Services for Apple Devices
                     </h1>
                     <p class="text-xl text-muted-foreground mb-8">
-                        Comprehensive Apple device solutions for businesses. From procurement to maintenance, we handle it all so you can focus on growth.
+                        Comprehensive Apple device solutions for businesses. From procurement to maintenance, we handle
+                        it all so you can focus on growth.
                     </p>
                     <button
                         class="btn-square bg-primary text-white px-8 py-3 rounded-2xl font-medium hover:shadow-lg hover:brightness-110 transition-all duration-200 shadow-md"
@@ -195,7 +215,8 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                     <!-- Procurement -->
-                    <div class="bg-white rounded-3xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div
+                        class="bg-white rounded-3xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
                         <div class="flex flex-col md:flex-row">
                             <div class="md:w-1/3 bg-secondary/50 flex items-center justify-center p-8">
                                 <div class="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center">
@@ -205,7 +226,8 @@
                             <div class="md:w-2/3 p-6">
                                 <h3 class="text-2xl font-bold mb-3">Procurement</h3>
                                 <p class="text-muted-foreground mb-4">
-                                    Bulk purchasing of Apple devices for your business with competitive pricing and dedicated support.
+                                    Bulk purchasing of Apple devices for your business with competitive pricing and
+                                    dedicated support.
                                 </p>
                                 <span class="text-sm font-medium text-primary">Contact for Quote</span>
                             </div>
@@ -213,7 +235,8 @@
                     </div>
 
                     <!-- Repair & AMC -->
-                    <div class="bg-white rounded-3xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div
+                        class="bg-white rounded-3xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
                         <div class="flex flex-col md:flex-row">
                             <div class="md:w-1/3 bg-secondary/50 flex items-center justify-center p-8">
                                 <div class="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center">
@@ -223,7 +246,8 @@
                             <div class="md:w-2/3 p-6">
                                 <h3 class="text-2xl font-bold mb-3">Repair & AMC</h3>
                                 <p class="text-muted-foreground mb-4">
-                                    Annual maintenance contracts with priority service, preventive maintenance, and fast turnaround times.
+                                    Annual maintenance contracts with priority service, preventive maintenance, and fast
+                                    turnaround times.
                                 </p>
                                 <span class="text-sm font-medium text-primary">Contact for Quote</span>
                             </div>
@@ -231,7 +255,8 @@
                     </div>
 
                     <!-- Rentals -->
-                    <div class="bg-white rounded-3xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div
+                        class="bg-white rounded-3xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
                         <div class="flex flex-col md:flex-row">
                             <div class="md:w-1/3 bg-secondary/50 flex items-center justify-center p-8">
                                 <div class="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center">
@@ -241,7 +266,8 @@
                             <div class="md:w-2/3 p-6">
                                 <h3 class="text-2xl font-bold mb-3">Rentals</h3>
                                 <p class="text-muted-foreground mb-4">
-                                    Flexible short-term and long-term device rental solutions for events, projects, or temporary needs.
+                                    Flexible short-term and long-term device rental solutions for events, projects, or
+                                    temporary needs.
                                 </p>
                                 <span class="text-sm font-medium text-primary">Contact for Quote</span>
                             </div>
@@ -249,7 +275,8 @@
                     </div>
 
                     <!-- Liquidation -->
-                    <div class="bg-white rounded-3xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div
+                        class="bg-white rounded-3xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
                         <div class="flex flex-col md:flex-row">
                             <div class="md:w-1/3 bg-secondary/50 flex items-center justify-center p-8">
                                 <div class="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center">
@@ -259,7 +286,8 @@
                             <div class="md:w-2/3 p-6">
                                 <h3 class="text-2xl font-bold mb-3">Liquidation</h3>
                                 <p class="text-muted-foreground mb-4">
-                                    Secure asset disposal and device buyback services with data wiping and environmentally responsible recycling.
+                                    Secure asset disposal and device buyback services with data wiping and
+                                    environmentally responsible recycling.
                                 </p>
                                 <span class="text-sm font-medium text-primary">Contact for Quote</span>
                             </div>
@@ -346,7 +374,8 @@
                         <form id="business-form">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                                 <div>
-                                    <label for="company-name" class="block text-sm font-medium mb-2">Company Name *</label>
+                                    <label for="company-name" class="block text-sm font-medium mb-2">Company Name
+                                        *</label>
                                     <input type="text" id="company-name" required
                                         class="w-full px-4 py-3 rounded-2xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
                                 </div>
@@ -382,7 +411,8 @@
                                     <input type="checkbox" id="agreement" required
                                         class="mt-1 w-5 h-5 rounded border-border text-primary focus:ring-primary">
                                     <span class="text-sm text-muted-foreground">
-                                        I agree to be contacted by Only Apple Tech regarding my business inquiry and understand that my information will be handled according to the privacy policy.
+                                        I agree to be contacted by Only Apple Tech regarding my business inquiry and
+                                        understand that my information will be handled according to the privacy policy.
                                     </span>
                                 </label>
                             </div>
@@ -390,8 +420,10 @@
                             <div class="flex flex-col sm:flex-row gap-4">
                                 <button type="button" id="submit-whatsapp"
                                     class="flex-1 btn-square bg-green-600 text-white px-6 py-3 rounded-2xl font-medium hover:shadow-lg hover:brightness-110 transition-all duration-200 shadow-md flex items-center justify-center gap-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="currentColor">
+                                        <path
+                                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                                     </svg>
                                     Submit via WhatsApp
                                 </button>
@@ -422,50 +454,61 @@
                         <details class="group bg-secondary/30 rounded-2xl p-6 cursor-pointer">
                             <summary class="flex items-center justify-between font-semibold text-lg list-none">
                                 <span>What is the minimum order quantity for bulk purchases?</span>
-                                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform group-open:rotate-180"></i>
+                                <i data-lucide="chevron-down"
+                                    class="w-5 h-5 transition-transform group-open:rotate-180"></i>
                             </summary>
                             <p class="mt-4 text-muted-foreground">
-                                We don't have a strict minimum order quantity. Whether you need 5 devices or 500, we can accommodate your business needs with competitive pricing.
+                                We don't have a strict minimum order quantity. Whether you need 5 devices or 500, we can
+                                accommodate your business needs with competitive pricing.
                             </p>
                         </details>
 
                         <details class="group bg-secondary/30 rounded-2xl p-6 cursor-pointer">
                             <summary class="flex items-center justify-between font-semibold text-lg list-none">
                                 <span>What payment terms do you offer for businesses?</span>
-                                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform group-open:rotate-180"></i>
+                                <i data-lucide="chevron-down"
+                                    class="w-5 h-5 transition-transform group-open:rotate-180"></i>
                             </summary>
                             <p class="mt-4 text-muted-foreground">
-                                We offer flexible payment terms including NET 30, NET 60, and customized billing cycles based on your business requirements and credit approval.
+                                We offer flexible payment terms including NET 30, NET 60, and customized billing cycles
+                                based on your business requirements and credit approval.
                             </p>
                         </details>
 
                         <details class="group bg-secondary/30 rounded-2xl p-6 cursor-pointer">
                             <summary class="flex items-center justify-between font-semibold text-lg list-none">
                                 <span>Do you provide warranty coverage for business repairs?</span>
-                                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform group-open:rotate-180"></i>
+                                <i data-lucide="chevron-down"
+                                    class="w-5 h-5 transition-transform group-open:rotate-180"></i>
                             </summary>
                             <p class="mt-4 text-muted-foreground">
-                                Yes, all our business repairs come with a 90-day warranty on parts and labor. AMC customers receive extended warranty coverage as part of their contract.
+                                Yes, all our business repairs come with a 90-day warranty on parts and labor. AMC
+                                customers receive extended warranty coverage as part of their contract.
                             </p>
                         </details>
 
                         <details class="group bg-secondary/30 rounded-2xl p-6 cursor-pointer">
                             <summary class="flex items-center justify-between font-semibold text-lg list-none">
                                 <span>What is your typical response time for business clients?</span>
-                                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform group-open:rotate-180"></i>
+                                <i data-lucide="chevron-down"
+                                    class="w-5 h-5 transition-transform group-open:rotate-180"></i>
                             </summary>
                             <p class="mt-4 text-muted-foreground">
-                                Business clients receive priority support with response times within 4 hours for critical issues and same-day service for most repairs. AMC customers get even faster response times.
+                                Business clients receive priority support with response times within 4 hours for
+                                critical issues and same-day service for most repairs. AMC customers get even faster
+                                response times.
                             </p>
                         </details>
 
                         <details class="group bg-secondary/30 rounded-2xl p-6 cursor-pointer">
                             <summary class="flex items-center justify-between font-semibold text-lg list-none">
                                 <span>Which areas do you service for business clients?</span>
-                                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform group-open:rotate-180"></i>
+                                <i data-lucide="chevron-down"
+                                    class="w-5 h-5 transition-transform group-open:rotate-180"></i>
                             </summary>
                             <p class="mt-4 text-muted-foreground">
-                                We primarily serve businesses in Bangalore and surrounding areas. For large contracts, we can arrange on-site support across Karnataka. Remote support is available nationwide.
+                                We primarily serve businesses in Bangalore and surrounding areas. For large contracts,
+                                we can arrange on-site support across Karnataka. Remote support is available nationwide.
                             </p>
                         </details>
                     </div>
@@ -486,9 +529,9 @@
                 and customer satisfaction is our top priority.
             </p>
             <div class="flex items-center justify-center gap-6 mb-12">
-                <a href="https://www.facebook.com/people/Onlyappletech-Blr/61555467723602/?mibextid=wwXIfr&rdid=dODvmzT75YrM1UpD&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F17tf3UJ3hx%2F%3Fmibextid%3DwwXIfr" target="_blank"
-                    class="text-muted-foreground hover:text-primary transition-colors" aria-label="Facebook"><i
-                        data-lucide="facebook" class="w-6 h-6"></i></a>
+                <a href="https://www.facebook.com/people/Onlyappletech-Blr/61555467723602/?mibextid=wwXIfr&rdid=dODvmzT75YrM1UpD&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F17tf3UJ3hx%2F%3Fmibextid%3DwwXIfr"
+                    target="_blank" class="text-muted-foreground hover:text-primary transition-colors"
+                    aria-label="Facebook"><i data-lucide="facebook" class="w-6 h-6"></i></a>
                 <a href="https://www.instagram.com/onlyappletechblr/" target="_blank"
                     class="text-muted-foreground hover:text-primary transition-colors" aria-label="Instagram"><i
                         data-lucide="instagram" class="w-6 h-6"></i></a>
@@ -519,13 +562,13 @@
 
             function toggleMenu() {
                 isOpen = !isOpen;
-                
+
                 if (isOpen) {
                     overlay.classList.remove('hidden');
                     menu.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
                     menu.classList.add('opacity-100', 'scale-100', 'pointer-events-auto');
                     document.body.style.overflow = 'hidden';
-                    
+
                     if (hamburgerIcon) {
                         hamburgerIcon.classList.add('active');
                     }
@@ -534,7 +577,7 @@
                     menu.classList.remove('opacity-100', 'scale-100', 'pointer-events-auto');
                     overlay.classList.add('hidden');
                     document.body.style.overflow = '';
-                    
+
                     if (hamburgerIcon) {
                         hamburgerIcon.classList.remove('active');
                     }
@@ -552,7 +595,7 @@
         }
 
         // Form submission handlers
-        document.getElementById('submit-whatsapp').addEventListener('click', function() {
+        document.getElementById('submit-whatsapp').addEventListener('click', function () {
             const form = document.getElementById('business-form');
             if (!form.checkValidity()) {
                 form.reportValidity();
@@ -566,12 +609,12 @@
             const requirement = document.getElementById('requirement').value;
 
             const message = `*Business Inquiry*\n\n*Company:* ${companyName}\n*Name:* ${yourName}\n*Email:* ${email}\n*Mobile:* ${mobile}\n*Requirement:*\n${requirement}`;
-            
+
             const whatsappUrl = `https://wa.me/919739767039?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank');
         });
 
-        document.getElementById('submit-email').addEventListener('click', function() {
+        document.getElementById('submit-email').addEventListener('click', function () {
             const form = document.getElementById('business-form');
             if (!form.checkValidity()) {
                 form.reportValidity();
@@ -586,7 +629,7 @@
 
             const subject = `Business Inquiry from ${companyName}`;
             const body = `Company Name: ${companyName}\nYour Name: ${yourName}\nEmail: ${email}\nMobile: ${mobile}\n\nRequirement:\n${requirement}`;
-            
+
             const mailtoUrl = `mailto:Onlyappletechblr@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             window.location.href = mailtoUrl;
         });

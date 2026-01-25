@@ -39,33 +39,33 @@ const repairSlides = [
 
 const showcaseSlides = [
     {
-        title: "iPhone Repair",
-        description: "Screen replacement, battery upgrades, charging issues, and camera fixes for all iPhone models.",
+        title: "iPhone Maintenance",
+        description: "Complete diagnostics, battery health checks, deep cleaning, software optimization, and preventive care to keep your iPhone running smoothly.",
         image: "images/showcase/iphone.webp"
     },
     {
-        title: "iPad Repair",
-        description: "Cracked screens, unresponsive touch, and battery issues for all iPad models.",
+        title: "iPad Care Services",
+        description: "Performance tuning, storage optimization, system diagnostics, thermal management, and regular maintenance for peak iPad performance.",
         image: "images/showcase/ipad.webp"
     },
     {
-        title: "MacBook Services",
-        description: "Keyboard repair, SSD upgrades, battery replacement, and liquid damage restoration.",
+        title: "MacBook Maintenance",
+        description: "Thermal paste renewal, fan cleaning, SSD health monitoring, battery calibration, and comprehensive system diagnostics for optimal performance.",
         image: "images/showcase/macbook.webp"
     },
     {
-        title: "iMac Repair",
-        description: "Screen issues, power problems, performance upgrades, and hardware repairs for all iMac models.",
+        title: "iMac Care & Optimization",
+        description: "Internal dust removal, display calibration, hardware diagnostics, performance upgrades, and preventive maintenance for all iMac models.",
         image: "images/showcase/imac-new.webp"
     },
     {
-        title: "Apple Watch Repair",
-        description: "Screen replacement, battery issues, and sensor repairs for all Apple Watch models.",
+        title: "Apple Watch Services",
+        description: "Sensor calibration, battery optimization, water resistance testing, software updates, and health monitoring system checks.",
         image: "images/showcase/apple-watch.webp"
     },
     {
-        title: "Mac Mini Services",
-        description: "Power supply repair, port replacements, overheating issues, and SSD upgrades.",
+        title: "Mac Mini Maintenance",
+        description: "Cooling system optimization, port cleaning, storage upgrades, system diagnostics, and preventive care for reliable performance.",
         image: "images/showcase/mac-mini.webp"
     }
 ];
