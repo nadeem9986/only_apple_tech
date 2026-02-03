@@ -402,6 +402,16 @@ img {
     animation: imageReveal 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Disable reveal animation for carousels to prevent animation conflicts */
+#service-image-track img,
+#mobile-showcase-track img,
+#service-carousel-track img,
+#desktop-carousel-track img,
+#mobile-reviews-track img {
+    animation: none !important;
+}
+
+
 /* Prevent layout shift with aspect ratio */
 img[width][height] {
     aspect-ratio: attr(width) / attr(height);

@@ -41,34 +41,41 @@ const showcaseSlides = [
     {
         title: "iPhone Maintenance",
         description: "Complete diagnostics, battery health checks, deep cleaning, software optimization, and preventive care to keep your iPhone running smoothly.",
-        image: "images/showcase/iphone.webp"
+        image: "images/showcase/iphone.webp",
+        link: "blog-article.html?id=1"
     },
     {
         title: "iPad Care Services",
         description: "Performance tuning, storage optimization, system diagnostics, thermal management, and regular maintenance for peak iPad performance.",
-        image: "images/showcase/ipad.webp"
+        image: "images/showcase/ipad.webp",
+        link: "blog-article.html?id=5"
     },
     {
         title: "MacBook Maintenance",
         description: "Thermal paste renewal, fan cleaning, SSD health monitoring, battery calibration, and comprehensive system diagnostics for optimal performance.",
-        image: "images/showcase/macbook.webp"
+        image: "images/showcase/macbook.webp",
+        link: "blog-article.html?id=2"
     },
     {
         title: "iMac Care & Optimization",
         description: "Internal dust removal, display calibration, hardware diagnostics, performance upgrades, and preventive maintenance for all iMac models.",
-        image: "images/showcase/imac-new.webp"
+        image: "images/showcase/imac-new.webp",
+        link: "blog-article.html?id=3"
     },
     {
         title: "Apple Watch Services",
         description: "Sensor calibration, battery optimization, water resistance testing, software updates, and health monitoring system checks.",
-        image: "images/showcase/apple-watch.webp"
+        image: "images/showcase/apple-watch.webp",
+        link: "blog-article.html?id=4"
     },
     {
         title: "Mac Mini Maintenance",
         description: "Cooling system optimization, port cleaning, storage upgrades, system diagnostics, and preventive care for reliable performance.",
-        image: "images/showcase/mac-mini.webp"
+        image: "images/showcase/mac-mini.webp",
+        link: "blog-article.html?id=6"
     }
 ];
+
 
 const reviews = [
     {
@@ -274,16 +281,22 @@ let currentServiceCarouselIdx = repairSlides.length;
 let currentDesktopCarouselIdx = showcaseSlides.length;
 let currentReviewPage = 0;
 let currentMobileReviewIdx = 0;
+
 let mobileServiceInterval;
 let mobileShowcaseInterval;
 let serviceCarouselInterval;
 let desktopCarouselInterval;
 let mobileReviewInterval;
+
 let isServiceTransitioning = false;
 let isDesktopTransitioning = false;
+let isMobileServiceTransitioning = false;
+let isMobileShowcaseTransitioning = false;
+
 let resizeTimeout;
 let lastWidth = window.innerWidth;
 let ticking = false;
+
 
 // ============================================
 // INITIALIZATION
@@ -513,11 +526,11 @@ function moveMobileReview(direction) {
 function updateMobileReviewUI() {
     const track = document.getElementById('mobile-reviews-track');
     const dots = document.querySelectorAll('#mobile-review-dots > span');
-    
+
     if (!track) return;
-    
+
     track.style.transform = `translateX(-${currentMobileReviewIdx * 100}%)`;
-    
+
     dots.forEach((dot, i) => {
         if (i === currentMobileReviewIdx) {
             dot.classList.add('bg-primary');
@@ -544,7 +557,7 @@ function renderServiceCards() {
 function renderMobileServiceCards(container) {
     // Create extended slides array for infinite loop (3 copies like desktop)
     const extendedSlides = [...repairSlides, ...repairSlides, ...repairSlides];
-    
+
     container.innerHTML = `
         <div class="max-w-3xl mx-auto px-4">
             <div class="bg-white border border-border rounded-3xl overflow-hidden shadow-lg">
@@ -624,14 +637,14 @@ function renderDeviceShowcase() {
 function renderMobileShowcase(container) {
     // Create extended slides array for infinite loop (3 copies like desktop)
     const extendedSlides = [...showcaseSlides, ...showcaseSlides, ...showcaseSlides];
-    
+
     container.innerHTML = `
         <div class="max-w-3xl mx-auto px-4">
             <div class="bg-white border border-border rounded-3xl overflow-hidden shadow-lg">
                 <div id="showcase-mobile-container" class="relative aspect-square overflow-hidden" style="background-image: url('images/ui/wood-texture.webp'); background-size: cover; background-position: center;">
                     <div id="mobile-showcase-track" class="flex h-full transition-transform duration-700 ease-in-out">
                         ${extendedSlides.map(slide => `
-                            <div class="w-full h-full flex items-center justify-center flex-shrink-0">
+                            <div class="w-full h-full flex items-center justify-center flex-shrink-0 cursor-pointer" onclick="window.open('${slide.link}', '_blank')">
                                 <img src="${slide.image}" alt="${slide.title}" width="800" height="450" loading="lazy" class="max-w-full max-h-full object-contain">
                             </div>
                         `).join('')}
@@ -642,7 +655,7 @@ function renderMobileShowcase(container) {
                         `).join('')}
                     </div>
                 </div>
-                <div class="p-8 text-center" id="mobile-showcase-text">
+                <div class="p-8 text-center cursor-pointer" id="mobile-showcase-text" onclick="window.open('${showcaseSlides[0].link}', '_blank')">
                     <h3 class="text-2xl font-bold mb-3">${showcaseSlides[0].title}</h3>
                     <p class="text-muted-foreground text-lg max-w-xl mx-auto">${showcaseSlides[0].description}</p>
                 </div>
@@ -659,12 +672,12 @@ function renderDesktopShowcase(container) {
             <div class="overflow-hidden py-10 -my-10">
                 <div id="desktop-carousel-track" class="flex gap-8 transition-transform duration-700 ease-in-out -mx-4 px-4">
                     ${extendedSlides.map(slide => `
-                        <div class="flex-shrink-0 w-full md:w-[calc(33.333%-1.333rem)] bg-white border border-border rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                            <div class="relative aspect-[4/3] rounded-t-3xl overflow-hidden flex items-center justify-center" style="background-image: url('images/ui/wood-texture.webp'); background-size: cover; background-position: center;">
+                        <div class="flex-shrink-0 w-full md:w-[calc(33.333%-1.333rem)] bg-white border border-border rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all cursor-pointer group" onclick="window.open('${slide.link}', '_blank')">
+                            <div class="relative aspect-[4/3] rounded-t-3xl overflow-hidden flex items-center justify-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('images/ui/wood-texture.webp'); background-size: cover; background-position: center;">
                                 <img src="${slide.image}" alt="${slide.title}" width="800" height="450" loading="lazy" class="max-w-full max-h-full object-contain">
                             </div>
                             <div class="p-6 text-center">
-                                <h3 class="text-xl font-bold mb-2">${slide.title}</h3>
+                                <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">${slide.title}</h3>
                                 <p class="text-muted-foreground">${slide.description}</p>
                             </div>
                         </div>
@@ -694,13 +707,14 @@ function renderDesktopShowcase(container) {
 // ============================================
 
 // Mobile Service Cards
-let isMobileServiceTransitioning = false;
+
 
 function initMobileServiceCards() {
     // Start at the middle set of slides (index = repairSlides.length)
     currentServiceIdx = repairSlides.length;
-    updateMobileServicePosition(false);
+    requestAnimationFrame(() => updateMobileServicePosition(false));
     startMobileServiceInterval();
+
     initSwipeSupport('service-mobile-container', (dir) => moveServiceSlide(dir));
 }
 
@@ -724,12 +738,14 @@ function updateMobileServicePosition(withTransition) {
 
     isMobileServiceTransitioning = true;
     imageTrack.style.transition = withTransition ? 'transform 700ms ease-in-out' : 'none';
+    if (!withTransition) imageTrack.offsetHeight; // Force reflow
     imageTrack.style.transform = `translateX(-${currentServiceIdx * 100}%)`;
-    
+
+
     // Update text and dots based on actual index
     const actualIndex = currentServiceIdx % repairSlides.length;
     const currentSlide = repairSlides[actualIndex];
-    
+
     if (withTransition) {
         textContainer.classList.add('text-fade-out');
         setTimeout(() => {
@@ -771,7 +787,7 @@ function updateMobileServicePosition(withTransition) {
                 imageTrack.style.transform = `translateX(-${currentServiceIdx * 100}%)`;
             }
             isMobileServiceTransitioning = false;
-        }, 700);
+        }, 750);
     } else {
         isMobileServiceTransitioning = false;
     }
@@ -779,9 +795,10 @@ function updateMobileServicePosition(withTransition) {
 
 // Desktop Service Carousel
 function initDesktopServiceCarousel() {
-    updateServiceCarouselPosition(false);
+    requestAnimationFrame(() => updateServiceCarouselPosition(false));
     startServiceCarouselInterval();
 }
+
 
 function startServiceCarouselInterval() {
     clearInterval(serviceCarouselInterval);
@@ -809,6 +826,8 @@ function updateServiceCarouselPosition(withTransition) {
 
     isServiceTransitioning = true;
     track.style.transition = withTransition ? 'transform 0.7s ease-in-out' : 'none';
+    if (!withTransition) track.offsetHeight; // Force reflow
+
 
     const cardWidth = track.children[0].offsetWidth;
     const gap = 32;
@@ -831,27 +850,32 @@ function updateServiceCarouselPosition(withTransition) {
             if (currentServiceCarouselIdx >= repairSlides.length * 2) {
                 currentServiceCarouselIdx = repairSlides.length;
                 track.style.transition = 'none';
+                track.offsetHeight; // Force reflow
                 updateServiceCarouselPosition(false);
             } else if (currentServiceCarouselIdx < repairSlides.length) {
                 currentServiceCarouselIdx = repairSlides.length * 2 - 1;
                 track.style.transition = 'none';
+                track.offsetHeight; // Force reflow
                 updateServiceCarouselPosition(false);
             }
+
             isServiceTransitioning = false;
-        }, 700);
+        }, 750);
     } else {
         isServiceTransitioning = false;
     }
 }
 
+
 // Mobile Showcase
-let isMobileShowcaseTransitioning = false;
+
 
 function initMobileShowcase() {
     // Start at the middle set of slides (index = showcaseSlides.length)
     currentMobileShowcaseIdx = showcaseSlides.length;
-    updateMobileShowcasePosition(false);
+    requestAnimationFrame(() => updateMobileShowcasePosition(false));
     startMobileShowcaseInterval();
+
     initSwipeSupport('showcase-mobile-container', (dir) => moveMobileShowcaseSlide(dir));
 }
 
@@ -870,20 +894,23 @@ function updateMobileShowcasePosition(withTransition) {
     const track = document.getElementById('mobile-showcase-track');
     const textContainer = document.getElementById('mobile-showcase-text');
     const dotsContainer = document.getElementById('mobile-showcase-dots');
-    
+
     if (!track || !textContainer || !dotsContainer) return;
 
     isMobileShowcaseTransitioning = true;
     track.style.transition = withTransition ? 'transform 700ms ease-in-out' : 'none';
+    if (!withTransition) track.offsetHeight; // Force reflow
     track.style.transform = `translateX(-${currentMobileShowcaseIdx * 100}%)`;
+
 
     // Update text and dots based on actual index
     const actualIndex = currentMobileShowcaseIdx % showcaseSlides.length;
     const currentSlide = showcaseSlides[actualIndex];
-    
+
     if (withTransition) {
         textContainer.classList.add('text-fade-out');
         setTimeout(() => {
+            textContainer.onclick = () => window.open(currentSlide.link, '_blank');
             textContainer.innerHTML = `
                 <h3 class="text-2xl font-bold mb-3">${currentSlide.title}</h3>
                 <p class="text-muted-foreground text-lg max-w-xl mx-auto">${currentSlide.description}</p>
@@ -892,12 +919,16 @@ function updateMobileShowcasePosition(withTransition) {
             textContainer.classList.add('text-fade-in');
             setTimeout(() => textContainer.classList.remove('text-fade-in'), 500);
         }, 350);
+
     } else {
+        textContainer.onclick = () => window.open(currentSlide.link, '_blank');
         textContainer.innerHTML = `
             <h3 class="text-2xl font-bold mb-3">${currentSlide.title}</h3>
             <p class="text-muted-foreground text-lg max-w-xl mx-auto">${currentSlide.description}</p>
         `;
     }
+
+
 
     Array.from(dotsContainer.children).forEach((dot, i) => {
         if (i === actualIndex) {
@@ -922,17 +953,19 @@ function updateMobileShowcasePosition(withTransition) {
                 track.style.transform = `translateX(-${currentMobileShowcaseIdx * 100}%)`;
             }
             isMobileShowcaseTransitioning = false;
-        }, 700);
+        }, 750);
     } else {
         isMobileShowcaseTransitioning = false;
     }
 }
 
+
 // Desktop Showcase Carousel
 function initDesktopCarousel() {
-    updateDesktopCarouselPosition(false);
+    requestAnimationFrame(() => updateDesktopCarouselPosition(false));
     startDesktopCarouselInterval();
 }
+
 
 function startDesktopCarouselInterval() {
     clearInterval(desktopCarouselInterval);
@@ -960,6 +993,8 @@ function updateDesktopCarouselPosition(withTransition) {
 
     isDesktopTransitioning = true;
     track.style.transition = withTransition ? 'transform 0.7s ease-in-out' : 'none';
+    if (!withTransition) track.offsetHeight; // Force reflow
+
 
     const cardWidth = track.children[0].offsetWidth;
     const gap = 32;
@@ -982,18 +1017,22 @@ function updateDesktopCarouselPosition(withTransition) {
             if (currentDesktopCarouselIdx >= showcaseSlides.length * 2) {
                 currentDesktopCarouselIdx = showcaseSlides.length;
                 track.style.transition = 'none';
+                track.offsetHeight; // Force reflow
                 updateDesktopCarouselPosition(false);
             } else if (currentDesktopCarouselIdx < showcaseSlides.length) {
                 currentDesktopCarouselIdx = showcaseSlides.length * 2 - 1;
                 track.style.transition = 'none';
+                track.offsetHeight; // Force reflow
                 updateDesktopCarouselPosition(false);
             }
             isDesktopTransitioning = false;
-        }, 700);
+
+        }, 750);
     } else {
         isDesktopTransitioning = false;
     }
 }
+
 
 // Swipe Support
 function initSwipeSupport(elementId, callback) {
@@ -1273,11 +1312,24 @@ window.addEventListener('resize', () => {
 
 document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
+        // Stop all intervals to prevent catch-up speed glitches when tab becomes visible
+        clearInterval(mobileServiceInterval);
+        clearInterval(mobileShowcaseInterval);
+        clearInterval(serviceCarouselInterval);
+        clearInterval(desktopCarouselInterval);
+        clearInterval(mobileReviewInterval);
         document.body.style.animationPlayState = 'paused';
     } else {
+        // Restart intervals smoothly
+        startMobileServiceInterval();
+        startMobileShowcaseInterval();
+        startServiceCarouselInterval();
+        startDesktopCarouselInterval();
+        startMobileReviewInterval();
         document.body.style.animationPlayState = 'running';
     }
 });
+
 
 // ============================================
 // MOBILE MENU FUNCTIONALITY
@@ -1296,19 +1348,19 @@ function initMobileMenu() {
 
     function toggleMenu() {
         isOpen = !isOpen;
-        
+
         if (isOpen) {
             // Open menu
             overlay.classList.remove('hidden');
             menu.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
             menu.classList.add('opacity-100', 'scale-100', 'pointer-events-auto');
             document.body.style.overflow = 'hidden';
-            
+
             // Animate hamburger to X
             if (hamburgerIcon) {
                 hamburgerIcon.classList.add('active');
             }
-            
+
             // Hide WhatsApp button
             if (whatsappBtn) {
                 whatsappBtn.style.opacity = '0';
@@ -1320,12 +1372,12 @@ function initMobileMenu() {
             menu.classList.remove('opacity-100', 'scale-100', 'pointer-events-auto');
             overlay.classList.add('hidden');
             document.body.style.overflow = '';
-            
+
             // Animate X back to hamburger
             if (hamburgerIcon) {
                 hamburgerIcon.classList.remove('active');
             }
-            
+
             // Show WhatsApp button
             if (whatsappBtn) {
                 whatsappBtn.style.opacity = '1';
@@ -1351,27 +1403,27 @@ function initMobileMenu() {
 function initServiceTabs() {
     const tabs = document.querySelectorAll('.service-tab');
     const contents = document.querySelectorAll('.service-content');
-    
+
     if (!tabs.length || !contents.length) return;
-    
+
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
             const service = tab.getAttribute('data-service');
-            
+
             // Update active tab
             tabs.forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
-            
+
             // Update active content with slide animation
             contents.forEach(content => {
                 if (content.getAttribute('data-service') === service) {
                     // Remove active from all first
                     contents.forEach(c => c.classList.remove('active'));
-                    
+
                     // Add active to selected content
                     setTimeout(() => {
                         content.classList.add('active');
-                        
+
                         // Reinitialize lucide icons for the new content
                         lucide.createIcons();
                     }, 50);
