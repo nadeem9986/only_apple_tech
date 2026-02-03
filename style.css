@@ -946,7 +946,7 @@ section.bg-white.border-y:has(#service-cards) #service-dots>span.bg-white {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    border: 1.5px solid #1c1c1c;
+    border: 2.5px solid #1c1c1c;
     border-radius: 50%;
     background-color: #ffffff;
     /* Added white background to cover the line */
@@ -969,4 +969,45 @@ section.bg-white.border-y:has(#service-cards) #service-dots>span.bg-white {
     background-color: #1c1c1c;
     z-index: 1;
     transform: translateX(-50%);
+}
+
+/* Hamburger Icon Styling */
+.hamburger-icon {
+    width: 22px;
+    height: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    position: relative;
+    padding: 0;
+}
+
+.hamburger-line {
+    width: 100%;
+    height: 2px;
+    background-color: #1c1c1c;
+    border-radius: 2px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    display: block;
+}
+
+/* No hover animation on the button itself as requested */
+#mobile-menu-btn:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Active State (X conversion) - Robust alignment */
+.hamburger-icon.active .hamburger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger-icon.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.hamburger-icon.active .hamburger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
 }
