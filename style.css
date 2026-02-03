@@ -1011,3 +1011,29 @@ section.bg-white.border-y:has(#service-cards) #service-dots>span.bg-white {
 .hamburger-icon.active .hamburger-line:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
 }
+
+/* Mobile Menu Scrollbar & Container Fixes */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #e4e4e7;
+    border-radius: 10px;
+}
+
+#mobile-menu {
+    overflow: hidden;
+    /* Ensure rounded corners clip content */
+}
+
+@media (max-width: 480px) {
+    #mobile-menu {
+        width: calc(100% - 1.5rem) !important;
+        max-height: calc(100vh - 2rem) !important;
+    }
+}
