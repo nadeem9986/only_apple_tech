@@ -1,0 +1,5 @@
+name = "only-apple-care"
+pages_build_output_dir = "public"
+
+[vars]
+# Add any environment variables here

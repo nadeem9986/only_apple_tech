@@ -4,7 +4,7 @@ const blogPosts = [
         id: 1,
         title: "The Complete Guide to iPhone Preventive Maintenance",
         excerpt: "Discover professional maintenance techniques to keep your iPhone performing like new. Learn battery optimization, cleaning protocols, and diagnostic tools that technicians use daily.",
-        image: "",
+        image: "images/blog/iphone-maintenance.webp",
         author: "Tech Specialist",
         date: "2026-01-20",
         readTime: "8 min read",
@@ -15,7 +15,7 @@ const blogPosts = [
         id: 2,
         title: "MacBook Thermal Management: The Ultimate Maintenance Guide",
         excerpt: "Master the art of MacBook thermal maintenance. Learn professional cooling optimization, fan cleaning techniques, and thermal paste renewal protocols for peak performance.",
-        image: "",
+        image: "images/blog/macbook-thermal.webp",
         author: "Senior Technician",
         date: "2026-01-18",
         readTime: "10 min read",
@@ -26,7 +26,7 @@ const blogPosts = [
         id: 3,
         title: "iPad Storage Optimization & Performance Tuning",
         excerpt: "Transform your iPad's performance with professional storage management techniques. Learn cache clearing, app optimization, and system tuning strategies.",
-        image: "",
+        image: "images/blog/ipad-maintenance.webp",
         author: "iPad Specialist",
         date: "2026-01-16",
         readTime: "7 min read",
@@ -37,7 +37,7 @@ const blogPosts = [
         id: 4,
         title: "Apple Watch Health Monitoring & Sensor Calibration",
         excerpt: "Ensure accurate health data with proper Apple Watch maintenance. Master sensor calibration, water resistance testing, and battery optimization techniques.",
-        image: "",
+        image: "images/blog/apple-watch-care.webp",
         author: "Wearables Expert",
         date: "2026-01-14",
         readTime: "6 min read",
@@ -48,7 +48,7 @@ const blogPosts = [
         id: 5,
         title: "iMac Display Calibration & Preventive Care Guide",
         excerpt: "Maintain stunning visual quality with professional iMac display calibration. Learn color accuracy optimization, internal dust prevention, and hardware diagnostics.",
-        image: "",
+        image: "images/blog/imac-maintenance.webp",
         author: "Display Technician",
         date: "2026-01-12",
         readTime: "9 min read",
@@ -59,7 +59,7 @@ const blogPosts = [
         id: 6,
         title: "MacBook Battery Calibration & Longevity Secrets",
         excerpt: "Extend your MacBook battery life by years with professional calibration techniques. Discover charging optimization, health monitoring, and replacement timing strategies.",
-        image: "",
+        image: "images/blog/macbook-battery.webp",
         author: "Battery Specialist",
         date: "2026-01-10",
         readTime: "8 min read",
@@ -70,7 +70,7 @@ const blogPosts = [
         id: 7,
         title: "Professional iPhone Cleaning: Deep Dive Protocol",
         excerpt: "Learn technician-grade iPhone cleaning methods. From port maintenance to oleophobic coating care, master the art of keeping your device pristine.",
-        image: "",
+        image: "images/blog/iphone-cleaning.webp",
         author: "Cleaning Specialist",
         date: "2026-01-08",
         readTime: "6 min read",
@@ -81,7 +81,7 @@ const blogPosts = [
         id: 8,
         title: "Mac Mini Cooling System Optimization Guide",
         excerpt: "Maximize Mac Mini performance with proper thermal management. Learn fan curve optimization, ventilation strategies, and diagnostic monitoring techniques.",
-        image: "",
+        image: "images/blog/mac-mini-cooling.webp",
         author: "Mac Specialist",
         date: "2026-01-06",
         readTime: "7 min read",
@@ -92,7 +92,7 @@ const blogPosts = [
         id: 9,
         title: "Comprehensive Apple Device Backup & Data Health",
         excerpt: "Protect your digital life with professional backup strategies. Learn automated backup systems, data integrity verification, and recovery planning.",
-        image: "",
+        image: "images/blog/apple-data-backup.webp",
         author: "Data Specialist",
         date: "2026-01-04",
         readTime: "9 min read",
@@ -113,12 +113,16 @@ document.addEventListener('DOMContentLoaded', () => {
 function renderBlogPosts() {
     const container = document.getElementById('blog-posts');
     container.innerHTML = blogPosts.map(post => `
-        <a href="blog-article.html?id=${post.id}" class="block">
-            <article class="bg-white border border-border rounded-3xl overflow-hidden shadow-sm cursor-pointer">
-                <div class="aspect-[16/9] bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
-                    <div class="w-full h-full flex items-center justify-center text-muted-foreground">
-                        <i data-lucide="image" class="w-16 h-16"></i>
-                    </div>
+        <a href="blog-article.html?id=${post.id}" class="block group">
+            <article class="bg-white border border-border rounded-3xl overflow-hidden shadow-sm cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <div class="aspect-[16/9] bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden relative">
+                    ${post.image ? `
+                        <img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    ` : `
+                        <div class="w-full h-full flex items-center justify-center text-muted-foreground">
+                            <i data-lucide="image" class="w-16 h-16"></i>
+                        </div>
+                    `}
                 </div>
                 <div class="p-6">
                     <div class="flex items-center gap-2 mb-3">
@@ -181,14 +185,14 @@ function initMobileMenu() {
 
     function toggleMenu() {
         isOpen = !isOpen;
-        
+
         if (isOpen) {
             // Open menu
             overlay.classList.remove('hidden');
             menu.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
             menu.classList.add('opacity-100', 'scale-100', 'pointer-events-auto');
             document.body.style.overflow = 'hidden';
-            
+
             // Animate hamburger to X
             if (hamburgerIcon) {
                 hamburgerIcon.classList.add('active');
@@ -199,7 +203,7 @@ function initMobileMenu() {
             menu.classList.remove('opacity-100', 'scale-100', 'pointer-events-auto');
             overlay.classList.add('hidden');
             document.body.style.overflow = '';
-            
+
             // Animate X back to hamburger
             if (hamburgerIcon) {
                 hamburgerIcon.classList.remove('active');
