@@ -1,12 +1,11 @@
 {
-  "name": "only_apple_care",
-  "version": "0.1.0",
-  "private": true,
+  "name": "only-apple-care",
+  "version": "1.0.0",
+  "description": "Only Apple Tech - Professional Apple Device Repair Service Website",
   "scripts": {
-    "start": "serve public",
-    "dev": "serve public"
+    "build": "echo 'No build required - static site'"
   },
-  "devDependencies": {
-    "serve": "^14.2.4"
-  }
+  "keywords": ["static", "website"],
+  "author": "Only Apple Tech",
+  "license": "MIT"
 }
